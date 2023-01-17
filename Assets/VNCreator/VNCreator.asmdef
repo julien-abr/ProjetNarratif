@@ -1,10 +1,12 @@
 {
     "name": "VNCreator",
     "rootNamespace": "VNCreator",
-    "references": [],
+    "references": [
+        "GUID:a697f79ee0fa19f47acb77b5912357a9"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
-    "allowUnsafeCode": true,
+    "allowUnsafeCode": false,
     "overrideReferences": false,
     "precompiledReferences": [],
     "autoReferenced": true,

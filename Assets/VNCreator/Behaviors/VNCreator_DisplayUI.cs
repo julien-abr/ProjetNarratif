@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Assets.SimpleLocalization;
 
 namespace VNCreator
 {
@@ -120,6 +121,7 @@ namespace VNCreator
             dialogueTxt.text = string.Empty;
             if (GameOptions.isInstantText)
             {
+                dialogueTxt.text = LocalizationManager.Localize("");
                 dialogueTxt.text = currentNode.dialogueText;
             }
             else
