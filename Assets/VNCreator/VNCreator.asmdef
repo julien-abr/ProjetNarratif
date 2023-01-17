@@ -2,7 +2,8 @@
     "name": "VNCreator",
     "rootNamespace": "VNCreator",
     "references": [
-        "GUID:a697f79ee0fa19f47acb77b5912357a9"
+        "GUID:a697f79ee0fa19f47acb77b5912357a9",
+        "GUID:6055be8ebefd69e48b49212b09b47b2f"
     ],
     "includePlatforms": [],
     "excludePlatforms": [],

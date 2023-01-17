@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.IMGUI.Controls;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 namespace VNCreator
 {
     public class VNCreator_OptionsMenu : MonoBehaviour
     {
+        public TMP_Dropdown languageDropdown;
         public Slider musicVolumeSlider;
         public Slider sfxVolumeSlider;
         public Slider readSpeedSlider;
@@ -20,6 +23,12 @@ namespace VNCreator
         void Start()
         {
             GameOptions.InitilizeOptions();
+
+            if (languageDropdown != null)
+            {
+                musicVolumeSlider.value = GameOptions.language;
+                musicVolumeSlider.onValueChanged.AddListener(GameOptions.SetLanguage);
+            }
 
             if(musicVolumeSlider != null)
             {

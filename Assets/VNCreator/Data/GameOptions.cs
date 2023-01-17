@@ -9,10 +9,13 @@ namespace VNCreator
         public static float musicVolume = 0.5f;
         public static float sfxVolume = 0.5f;
         public static float readSpeed = 0.5f;
+        public static float language = 0;
         public static bool isInstantText = false;
 
         public static void InitilizeOptions()
         {
+            if (PlayerPrefs.HasKey("Language"))
+                language = PlayerPrefs.GetFloat("Language");
             if (PlayerPrefs.HasKey("MusicVolume"))
                 musicVolume = PlayerPrefs.GetFloat("MusicVolume");
             if (PlayerPrefs.HasKey("SfxVolume"))
@@ -21,6 +24,14 @@ namespace VNCreator
                 readSpeed = PlayerPrefs.GetFloat("ReadSpeed");
             if (PlayerPrefs.HasKey("InstantText"))
                 isInstantText = PlayerPrefs.GetInt("InstantText") == 1 ? true : false;
+        }
+
+        public static void SetLanguage(float index)
+        {
+            Debug.Log("Dropdown");
+            Debug.Log(index);
+            language = index;
+            PlayerPrefs.SetFloat("Language", index);
         }
 
         public static void SetMusicVolume(float index)
