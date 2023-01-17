@@ -1,0 +1,71 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 724a6ebacce14a14fbc987b90fb93c52, type: 3}
+  m_Name: Custom Hierarchy Rules
+  m_EditorClassIdentifier: 
+  customHierarchyLines:
+  - typo: Canvas
+    hierarchyTypos: 1
+    fontColor: {r: 1, g: 1, b: 1, a: 1}
+    bgColor: {r: 0.6792453, g: 0, b: 0.25044814, a: 1}
+    alignment: 4
+    upperCase: 1
+    fontStyle: 1
+    icon: {fileID: 2800000, guid: 06bf6150656339941aa98e175a995445, type: 3}
+  - typo: Chara
+    hierarchyTypos: 1
+    fontColor: {r: 0, g: 0.9322505, b: 1, a: 1}
+    bgColor: {r: 1, g: 1, b: 1, a: 0}
+    alignment: 3
+    upperCase: 0
+    fontStyle: 0
+    icon: {fileID: 2800000, guid: 0b5110af86fcf1d4a9e4acfac63454c9, type: 3}
+  - typo: Camera
+    hierarchyTypos: 1
+    fontColor: {r: 1, g: 0.19339621, b: 0.19339621, a: 1}
+    bgColor: {r: 1, g: 1, b: 1, a: 0}
+    alignment: 0
+    upperCase: 0
+    fontStyle: 1
+    icon: {fileID: 2800000, guid: cf3fbf98d5c3f1941bd9c0256918a4c8, type: 3}
+  - typo: GameManager
+    hierarchyTypos: 1
+    fontColor: {r: 1, g: 1, b: 1, a: 1}
+    bgColor: {r: 0, g: 0, b: 0, a: 1}
+    alignment: 4
+    upperCase: 1
+    fontStyle: 1
+    icon: {fileID: 2800000, guid: f9161c6c9e06dc445ada3ee16d991f90, type: 3}
+  - typo: Player
+    hierarchyTypos: 3
+    fontColor: {r: 0.0990566, g: 1, b: 0.93501693, a: 1}
+    bgColor: {r: 1, g: 1, b: 1, a: 0}
+    alignment: 3
+    upperCase: 1
+    fontStyle: 1
+    icon: {fileID: 2800000, guid: 7f99e36fe9442d7478a8196056f91c4f, type: 3}
+  - typo: Light
+    hierarchyTypos: 1
+    fontColor: {r: 1, g: 0.9345745, b: 0, a: 1}
+    bgColor: {r: 1, g: 1, b: 1, a: 0}
+    alignment: 3
+    upperCase: 0
+    fontStyle: 0
+    icon: {fileID: 2800000, guid: ba6fb66d108240a4a98dea11660dc646, type: 3}
+  - typo: BoxCollider2D
+    hierarchyTypos: 4
+    fontColor: {r: 0.2971698, g: 1, b: 0.3385128, a: 1}
+    bgColor: {r: 1, g: 1, b: 1, a: 0}
+    alignment: 3
+    upperCase: 0
+    fontStyle: 0
+    icon: {fileID: 2800000, guid: 7f854f490da24e54f9e8383e446b5d81, type: 3}
