@@ -1,16 +1,31 @@
 using System.Collections;
 using System.Collections.Generic;
 using Assets.SimpleLocalization;
+using JetBrains.Annotations;
 using UnityEngine;
 
 public class LocalizeText : MonoBehaviour
 {
+    public static LocalizeText Instance { get; private set; }
     void Awake()
     {
-        LocalizationManager.Read();
+        if (Instance != null && Instance != this)
+        {
+            Destroy(this);
+        }
+        else
+        {
+            Instance = this;
+        }
 
-        LocalizationManager.Language = "English";
-        
+        DontDestroyOnLoad(gameObject);
+
+        LocalizationManager.Read();  
+    }
+
+    public void SetLanguage(string language)
+    {
+        LocalizationManager.Language = language;
     }
 
 

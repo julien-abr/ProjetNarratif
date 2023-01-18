@@ -26,8 +26,8 @@ namespace VNCreator
 
             if (languageDropdown != null)
             {
-                musicVolumeSlider.value = GameOptions.language;
-                musicVolumeSlider.onValueChanged.AddListener(GameOptions.SetLanguage);
+                languageDropdown.value = GameOptions.language;
+                languageDropdown.onValueChanged.AddListener(GameOptions.SetLanguage);
             }
 
             if(musicVolumeSlider != null)

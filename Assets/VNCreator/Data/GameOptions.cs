@@ -9,13 +9,16 @@ namespace VNCreator
         public static float musicVolume = 0.5f;
         public static float sfxVolume = 0.5f;
         public static float readSpeed = 0.5f;
-        public static float language = 0;
+        public static int language = 0;
         public static bool isInstantText = false;
 
         public static void InitilizeOptions()
         {
             if (PlayerPrefs.HasKey("Language"))
-                language = PlayerPrefs.GetFloat("Language");
+                language = PlayerPrefs.GetInt("Language");
+
+            LocalizeText.Instance.SetLanguage(GetLanguage(language));
+
             if (PlayerPrefs.HasKey("MusicVolume"))
                 musicVolume = PlayerPrefs.GetFloat("MusicVolume");
             if (PlayerPrefs.HasKey("SfxVolume"))
@@ -26,12 +29,11 @@ namespace VNCreator
                 isInstantText = PlayerPrefs.GetInt("InstantText") == 1 ? true : false;
         }
 
-        public static void SetLanguage(float index)
+        public static void SetLanguage(int index)
         {
-            Debug.Log("Dropdown");
-            Debug.Log(index);
             language = index;
-            PlayerPrefs.SetFloat("Language", index);
+            LocalizeText.Instance.SetLanguage(GetLanguage(language));
+            PlayerPrefs.SetInt("Language", index);
         }
 
         public static void SetMusicVolume(float index)
@@ -56,6 +58,18 @@ namespace VNCreator
         {
             isInstantText = index;
             PlayerPrefs.SetInt("InstantText", index ? 1 : 0);
+        }
+
+        private static string GetLanguage(int index)
+        {
+            switch(index)
+            {
+                case 0:
+                    return "English";
+                case 1:
+                    return "French";
+            }
+            return "Enlgish";
         }
     }
 }
