@@ -23,18 +23,21 @@ namespace Team02
 
             GUILayout.Space(10);
 
-            GUILayout.BeginHorizontal();
+            //=====================================================================
+            if (rbSO.GetLanguages == null)
+                return;
+
+            GUILayout.BeginVertical();
             {
-                if (GUILayout.Button(new GUIContent("French", "Switch the texts to french.")))
+                foreach(var language in rbSO.GetLanguages)
                 {
-                    Debug.Log("Hard imported the csv !");
-                }
-                if (GUILayout.Button(new GUIContent("English", "Switch the texts to english.")))
-                {
-                    Debug.Log("Hard imported the csv !");
+                    if (GUILayout.Button(new GUIContent(language, "Switch to " + language)))
+                    {
+                        Debug.Log("Switched to " + language);
+                    }
                 }
             }
-            GUILayout.EndHorizontal();
+            GUILayout.EndVertical();
 
             base.OnInspectorGUI();
         }

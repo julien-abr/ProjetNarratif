@@ -1,3 +1,4 @@
+using System.Text.RegularExpressions;
 using UnityEngine;
 
 namespace Team02
@@ -101,7 +102,7 @@ namespace Team02
 
     class CSV
     {
-        private string _csvAsString;
+        private string[] _csvAsStrings;
 
         public CSV()
         {
@@ -111,16 +112,44 @@ namespace Team02
                 Debug.LogError("There are no \"Fights.csv\" file in \"Resources/Team02\".");
                 return;
             }
-            _csvAsString = csv.text;
-            Debug.Log("CSV as pure string :\n" + _csvAsString);
+            _csvAsStrings = csv.text.Split('\n');
+        }
+
+        /// <summary>
+        /// Returns an array of languages found in the csv.
+        /// </summary>
+        /// <returns></returns>
+        public string[] GetLanguages()
+        {
+            MatchCollection matches = Regex.Matches(_csvAsStrings[0], @"[^;\n\r]+");
+            string[] a = new string[matches.Count];
+
+            for(int i = 0; i < matches.Count; i++)
+            {
+                a[i] = matches[i].Value;
+            }
+
+            return a;
         }
 
         /// <summary>
         /// Returns an array of arrays of strings. Each array is a line of the csv and each line is an array of the csv columns.
         /// </summary>
-        public string[][] ToStrings()
+        public string[,] ToStrings()
         {
-            string[][] a = new string[4][];
+            string[,] a;
+            int n = (_csvAsStrings[2].Split(';')).Length - 1;
+            a = new string[_csvAsStrings.Length - 3, n];
+
+            for(int i = 2; i < _csvAsStrings.Length - 1; i++)
+            {
+                string[] d = _csvAsStrings[i].Split(';');
+                for(int j = 1; j < d.Length; j++)
+                {
+                    a[i - 2, j - 1] = d[j];
+                }
+            }
+
             return a;
         }
     }
