@@ -30,6 +30,7 @@ namespace VNCreator
                         characterSpr = _node.nodeData.characterSpr,
                         characterName = _node.nodeData.characterName,
                         dialogueText = _node.nodeData.dialogueText,
+                        exp = _node.nodeData.exp,
                         backgroundSpr = _node.nodeData.backgroundSpr,
                         startNode = _node.nodeData.startNode,
                         endNode = _node.nodeData.endNode,

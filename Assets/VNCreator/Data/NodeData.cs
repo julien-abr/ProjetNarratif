@@ -11,6 +11,15 @@ namespace VNCreator
         public Sprite characterSpr;
         public string characterName;
         public string dialogueText;
+        public enum Expression
+        {
+            None,
+            Neutral,
+            Anger,
+            Happy,
+        }
+        public Expression exp;
+
         public Sprite backgroundSpr;
         public bool startNode;
         public bool endNode;

@@ -13,8 +13,10 @@
 		<engine:VisualElement>
 			<engine:Label text="Character Name" class="min_header"/>
 			<engine:TextField name="Char_Name" class="char_name"/>
-			<engine:Label text="Dialogue" class="min_header"/>
+			<engine:Label text="Dialogue Key" class="min_header"/>
 			<engine:TextField name="Dialogue_Field" class="dialogue_field"/>
+			<engine:Label text="Enum Key" class="min_header"/>
+			<editor:EnumField name="Enum_Field" class="enum_field"/>
 			<engine:Label text="Sound Effect" class="min_header"/>
 			<editor:ObjectField name="Sound_Field" class="sound_selector"/>
 			<engine:Label text="Background Music" class="min_header"/>

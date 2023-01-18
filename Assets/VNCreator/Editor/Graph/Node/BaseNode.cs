@@ -72,6 +72,17 @@ namespace VNCreator
                 }
             );
 
+            EnumField enumField = this.Query<EnumField>("Enum_Field");
+            enumField.Init(NodeData.Expression.None);
+            enumField.value = node.nodeData.exp;
+            enumField.RegisterValueChangedCallback(
+                e =>
+                {
+                    node.nodeData.exp = (NodeData.Expression)System.Enum.Parse(typeof(NodeData.Expression), enumField.value.ToString());
+                }
+            );
+
+
             ObjectField sfxField = this.Query<ObjectField>("Sound_Field").First();
             sfxField.objectType = typeof(AudioClip);
             sfxField.value = node.nodeData.soundEffect;

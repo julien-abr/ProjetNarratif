@@ -69,7 +69,7 @@ namespace VNCreator
                 case 1:
                     return "French";
             }
-            return "Enlgish";
+            return "English";
         }
     }
 }

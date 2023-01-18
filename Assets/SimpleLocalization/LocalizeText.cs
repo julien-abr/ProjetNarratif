@@ -25,6 +25,7 @@ public class LocalizeText : MonoBehaviour
 
     public void SetLanguage(string language)
     {
+        Debug.Log("Language : " + language);
         LocalizationManager.Language = language;
     }
 
