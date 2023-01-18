@@ -456,7 +456,7 @@ GameObject:
   - component: {fileID: 367447451}
   - component: {fileID: 367447452}
   m_Layer: 5
-  m_Name: Image
+  m_Name: ParentUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
