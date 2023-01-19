@@ -23,18 +23,34 @@ MonoBehaviour:
     icon: {fileID: 2800000, guid: 06bf6150656339941aa98e175a995445, type: 3}
   - typo: Chara
     hierarchyTypos: 1
-    fontColor: {r: 0, g: 0.9322505, b: 1, a: 1}
+    fontColor: {r: 0, g: 1, b: 0.018793583, a: 1}
     bgColor: {r: 1, g: 1, b: 1, a: 0}
     alignment: 3
     upperCase: 0
     fontStyle: 0
-    icon: {fileID: 2800000, guid: 0b5110af86fcf1d4a9e4acfac63454c9, type: 3}
+    icon: {fileID: 2800000, guid: 0ccc508108fa6ed4fa11b4a467d7f609, type: 3}
+  - typo: Player
+    hierarchyTypos: 1
+    fontColor: {r: 0.36320752, g: 1, b: 0.87548757, a: 1}
+    bgColor: {r: 1, g: 1, b: 1, a: 0}
+    alignment: 3
+    upperCase: 0
+    fontStyle: 0
+    icon: {fileID: 2800000, guid: 535f128ad31cfdd4f891ba66e08d1099, type: 3}
+  - typo: Enem
+    hierarchyTypos: 1
+    fontColor: {r: 1, g: 0.28773582, b: 0.3292578, a: 1}
+    bgColor: {r: 1, g: 1, b: 1, a: 0}
+    alignment: 3
+    upperCase: 0
+    fontStyle: 0
+    icon: {fileID: 2800000, guid: 5d6d531d24c1a8d4ebb5ff97983a9eed, type: 3}
   - typo: Camera
     hierarchyTypos: 1
     fontColor: {r: 1, g: 0.19339621, b: 0.19339621, a: 1}
     bgColor: {r: 1, g: 1, b: 1, a: 0}
     alignment: 0
-    upperCase: 0
+    upperCase: 1
     fontStyle: 1
     icon: {fileID: 2800000, guid: cf3fbf98d5c3f1941bd9c0256918a4c8, type: 3}
   - typo: GameManager
