@@ -25,6 +25,7 @@ namespace Team02
 
         public void OnDestroy()
         {
+            EditorUtility.SetDirty(rapBattlesSO);
             AssetDatabase.SaveAssets();
         }
 
@@ -71,7 +72,9 @@ namespace Team02
                         }
                     }
 
-                    GUILayout.Space(25);
+                    GUILayout.Space(12);
+                    GUILayout.Label("===== Tools");
+                    GUILayout.Space(12);
 
                     if (GUILayout.Button(new GUIContent("Hard Import CSV", "Resets everything and imports the csv."), bigbuttonStyle))
                     {
@@ -85,56 +88,75 @@ namespace Team02
                             rapBattlesSO.DebugLog();
                         }
                     }
+
+                    GUILayout.Space(12);
+                    GUILayout.Label("===== Languages");
+                    GUILayout.Space(12);
+
+                    if(rapBattlesSO.GetLanguages != null)
+                    {
+                        int i = 0;
+                        foreach (var lang in rapBattlesSO.GetLanguages)
+                        {
+                            if (GUILayout.Button(lang, smallbuttonStyle))
+                            {
+                                rapBattlesSO.ChangeLanguage(i);
+                            }
+
+                            i++;
+                        }
+                    }
                 }
                 GUILayout.EndVertical();
 
                 GUILayout.Space(10);
 
-
-                scrollPos = GUILayout.BeginScrollView(scrollPos, false, true);
-                GUILayout.BeginVertical();
+                if (selectedRapBattle != null)
                 {
-                    GUILayout.Label(selectedRapBattle.GetID, EditorStyles.whiteLargeLabel);
-                    GUILayout.Label("====================================");
-
-                    EditorGUI.BeginChangeCheck();
-                    foreach (var dlg in selectedRapBattle.GetFightDialogs)
+                    scrollPos = GUILayout.BeginScrollView(scrollPos, false, true);
+                    GUILayout.BeginVertical();
                     {
-                        GUILayout.Label(dlg.GetID, EditorStyles.whiteLargeLabel);
-                        GUILayout.Space(10);
-                        foreach (var line in dlg.GetPlayerLines)
-                        {
-                            GUILayout.Label(line.GetID, EditorStyles.whiteLabel);
-                            GUILayout.Label(line.GetText, rapLineStyle);
+                        GUILayout.Label(selectedRapBattle.GetID, EditorStyles.whiteLargeLabel);
+                        GUILayout.Label("====================================");
 
-                            line.DamageType = (LINETYPE)EditorGUILayout.EnumPopup("Damage Type", line.DamageType);
-                            line.Damage = EditorGUILayout.IntSlider("Damage", line.Damage, 0, 100);
+                        EditorGUI.BeginChangeCheck();
+                        foreach (var dlg in selectedRapBattle.GetFightDialogs)
+                        {
+                            GUILayout.Label(dlg.GetID, EditorStyles.whiteLargeLabel);
+                            GUILayout.Space(10);
+                            foreach (var line in dlg.GetPlayerLines)
+                            {
+                                GUILayout.Label(line.GetID, EditorStyles.whiteLabel);
+                                GUILayout.Label(line.GetText, rapLineStyle);
+
+                                line.DamageType = (LINETYPE)EditorGUILayout.EnumPopup("Damage Type", line.DamageType);
+                                line.Damage = EditorGUILayout.IntSlider("Damage", line.Damage, 0, 100);
+
+                                GUILayout.Space(15);
+                            }
+
+                            GUILayout.Label(dlg.GetEnemyLine.GetID, EditorStyles.whiteLabel);
+                            GUILayout.Label(dlg.GetEnemyLine.GetText, rapLineStyle);
+
+                            dlg.GetEnemyLine.DamageType = (LINETYPE)EditorGUILayout.EnumPopup("Damage Type", dlg.GetEnemyLine.DamageType);
+                            dlg.GetEnemyLine.Damage = EditorGUILayout.IntSlider("Damage", dlg.GetEnemyLine.Damage, 0, 100);
 
                             GUILayout.Space(15);
+                            GUILayout.Label("====================================");
                         }
 
-                        GUILayout.Label(dlg.GetEnemyLine.GetID, EditorStyles.whiteLabel);
-                        GUILayout.Label(dlg.GetEnemyLine.GetText, rapLineStyle);
 
-                        dlg.GetEnemyLine.DamageType = (LINETYPE)EditorGUILayout.EnumPopup("Damage Type", dlg.GetEnemyLine.DamageType);
-                        dlg.GetEnemyLine.Damage = EditorGUILayout.IntSlider("Damage", dlg.GetEnemyLine.Damage, 0, 100);
-
-                        GUILayout.Space(15);
-                        GUILayout.Label("====================================");
+                        if (EditorGUI.EndChangeCheck())
+                        {
+                            EditorUtility.SetDirty(rapBattlesSO);
+                            AssetDatabase.SaveAssets();
+                        }
                     }
-
-
-                    if (EditorGUI.EndChangeCheck())
-                    {
-                        EditorUtility.SetDirty(rapBattlesSO);
-                        AssetDatabase.SaveAssets();
-                    }
+                    GUILayout.EndVertical();
+                    GUILayout.EndScrollView();
                 }
-                GUILayout.EndVertical();
-                GUILayout.EndScrollView();
             }
             GUILayout.EndHorizontal();
         }
     }
 }
-

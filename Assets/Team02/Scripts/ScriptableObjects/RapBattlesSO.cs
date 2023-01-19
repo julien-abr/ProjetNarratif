@@ -83,5 +83,24 @@ namespace Team02
                 }
             }
         }
+
+        public void ChangeLanguage(int lang)
+        {
+            CSV csv = new();
+            string[,] importedStrings = csv.ToStrings();
+
+            foreach (var battle in rapBattles)
+            {
+                foreach(var dlg in battle.GetFightDialogs)
+                {
+                    foreach(var line in dlg.GetPlayerLines)
+                    {
+                        line.UpdateLine(importedStrings[line.Position.x, line.Position.y + (NB_OF_PICKABLE_LINES + 2) * lang]);
+                    }
+
+                    dlg.GetEnemyLine.UpdateLine(importedStrings[dlg.GetEnemyLine.Position.x, dlg.GetEnemyLine.Position.y + (NB_OF_PICKABLE_LINES + 2) * lang]);
+                }
+            }
+        }
     }
 }
