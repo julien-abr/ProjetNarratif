@@ -19,6 +19,8 @@ namespace Team02
             rapBattlesSO = Resources.Load<RapBattlesSO>("Team02/RapBattles");
             if (!rapBattlesSO)
                 Debug.LogWarning("No RapBattles ScriptableObject found in Resources/Team02/ !");
+            else
+                Debug.Log($"Found RapBattles ! It contains {rapBattlesSO.GetRapBattles.Count} rap battles.");
 
             return window;
         }

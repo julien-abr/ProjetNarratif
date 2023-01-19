@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace Team02
 {
+    [System.Serializable]
     public enum LINETYPE
     {
         CRITICAL,
@@ -14,10 +15,15 @@ namespace Team02
     [System.Serializable]
     public class FightLine
     {
+        [SerializeField, HideInInspector]
         private string _id;
+        [SerializeField, HideInInspector]
         private string _textLine;
+        [SerializeField, HideInInspector]
         private LINETYPE _damageType;
+        [SerializeField, HideInInspector]
         private int _damage;
+        [SerializeField, HideInInspector]
         private Vector2Int _position;
 
         public FightLine(string id, string textLine)
@@ -47,8 +53,11 @@ namespace Team02
     [System.Serializable]
     public class FightDlg
     {
+        [SerializeField, HideInInspector]
         private string _id;
+        [SerializeField, HideInInspector]
         private List<FightLine> _playerLines = new List<FightLine>();
+        [SerializeField, HideInInspector]
         private FightLine _enemyLine;
 
         public FightDlg(string id, List<FightLine> playerLines, FightLine enemyLine)
@@ -74,7 +83,9 @@ namespace Team02
     [System.Serializable]
     public class RapBattle
     {
+        [SerializeField, HideInInspector]
         private string _id;
+        [SerializeField, HideInInspector]
         private List<FightDlg> _fightDialogs = new List<FightDlg>();
 
         public RapBattle(string id, List<FightDlg> fightDialogs)
@@ -92,6 +103,7 @@ namespace Team02
         public List<FightDlg> GetFightDialogs => _fightDialogs;
     }
 
+    [System.Serializable]
     class CSV
     {
         private string[] _csvAsStrings;

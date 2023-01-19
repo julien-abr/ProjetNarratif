@@ -8,7 +8,9 @@ namespace Team02
 {
     public class RapBattlesSO : ScriptableObject
     {
+        [SerializeField, HideInInspector]
         private List<RapBattle> rapBattles;
+        [SerializeField, HideInInspector]
         private string[] languages;
         private const int NB_OF_PICKABLE_LINES = 3;
         private const int LANGUAGE_LENGTH = NB_OF_PICKABLE_LINES + 2;
