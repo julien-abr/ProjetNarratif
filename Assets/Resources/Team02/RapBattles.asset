@@ -12,4 +12,3 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 244ac4776e0b02541b69feec0e3f5bc7, type: 3}
   m_Name: RapBattles
   m_EditorClassIdentifier: 
-  rapBattles: []
