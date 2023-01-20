@@ -7,9 +7,9 @@ namespace Team02
     [System.Serializable]
     public enum LINETYPE
     {
-        CRITICAL,
-        NEUTRAL,
-        BAD
+        EFFECTIVE,
+        INEFFECTIVE,
+        CRITICAL
     }
 
     [System.Serializable]
@@ -87,11 +87,14 @@ namespace Team02
         private string _id;
         [SerializeField, HideInInspector]
         private List<FightDlg> _fightDialogs = new List<FightDlg>();
+        [SerializeField, HideInInspector]
+        private GameObject[] _fighters;
 
         public RapBattle(string id, List<FightDlg> fightDialogs)
         {
             _id = id;
             _fightDialogs = fightDialogs;
+            _fighters = new GameObject[2];
         }
 
         public void UpdateID(string newID)
@@ -101,6 +104,7 @@ namespace Team02
 
         public string GetID => _id;
         public List<FightDlg> GetFightDialogs => _fightDialogs;
+        public GameObject[] GetFighters => _fighters;
     }
 
     [System.Serializable]
@@ -156,5 +160,36 @@ namespace Team02
 
             return a;
         }
+    }
+
+    public enum SPRITE_POSE
+    {
+        IDLE = 0,
+        WEAK = 1,
+        ATTACK = 2,
+        HURT = 3
+    }
+
+    [System.Serializable]
+    public class CharacterData
+    {
+        public string name;
+        [SerializeField]
+        private SpriteData[] _sprites;
+        //[SerializeField]
+        //private AudioClip[] _audioClips;
+
+        public Sprite GetSprite(SPRITE_POSE pose) => _sprites[(int)pose].GetSprite;
+        //public AudioClip GetAudioClip(int index) => _audioClips[index];
+    }
+
+    [System.Serializable]
+    public struct SpriteData
+    {
+        public SPRITE_POSE _pose;
+        [SerializeField]
+        private Sprite _sprite;
+
+        public Sprite GetSprite => _sprite;
     }
 }
