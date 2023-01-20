@@ -7,9 +7,9 @@ namespace Team02
     [System.Serializable]
     public enum LINETYPE
     {
-        CRITICAL,
-        NEUTRAL,
-        BAD
+        EFFECTIVE,
+        INEFFECTIVE,
+        CRITICAL
     }
 
     [System.Serializable]
