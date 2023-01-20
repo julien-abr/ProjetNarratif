@@ -305,6 +305,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1615949905}
     m_Modifications:
+    - target: {fileID: 4776865795683042252, guid: 3c68648978e52624188946f54dcda334, type: 3}
+      propertyPath: choiceManager
+      value: 
+      objectReference: {fileID: 2042917330}
     - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
       propertyPath: m_Text
       value: "- T'as tu\xE9 ma grand m\xE8re putain"
@@ -497,6 +501,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1615949905}
     m_Modifications:
+    - target: {fileID: 4776865795683042252, guid: 3c68648978e52624188946f54dcda334, type: 3}
+      propertyPath: choiceManager
+      value: 
+      objectReference: {fileID: 2042917330}
     - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
       propertyPath: m_Text
       value: "- Ouais bas d\xE9so."
@@ -1477,6 +1485,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 890694374}
     m_Modifications:
+    - target: {fileID: 4776865795683042252, guid: 3c68648978e52624188946f54dcda334, type: 3}
+      propertyPath: choiceManager
+      value: 
+      objectReference: {fileID: 2042917330}
     - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
       propertyPath: m_Text
       value: "T'\xE9tais jamais avec moi, tous le tempsa vec ta famille sale con
@@ -1570,7 +1582,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Ligne
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5725313423134733971, guid: 3c68648978e52624188946f54dcda334, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3c68648978e52624188946f54dcda334, type: 3}
 --- !u!224 &2065664809 stripped
 RectTransform:
@@ -1690,6 +1703,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1615949905}
     m_Modifications:
+    - target: {fileID: 4776865795683042252, guid: 3c68648978e52624188946f54dcda334, type: 3}
+      propertyPath: choiceManager
+      value: 
+      objectReference: {fileID: 2042917330}
+    - target: {fileID: 5725313423134733971, guid: 3c68648978e52624188946f54dcda334, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Team02.Choices, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7112096346906685246, guid: 3c68648978e52624188946f54dcda334, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
