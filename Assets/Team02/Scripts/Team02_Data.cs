@@ -22,8 +22,6 @@ namespace Team02
         [SerializeField, HideInInspector]
         private LINETYPE _damageType;
         [SerializeField, HideInInspector]
-        private int _damage;
-        [SerializeField, HideInInspector]
         private Vector2Int _position;
 
         public FightLine(string id, string textLine)
@@ -46,7 +44,6 @@ namespace Team02
         public string GetID => _id;
         public string GetText => _textLine;
         public LINETYPE DamageType { get { return _damageType; } set { _damageType = value; } }
-        public int Damage { get { return _damage; } set { _damage = value; } }
         public Vector2Int Position { get { return _position ; } set { _position = value; } }
     }
 
@@ -176,6 +173,12 @@ namespace Team02
         public string name;
         [SerializeField]
         private SpriteData[] _sprites;
+        [SerializeField, TextArea]
+        private string _description;
+        [SerializeField]
+        private string[] _strongTraits;
+        [SerializeField]
+        private string[] _weakTraits;
         //[SerializeField]
         //private AudioClip[] _audioClips;
 

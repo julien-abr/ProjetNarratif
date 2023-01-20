@@ -21,6 +21,77 @@ namespace Team02
         public List<RapBattle> GetRapBattles => rapBattles;
         public List<RapBattle> SetRapBattles { set => rapBattles = value; }
 
+        /// <summary> Return the requested line. Leave lineIndex null if you want the enemy line to be returned. </summary>
+        public FightLine GetLine(int battleIndex, int dialogueIndex, int? lineIndex = null)
+        {
+            if(rapBattles == null || rapBattles.Count == 0)
+            {
+                Debug.LogError($"rapBattles is either null or empty.");
+                return null;
+            }
+
+            if(battleIndex < 0 || battleIndex >= rapBattles.Count)
+            {
+                Debug.LogError($"battleIndex out of range. (battleIndex = {battleIndex}, rapBattles.Count = {rapBattles.Count}.)");
+                return null;
+            }
+
+            if (rapBattles[battleIndex].GetFightDialogs == null || rapBattles[battleIndex].GetFightDialogs.Count == 0)
+            {
+                Debug.LogError($"_fightDialogs of {rapBattles[battleIndex].GetID} is either null or empty.");
+                return null;
+            }
+
+            FightDlg[] fightDialogs = (rapBattles[battleIndex].GetFightDialogs).ToArray();
+
+
+            if (dialogueIndex < 0 || dialogueIndex >= fightDialogs.Length)
+            {
+                Debug.LogError($"dialogueIndex out of range. (dialogueIndex = {battleIndex}, _fightDialogs.Count = {fightDialogs.Length}.)");
+                return null;
+            }
+
+            if(lineIndex == null)
+            {
+                if(fightDialogs[dialogueIndex].GetEnemyLine == null)
+                {
+                    Debug.LogError($"{fightDialogs[dialogueIndex].GetID} has no enemy line.");
+                    return null;
+                }
+
+                return fightDialogs[dialogueIndex].GetEnemyLine;
+            }
+
+            if (fightDialogs[dialogueIndex].GetPlayerLines == null || fightDialogs[dialogueIndex].GetPlayerLines.Count == 0)
+            {
+                Debug.LogError($"_playerLines of {fightDialogs[dialogueIndex].GetID} is either null or empty.");
+                return null;
+            }
+
+            FightLine[] playerLines = (fightDialogs[dialogueIndex].GetPlayerLines).ToArray();
+
+            if (lineIndex < 0 || lineIndex >= playerLines.Length)
+            {
+                Debug.LogError($"lineIndex out of range. (lineIndex = {battleIndex}, _playerLines.Count = {playerLines.Length}.)");
+                return null;
+            }
+
+            return playerLines[lineIndex.Value];
+        }
+        public FightLine GetLine(string lineID)
+        {
+            int battleIndex = int.Parse(lineID.Substring(FIGHT_BATTLE_ID_INDEX, 2)) - 1;
+            int dlgIndex = int.Parse(lineID.Substring(FIGHT_BATTLE_ID_INDEX + 3, 2)) - 1;
+
+            if(lineID.Substring(FIGHT_BATTLE_ID_INDEX + 6, 6) == "PLAYER")
+            {
+                int lineIndex = int.Parse(lineID.Substring(19, 2));
+                return GetLine(battleIndex, dlgIndex, lineIndex);
+            }
+
+            return GetLine(battleIndex, dlgIndex);
+        }
+
         /// <summary>
         /// This imports the Fights CSV as new and destroys the current data.
         /// ONLY USE THIS IF YOU DON'T CARE ABOUT LOOSING THIS SO's DATA.

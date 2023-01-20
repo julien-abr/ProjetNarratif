@@ -147,7 +147,6 @@ namespace Team02
                                 GUILayout.Label(line.GetText, rapLineStyle);
 
                                 line.DamageType = (LINETYPE)EditorGUILayout.EnumPopup("Damage Type", line.DamageType);
-                                line.Damage = EditorGUILayout.IntSlider("Damage", line.Damage, 0, 100);
 
                                 GUILayout.Space(15);
                             }
@@ -156,7 +155,6 @@ namespace Team02
                             GUILayout.Label(dlg.GetEnemyLine.GetText, rapLineStyle);
 
                             dlg.GetEnemyLine.DamageType = (LINETYPE)EditorGUILayout.EnumPopup("Damage Type", dlg.GetEnemyLine.DamageType);
-                            dlg.GetEnemyLine.Damage = EditorGUILayout.IntSlider("Damage", dlg.GetEnemyLine.Damage, 0, 100);
 
                             GUILayout.Space(15);
                             GUILayout.Label("====================================");
