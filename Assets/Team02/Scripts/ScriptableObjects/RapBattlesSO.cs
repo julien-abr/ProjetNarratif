@@ -12,10 +12,10 @@ namespace Team02
         private List<RapBattle> rapBattles;
         [SerializeField, HideInInspector]
         private string[] languages;
+
         private const int NB_OF_PICKABLE_LINES = 3;
         private const int LANGUAGE_LENGTH = NB_OF_PICKABLE_LINES + 2;
         private const int FIGHT_BATTLE_ID_INDEX = 6;
-        private const int FIGHT_DLG_ID_INDEX = 9;
 
         public string[] GetLanguages => languages;
         public List<RapBattle> GetRapBattles => rapBattles;
@@ -97,10 +97,10 @@ namespace Team02
                 {
                     foreach(var line in dlg.GetPlayerLines)
                     {
-                        line.UpdateLine(importedStrings[line.Position.x, line.Position.y + (NB_OF_PICKABLE_LINES + 2) * lang]);
+                        line.UpdateLine(importedStrings[line.Position.x, line.Position.y + LANGUAGE_LENGTH * lang]);
                     }
 
-                    dlg.GetEnemyLine.UpdateLine(importedStrings[dlg.GetEnemyLine.Position.x, dlg.GetEnemyLine.Position.y + (NB_OF_PICKABLE_LINES + 2) * lang]);
+                    dlg.GetEnemyLine.UpdateLine(importedStrings[dlg.GetEnemyLine.Position.x, dlg.GetEnemyLine.Position.y + LANGUAGE_LENGTH * lang]);
                 }
             }
         }
