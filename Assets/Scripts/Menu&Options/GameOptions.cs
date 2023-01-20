@@ -25,13 +25,12 @@ namespace Team02
                 isInstantText = PlayerPrefs.GetInt("InstantText") == 1 ? true : false;
 
             audioMixer = Resources.Load<AudioMixer>("Audio/AudioMixer");
-            Debug.Log(audioMixer);
         }
 
         public static void SetLanguage(int index)
         {
             language = index;
-            //LocalizeText.Instance.SetLanguage(GetLanguage(language));
+            //change language
             PlayerPrefs.SetInt("Language", index);
         }
 

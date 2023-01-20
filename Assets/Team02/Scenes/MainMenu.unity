@@ -3176,7 +3176,6 @@ MonoBehaviour:
   backButton: {fileID: 555888551}
   mainMenu: {fileID: 674746471}
   optionsMenu: {fileID: 786037894}
-  audioMixer: {fileID: 24100000, guid: aed6030711eaf7342a013e3a0b4d9e4f, type: 2}
 --- !u!1 &1341124968
 GameObject:
   m_ObjectHideFlags: 0
