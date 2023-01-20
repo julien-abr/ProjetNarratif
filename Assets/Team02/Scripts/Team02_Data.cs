@@ -87,11 +87,14 @@ namespace Team02
         private string _id;
         [SerializeField, HideInInspector]
         private List<FightDlg> _fightDialogs = new List<FightDlg>();
+        [SerializeField, HideInInspector]
+        private GameObject[] _fighters;
 
         public RapBattle(string id, List<FightDlg> fightDialogs)
         {
             _id = id;
             _fightDialogs = fightDialogs;
+            _fighters = new GameObject[2];
         }
 
         public void UpdateID(string newID)
@@ -101,6 +104,7 @@ namespace Team02
 
         public string GetID => _id;
         public List<FightDlg> GetFightDialogs => _fightDialogs;
+        public GameObject[] GetFighters => _fighters;
     }
 
     [System.Serializable]

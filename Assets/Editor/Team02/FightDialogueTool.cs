@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEditor;
 using UnityEngine;
@@ -43,7 +44,6 @@ namespace Team02
             rapLineStyle.fontSize = 16;
             rapLineStyle.fontStyle = FontStyle.Bold;
             rapLineStyle.wordWrap = true;
-
             if (!rapBattlesSO)
             {
                 if (GUILayout.Button(new GUIContent("New Rap Battles List", "Create a new RapBattles ScriptableObject."), bigbuttonStyle))
@@ -118,13 +118,28 @@ namespace Team02
                     scrollPos = GUILayout.BeginScrollView(scrollPos, false, true);
                     GUILayout.BeginVertical();
                     {
-                        GUILayout.Label(selectedRapBattle.GetID, EditorStyles.whiteLargeLabel);
+                        EditorGUI.BeginChangeCheck();
+                        GUILayout.Label(selectedRapBattle.GetID, rapLineStyle);
+
+                        GUILayout.BeginHorizontal();
+                        {
+                            for (int i = 0; i < 2; i++)
+                            {
+                                GUILayout.BeginVertical();
+                                {
+                                    GUILayout.Label(i == 0 ? "Player Prefab: " : "Opponent Prefab: ");
+                                    selectedRapBattle.GetFighters[i] = (GameObject)EditorGUILayout.ObjectField(selectedRapBattle.GetFighters[i], typeof(GameObject), false);
+                                }
+                                GUILayout.EndVertical();
+                            }
+                        }
+                        GUILayout.EndHorizontal();
+
                         GUILayout.Label("====================================");
 
-                        EditorGUI.BeginChangeCheck();
                         foreach (var dlg in selectedRapBattle.GetFightDialogs)
                         {
-                            GUILayout.Label(dlg.GetID, EditorStyles.whiteLargeLabel);
+                            GUILayout.Label(dlg.GetID, rapLineStyle);
                             GUILayout.Space(10);
                             foreach (var line in dlg.GetPlayerLines)
                             {
