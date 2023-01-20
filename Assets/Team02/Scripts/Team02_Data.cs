@@ -161,4 +161,35 @@ namespace Team02
             return a;
         }
     }
+
+    public enum SPRITE_POSE
+    {
+        IDLE = 0,
+        WEAK = 1,
+        ATTACK = 2,
+        HURT = 3
+    }
+
+    [System.Serializable]
+    public class CharacterData
+    {
+        public string name;
+        [SerializeField]
+        private SpriteData[] _sprites;
+        //[SerializeField]
+        //private AudioClip[] _audioClips;
+
+        public Sprite GetSprite(SPRITE_POSE pose) => _sprites[(int)pose].GetSprite;
+        //public AudioClip GetAudioClip(int index) => _audioClips[index];
+    }
+
+    [System.Serializable]
+    public struct SpriteData
+    {
+        public SPRITE_POSE _pose;
+        [SerializeField]
+        private Sprite _sprite;
+
+        public Sprite GetSprite => _sprite;
+    }
 }

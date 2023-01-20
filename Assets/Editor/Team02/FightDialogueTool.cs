@@ -121,7 +121,7 @@ namespace Team02
                         EditorGUI.BeginChangeCheck();
                         GUILayout.Label(selectedRapBattle.GetID, rapLineStyle);
 
-                        GUILayout.BeginHorizontal();
+                        /*GUILayout.BeginHorizontal();
                         {
                             for (int i = 0; i < 2; i++)
                             {
@@ -133,7 +133,7 @@ namespace Team02
                                 GUILayout.EndVertical();
                             }
                         }
-                        GUILayout.EndHorizontal();
+                        GUILayout.EndHorizontal();*/
 
                         GUILayout.Label("====================================");
 
