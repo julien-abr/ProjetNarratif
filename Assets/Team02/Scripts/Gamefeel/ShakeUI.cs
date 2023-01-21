@@ -6,9 +6,9 @@ namespace Team02
 {
     public class ShakeUI : MonoBehaviour
     {
-        //METTRE CE SCRIPT SUR UN COMPONENT UI AVEC RECT TRANSFORM PARENT DE TOUS L'UI
-        public float duration = 1f;
-        public float magnitude = 0.3f;
+        [Header("ShakeOptions")]
+        [SerializeField, Range(0.25f, 1.5f)] private float duration;
+        [SerializeField, Range(0f, 0.5f)] private  float magnitude;
         private RectTransform rectTransform;
 
         private void Start()
@@ -16,13 +16,18 @@ namespace Team02
             rectTransform = GetComponent<RectTransform>();
         }
 
-        [ContextMenu("Shake1")]
+        [ContextMenu("Shake1")] //To test
         public void Shake1()
         {
-            rectTransform = GetComponent<RectTransform>();
+            if (rectTransform == null)
+            {
+                Debug.LogWarning("Cant shake if your not playing");
+                return;
+            }
             StartCoroutine(Shake());
         }
-        public IEnumerator Shake()
+
+        public IEnumerator Shake() //Call this to shake, call with parameter to change shake duration and magnitude
         {
             Vector2 orignalPosition = rectTransform.anchoredPosition;
             float elapsed = 0f;
