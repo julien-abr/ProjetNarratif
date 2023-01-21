@@ -41,10 +41,10 @@ namespace Team02
             currentX += amountToMove;
         }
 
-        private void ResetData(int AmountOfDialogs) //Call between each battlephase
+        private void ResetData(int amountOfDialogs) //Call between each battlephase
         {
             rectTransform.anchoredPosition = new Vector2(0, rectTransform.anchoredPosition.y);
-            numberOfDialogs = numberOfDialogs ;
+            numberOfDialogs = amountOfDialogs;
             amountToMove = ((canvasScaler.referenceResolution.x / 2) - offset) / numberOfDialogs;
         }
     }

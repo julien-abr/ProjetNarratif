@@ -19,6 +19,7 @@ namespace Team02
         [ContextMenu("Shake1")]
         public void Shake1()
         {
+            rectTransform = GetComponent<RectTransform>();
             StartCoroutine(Shake());
         }
         public IEnumerator Shake()
