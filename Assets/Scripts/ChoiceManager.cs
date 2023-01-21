@@ -60,7 +60,7 @@ namespace Team02
             onfightDlgStageChanged += () => 
             {
                 var fightDlg = RapBattles[RapBattleStage]?.GetFightDialogs;
-
+                
                 SetLinePlayer(fightDlg[FightDlgStage - 1]);
                 SetLineEnemy(fightDlg[FightDlgStage - 1]);
             };
@@ -137,9 +137,9 @@ namespace Team02
         private GameObject prefabChoice;
 
         *//*private List<string> allLines = new List<string>() {
-        "Tu me plaisais pas en même temps",
-        "Ouais bas déso",
-        "T'as tué ma grand mère putain",
+        "Tu me plaisais pas en mï¿½me temps",
+        "Ouais bas dï¿½so",
+        "T'as tuï¿½ ma grand mï¿½re putain",
         "Sale chienne !",
         "C'est vraiment pas sympa"};*//*
 

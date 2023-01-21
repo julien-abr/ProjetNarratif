@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -31,7 +32,23 @@ namespace Team02
 
         public void UpdateTextFight(string textLine)
         {
-            choiceText.text = ($"- {textLine}");
+            if(GameOptions.isInstantText)
+                choiceText.text = ($"- {textLine}");
+            else
+                StartCoroutine(WriteText(textLine));
+        }
+
+        private IEnumerator WriteText(string textLine)
+        {
+            var localizedText = ($"- {textLine}");
+            var chars = localizedText.ToCharArray();
+            var fullString = string.Empty;
+            foreach (var t in chars)
+            {
+                fullString += t;
+                choiceText.text = fullString;
+                yield return new WaitForSeconds(0.01f / GameOptions.readSpeed);
+            }
         }
 
         public void Selected()

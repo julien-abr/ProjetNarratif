@@ -12,6 +12,7 @@ namespace Team02
         public static int language = 0;
         public static bool isInstantText = false;
         private static AudioMixer audioMixer;
+        private static RapBattlesSO rapBattlesSo;
 
         public static void InitilizeOptions()
         {
@@ -25,12 +26,13 @@ namespace Team02
                 isInstantText = PlayerPrefs.GetInt("InstantText") == 1 ? true : false;
 
             audioMixer = Resources.Load<AudioMixer>("Audio/AudioMixer");
+            rapBattlesSo = Resources.Load<RapBattlesSO>("Team02/RapBattles");
         }
 
         public static void SetLanguage(int index)
         {
             language = index;
-            //change language
+            rapBattlesSo.ChangeLanguage(index);
             PlayerPrefs.SetInt("Language", index);
         }
 

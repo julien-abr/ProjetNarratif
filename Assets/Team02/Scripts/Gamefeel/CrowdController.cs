@@ -8,10 +8,10 @@ namespace Team02
 {
     public class CrowdController : MonoBehaviour
     {
-        [SerializeField] private RectTransform rectTransform;
         [SerializeField] private Canvas canvas;
 
-        [SerializeField] private int numberOfDialogue;
+        private int numberOfDialogs;
+        private RectTransform rectTransform;
         private CanvasScaler canvasScaler;
         private float amountToMove;
         private float currentX;
@@ -23,11 +23,11 @@ namespace Team02
 
         private void Start()
         {
+            rectTransform = GetComponent<RectTransform>();
             canvasScaler = canvas.GetComponent<CanvasScaler>();
-            ResetData();
         }
 
-        public void LeftFighterWon()
+        public void LeftFighterWon() //Call when player won
         {
             Vector2 newPos = new Vector2(currentX - amountToMove, rectTransform.anchoredPosition.y);
             rectTransform.DOAnchorPos(newPos, moveDuration).SetEase(easeMode);
@@ -41,25 +41,11 @@ namespace Team02
             currentX += amountToMove;
         }
 
-        private void ResetData()
+        private void ResetData(int AmountOfDialogs) //Call between each battlephase
         {
             rectTransform.anchoredPosition = new Vector2(0, rectTransform.anchoredPosition.y);
-            // numberOfDialogue = get dialogs ;
-            amountToMove = ((canvasScaler.referenceResolution.x / 2) - offset) / numberOfDialogue;
-        }
-
-        private void WriteText()
-        {
-            string localizedText = "sentence";
-            char[] _chars = localizedText.ToCharArray();
-            string fullString = string.Empty;
-            for (int i = 0; i < _chars.Length; i++)
-            {
-                fullString += _chars[i];
-                //dialogueTxt.text = fullString;
-                //yield return new WaitForSeconds(0.01f / GameOptions.readSpeed);
-            }
-
+            numberOfDialogs = numberOfDialogs ;
+            amountToMove = ((canvasScaler.referenceResolution.x / 2) - offset) / numberOfDialogs;
         }
     }
 }

@@ -19,15 +19,19 @@ public class MainMenuController : MonoBehaviour
     [SerializeField] private GameObject mainMenu;
     [SerializeField] private GameObject optionsMenu;
     private AudioMixer audioMixer;
+    private RapBattlesSO rapBattlesSo;
 
-    void Start()
+    private void Start()
     {
         audioMixer = Resources.Load<AudioMixer>("Audio/AudioMixer");
+        rapBattlesSo = Resources.Load<RapBattlesSO>("Team02/RapBattles");
+        
         GameOptions.InitilizeOptions();
 
         if (languageDropdown != null)
         {
             languageDropdown.value = GameOptions.language;
+            rapBattlesSo.ChangeLanguage(GameOptions.language);
             languageDropdown.onValueChanged.AddListener(GameOptions.SetLanguage);
         }
 
