@@ -8,19 +8,16 @@ namespace Team02
     public class ChoiceManager : MonoBehaviour
     {
         [SerializeField]
-        private GameObject prefabChoice;
-
-        [SerializeField]
         private RapBattlesSO rapBattlesSO;
-
-        private List<Choices> allChoices = new List<Choices>();
 
         [SerializeField]
         private GameObject TextBox_Player;
+        private List<Choices> choicesPlayer = new List<Choices>();
         [SerializeField]
         private GameObject TextBox_Enemy;
+        private Choices choiceEnemy;
 
-        private int RAP_BATTLE_STAGE = 1; // Doesn't start From 0 to represente fight 1-2-3
+        private int RAP_BATTLE_STAGE = 1; // Doesn't start From 0 to represente fight 1-2-3 so use RapBattleStage below
         private int RapBattleStage { get => RAP_BATTLE_STAGE - 1; set { RAP_BATTLE_STAGE = value; } } // -1 for list 
 
 
@@ -44,8 +41,24 @@ namespace Team02
 
         private void Awake()
         {
-            TextBox_Player = this.gameObject.transform.GetChild(0).gameObject;
-            TextBox_Enemy = this.gameObject.transform.GetChild(1).gameObject;
+            if (TextBox_Player == null)
+            {
+                TextBox_Player = this.gameObject.transform.GetChild(0).gameObject;
+            }
+            if (TextBox_Enemy == null)
+            {
+                TextBox_Enemy = this.gameObject.transform.GetChild(1).gameObject;
+            }
+
+            // Get the choice of the Player and the Enemy via their child 
+            choicesPlayer.Clear();
+
+            for (int i = 0; i < TextBox_Player.gameObject.transform.childCount; i++)
+            {
+                choicesPlayer.Add(TextBox_Player.gameObject.transform.GetChild(i).GetComponent<Choices>());
+            }
+
+            choiceEnemy = TextBox_Enemy.gameObject.transform.GetChild(0).GetComponent<Choices>();
         }
 
         private void Start()
@@ -68,13 +81,14 @@ namespace Team02
             FightDlgStage = 1;
         }
 
-        public void GoNextStage()
+        public void GoNextFightStage()
         {
             int nextfightDlgStage = FIGHT_DLG_STAGE + 1;
 
             if (nextfightDlgStage > rapBattlesSO.GetRapBattles[RapBattleStage].GetFightDialogs.Count
                 && RAP_BATTLE_STAGE < rapBattlesSO.GetRapBattles.Count)
             {
+                // Go next BATTLE Stage
                 RAP_BATTLE_STAGE++;
                 FightDlgStage = 1;
             }
@@ -92,14 +106,14 @@ namespace Team02
 
         void SetLinePlayer(FightDlg _fightDlg)
         {
-            for (int i = 0; i < TextBox_Player.gameObject.transform.childCount; i++)
+            for (int i = 0; i < choicesPlayer.Count; i++)
             {
-                TextBox_Player.gameObject.transform.GetChild(i).GetComponent<Choices>().UpdateTextFight(_fightDlg.GetPlayerLines[i].GetText);
+                choicesPlayer[i].UpdateTextFight(_fightDlg.GetPlayerLines[i].GetText);
             }
         }
         void SetLineEnemy(FightDlg _fightDlg)
         {
-            TextBox_Enemy.gameObject.transform.GetChild(0).GetComponent<Choices>().UpdateTextFight(_fightDlg.GetEnemyLine.GetText);
+            choiceEnemy.UpdateTextFight(_fightDlg.GetEnemyLine.GetText);
         }
 
         /*private void UpdateAllChoices()
