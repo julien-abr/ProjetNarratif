@@ -7,9 +7,9 @@ namespace Team02
     [System.Serializable]
     public enum LINETYPE
     {
-        EFFECTIVE,
-        INEFFECTIVE,
-        CRITICAL
+        EFFECTIVE = 2,
+        NORMAL = 1,
+        INEFFECTIVE = -1
     }
 
     [System.Serializable]

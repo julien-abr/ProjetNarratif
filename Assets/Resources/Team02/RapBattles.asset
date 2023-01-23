@@ -18,58 +18,58 @@ MonoBehaviour:
     - _id: Fight_01_01
       _playerLines:
       - _id: Fight_01_01_PLAYER_01
-        _textLine: The sky is blue today.
-        _damageType: 0
+        _textLine: Le ciel est bleu aujourd'hui.
+        _damageType: -1
         _position: {x: 0, y: 1}
       - _id: Fight_01_01_PLAYER_02
-        _textLine: Dogs bark at the moon.
-        _damageType: 0
+        _textLine: "Les chiens aboient \xE0 la lune."
+        _damageType: 1
         _position: {x: 0, y: 2}
       - _id: Fight_01_01_PLAYER_03
-        _textLine: Rainbows appear after the rain.
-        _damageType: 0
+        _textLine: "Les arcs-en-ciel apparaissent apr\xE8s la pluie."
+        _damageType: 2
         _position: {x: 0, y: 3}
       _enemyLine:
         _id: Fight_01_01_OPPONENT
-        _textLine: "Rabbits jump in the fields.\r"
-        _damageType: 0
+        _textLine: Les lapins sautent dans les champs.
+        _damageType: 1
         _position: {x: 0, y: 4}
     - _id: Fight_01_02
       _playerLines:
       - _id: Fight_01_02_PLAYER_01
-        _textLine: The trees are green in summer.
+        _textLine: "Les arbres sont verts en \xE9t\xE9."
         _damageType: 0
         _position: {x: 1, y: 1}
       - _id: Fight_01_02_PLAYER_02
-        _textLine: Leaves fall from the trees in autumn.
+        _textLine: Les feuilles tombent des arbres en automne.
         _damageType: 0
         _position: {x: 1, y: 2}
       - _id: Fight_01_02_PLAYER_03
-        _textLine: Marmots hibernate during the winter.
+        _textLine: Les marmottes hibernent pendant l'hiver.
         _damageType: 0
         _position: {x: 1, y: 3}
       _enemyLine:
         _id: Fight_01_02_OPPONENT
-        _textLine: "Wolves howl at the moon.\r"
+        _textLine: "Les loups hurlent \xE0 la lune."
         _damageType: 0
         _position: {x: 1, y: 4}
     - _id: Fight_01_03
       _playerLines:
       - _id: Fight_01_03_PLAYER_01
-        _textLine: Rain falls from the sky.
+        _textLine: La pluie tombe du ciel.
         _damageType: 0
         _position: {x: 2, y: 1}
       - _id: Fight_01_03_PLAYER_02
-        _textLine: Stars shine at night.
+        _textLine: "Les \xE9toiles brillent la nuit."
         _damageType: 0
         _position: {x: 2, y: 2}
       - _id: Fight_01_03_PLAYER_03
-        _textLine: Frogs croak in the marshes.
+        _textLine: Les grenouilles coassent dans les marais.
         _damageType: 0
         _position: {x: 2, y: 3}
       _enemyLine:
         _id: Fight_01_03_OPPONENT
-        _textLine: "Bears wake up from hibernation.\r"
+        _textLine: "Les ours se r\xE9veillent apr\xE8s l'hibernation."
         _damageType: 0
         _position: {x: 2, y: 4}
     _fighters:
@@ -80,58 +80,58 @@ MonoBehaviour:
     - _id: Fight_02_01
       _playerLines:
       - _id: Fight_02_01_PLAYER_01
-        _textLine: Birds sing in the morning.
+        _textLine: Les oiseaux chantent le matin.
         _damageType: 0
         _position: {x: 3, y: 1}
       - _id: Fight_02_01_PLAYER_02
-        _textLine: Mountains are tall and majestic.
+        _textLine: Les montagnes sont hautes et imposantes.
         _damageType: 0
         _position: {x: 3, y: 2}
       - _id: Fight_02_01_PLAYER_03
-        _textLine: Bees buzz around the flowers.
+        _textLine: Les abeilles butinent les fleurs.
         _damageType: 0
         _position: {x: 3, y: 3}
       _enemyLine:
         _id: Fight_02_01_OPPONENT
-        _textLine: "Beavers build dams.\r"
+        _textLine: Les castors construisent des barrages.
         _damageType: 0
         _position: {x: 3, y: 4}
     - _id: Fight_02_02
       _playerLines:
       - _id: Fight_02_02_PLAYER_01
-        _textLine: Flowers grow in the garden.
+        _textLine: Les fleurs poussent dans le jardin.
         _damageType: 0
         _position: {x: 4, y: 1}
       - _id: Fight_02_02_PLAYER_02
-        _textLine: Oceans are vast and deep.
+        _textLine: "Les oc\xE9ans sont vastes et profonds."
         _damageType: 0
         _position: {x: 4, y: 2}
       - _id: Fight_02_02_PLAYER_03
-        _textLine: Eagles soar in the sky.
+        _textLine: Les aigles tournoient dans le ciel.
         _damageType: 0
         _position: {x: 4, y: 3}
       _enemyLine:
         _id: Fight_02_02_OPPONENT
-        _textLine: "Squirrels store nuts.\r"
+        _textLine: "Les \xE9cureuils stockent des noisettes."
         _damageType: 0
         _position: {x: 4, y: 4}
     - _id: Fight_02_03
       _playerLines:
       - _id: Fight_02_03_PLAYER_01
-        _textLine: Children play in the park.
+        _textLine: Les enfants jouent dans le parc.
         _damageType: 0
         _position: {x: 5, y: 1}
       - _id: Fight_02_03_PLAYER_02
-        _textLine: Campfires light up the night.
+        _textLine: Les feux de camp illuminent la nuit.
         _damageType: 0
         _position: {x: 5, y: 2}
       - _id: Fight_02_03_PLAYER_03
-        _textLine: Moths glow in the dark.
+        _textLine: Les papillons de nuit brillent dans le noir.
         _damageType: 0
         _position: {x: 5, y: 3}
       _enemyLine:
         _id: Fight_02_03_OPPONENT
-        _textLine: "Deer graze in the forests.\r"
+        _textLine: "Les cerfs paissent dans les for\xEAts."
         _damageType: 0
         _position: {x: 5, y: 4}
     _fighters:
@@ -142,58 +142,58 @@ MonoBehaviour:
     - _id: Fight_03_01
       _playerLines:
       - _id: Fight_03_01_PLAYER_01
-        _textLine: Clouds float in the sky.
+        _textLine: Les nuages flottent dans le ciel.
         _damageType: 0
         _position: {x: 6, y: 1}
       - _id: Fight_03_01_PLAYER_02
-        _textLine: Rivers flow to the sea.
+        _textLine: "Les rivi\xE8res coulent vers la mer."
         _damageType: 0
         _position: {x: 6, y: 2}
       - _id: Fight_03_01_PLAYER_03
-        _textLine: Wild cats hunt mice.
+        _textLine: Les chats sauvages chassent les souris.
         _damageType: 0
         _position: {x: 6, y: 3}
       _enemyLine:
         _id: Fight_03_01_OPPONENT
-        _textLine: "Tigers hunt in the jungle.\r"
+        _textLine: Les tigres chassent dans la jungle.
         _damageType: 0
         _position: {x: 6, y: 4}
     - _id: Fight_03_02
       _playerLines:
       - _id: Fight_03_02_PLAYER_01
-        _textLine: Cars drive on the road.
+        _textLine: Les voitures roulent sur la route.
         _damageType: 0
         _position: {x: 7, y: 1}
       - _id: Fight_03_02_PLAYER_02
-        _textLine: Butterflies fly around the flowers.
+        _textLine: Les papillons volent autour des fleurs.
         _damageType: 0
         _position: {x: 7, y: 2}
       - _id: Fight_03_02_PLAYER_03
-        _textLine: Mice nibble on grains.
+        _textLine: Les souris grignotent les grains.
         _damageType: 0
         _position: {x: 7, y: 3}
       _enemyLine:
         _id: Fight_03_02_OPPONENT
-        _textLine: "Elephants bathe in the rivers.\r"
+        _textLine: "Les \xE9l\xE9phants se baignent dans les rivi\xE8res."
         _damageType: 0
         _position: {x: 7, y: 4}
     - _id: Fight_03_03
       _playerLines:
       - _id: Fight_03_03_PLAYER_01
-        _textLine: Cats sleep all day.
+        _textLine: "Les chats dorment toute la journ\xE9e."
         _damageType: 0
         _position: {x: 8, y: 1}
       - _id: Fight_03_03_PLAYER_02
-        _textLine: Lightning illuminates the stormy sky.
+        _textLine: "Les \xE9clairs illuminent le ciel orageux."
         _damageType: 0
         _position: {x: 8, y: 2}
       - _id: Fight_03_03_PLAYER_03
-        _textLine: Foxes hunt rabbits.
+        _textLine: Les renards chassent les lapins.
         _damageType: 0
         _position: {x: 8, y: 3}
       _enemyLine:
         _id: Fight_03_03_OPPONENT
-        _textLine: "Lions roar in the savannah.\r"
+        _textLine: Les lions rugissent dans la savane.
         _damageType: 0
         _position: {x: 8, y: 4}
     _fighters:

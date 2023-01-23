@@ -72,7 +72,7 @@ namespace Team02
 
             if (lineIndex < 0 || lineIndex >= playerLines.Length)
             {
-                Debug.LogError($"lineIndex out of range. (lineIndex = {battleIndex}, _playerLines.Count = {playerLines.Length}.)");
+                Debug.LogError($"lineIndex out of range. (lineIndex = {lineIndex}, _playerLines.Count = {playerLines.Length}.)");
                 return null;
             }
 
@@ -134,6 +134,21 @@ namespace Team02
                     rapBattles.Add(new(importedStrings[i, 0][..8], new()));
                     i--;
                 }
+            }
+        }
+
+        public void SoftImportCSV()
+        {
+            CSV csv = new();
+            string[,] importedStrings = csv.ToStrings();
+
+            for (int i = 0; i < importedStrings.GetLength(0); i++)
+            {
+                for(int j = 1; j <= NB_OF_PICKABLE_LINES; j++)
+                {
+                    GetLine(importedStrings[i, 0] + "_PLAYER_" + (j - 1).ToString("00")).UpdateLine(importedStrings[i, j]);
+                }
+                GetLine(importedStrings[i, 0] + "_OPPONENT").UpdateLine(importedStrings[i, NB_OF_PICKABLE_LINES + 1]);
             }
         }
 

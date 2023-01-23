@@ -78,6 +78,11 @@ namespace Team02
                     GUILayout.Label("===== Tools");
                     GUILayout.Space(12);
 
+                    if (GUILayout.Button(new GUIContent("Soft Import CSV", "Update the texts to the one in the csv. The csv must be the same apart from the changes in text."), bigbuttonStyle))
+                    {
+                        rapBattlesSO.SoftImportCSV();
+                    }
+
                     if (GUILayout.Button(new GUIContent("Hard Import CSV", "Resets everything and imports the csv."), bigbuttonStyle))
                     {
                         rapBattlesSO.HardImportCSV();
