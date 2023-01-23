@@ -692,11 +692,6 @@ MonoBehaviour:
   offset: 100
   moveDuration: 1.7
   easeMode: 21
---- !u!1 &798420966 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7112096346906685247, guid: 3c68648978e52624188946f54dcda334, type: 3}
-  m_PrefabInstance: {fileID: 2065664808}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &849302530
 GameObject:
   m_ObjectHideFlags: 0
@@ -1702,7 +1697,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b60a7a2cba6fd48459f42332417c5192, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefabChoice: {fileID: 798420966}
   rapBattlesSO: {fileID: 11400000, guid: 39fbb0e84ba258447bdce31edae7e34d, type: 2}
   TextBox_Player: {fileID: 1615949904}
   TextBox_Enemy: {fileID: 890694373}
