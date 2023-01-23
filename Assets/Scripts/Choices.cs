@@ -54,7 +54,7 @@ namespace Team02
         public void Selected()
         {
             Debug.Log("Selected");
-            choiceManager.GoNextStage();
+            choiceManager.GoNextFightStage();
         }
     }
 
