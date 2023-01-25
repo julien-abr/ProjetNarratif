@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEditor;
+using UnityEngine.SceneManagement;
 
 [InitializeOnLoad]
 public class CustomHierarchy : MonoBehaviour
@@ -8,7 +9,12 @@ public class CustomHierarchy : MonoBehaviour
 
     static CustomHierarchy()
     {
-        Initialize();
+            
+        if (SceneManager.GetActiveScene().name == "Narrative_Team02")
+        {
+            Debug.Log($"CustomHierarchy is initialized only on the Narrative_Team02 scene because of the HUB");
+            Initialize();
+        }
     }
 
     private static HierarchyRulesSO hierarchyRules;

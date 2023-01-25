@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Team02/Scenes/MainMenu.unity
     guid: 4a7faa65b7a2901488d8bcd39dfb1f6b
   - enabled: 1
-    path: Assets/Team02/Scenes/CanvaLayout.unity
+    path: Assets/Team02/Scenes/Narrative_Team02.unity
     guid: 6dbe78c76d91d3b40b70d278d0ebaeb9
   m_configObjects: {}

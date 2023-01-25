@@ -13,6 +13,9 @@ namespace Team02
         public string idChoice;
         public string IDChoice => idChoice;
 
+        [SerializeField]
+        private bool enemy;
+
         public LINETYPE effectiveness;
         public LINETYPE Effectiveness => effectiveness;
 
@@ -46,7 +49,30 @@ namespace Team02
 
         public void Selected()
         {
-            choiceManager.SwitchSpeaker();
+            float score = 0;
+            if (enemy)
+            {
+                score = -0.75f;
+            }
+            else
+            {
+                switch (effectiveness)
+                {
+                    case LINETYPE.EFFECTIVE:
+                        score = 2;
+                        break;
+                    case LINETYPE.NORMAL:
+                        score = 1;
+                        break;
+                    case LINETYPE.INEFFECTIVE:
+                        score = -1;
+                        break;
+                    default:
+                        break;
+                }
+            }
+            
+            choiceManager.SwitchSpeaker(score);
         }
     }
 

@@ -7,8 +7,11 @@ namespace Team02
 {
     public class IntroCharacters : MonoBehaviour
     {
+        [Header("References")]
         [SerializeField]
         ChoiceManager choiceManager;
+        [SerializeField]
+        private DialoguesSO dialoguesSO;
 
         [Header("Text Box Background Intro")]
         [SerializeField]
@@ -20,6 +23,7 @@ namespace Team02
 
         private const int stageIntro = 3 + 1 + 1 + 1;
         private int currentStageIntro = 0;
+        private int currentFight; // Current opponent nbr
 
         [Header("Intro Panels")]
         [SerializeField]
@@ -58,6 +62,10 @@ namespace Team02
             TextBoxBackgroundIntro.SetActive(true);
             currentStageIntro = 0;
             choiceManager.TextBox_Player_Disabled();
+            if (choiceManager.CurrentScore > 0 || currentFight <= 0)
+            {
+                currentFight++; 
+            }
 
             AdvancedIntro();
         }
@@ -73,20 +81,11 @@ namespace Team02
             switch (currentStageIntro)
             {
                 case 1: // Enemy intro line 1
-                    // Display name and dialogue enemy
-                    /*nameSpeaker.text = firstSpeaker.GetID;
-                    lineSpeaker.text = firstSpeaker.GetText;*/
-                    nameSpeaker.text = "Enemy";
-                    lineSpeaker.text = "First Dialog Enemy";
-                    break;
                 case 2: // Player intro line 1
-                    nameSpeaker.text = "Player";
-                    lineSpeaker.text = "First Dialog Player";
-                    break;
                 case 3: // Enemy intro line 2
-                    nameSpeaker.text = "Enemy";
-                    lineSpeaker.text = "First Dialog Enemy";
-                    break; 
+                    nameSpeaker.text = dialoguesSO.dialogues[currentFight - 1].lines[currentStageIntro - 1].character.ToString();
+                    lineSpeaker.text = dialoguesSO.dialogues[currentFight - 1].lines[currentStageIntro - 1].text;
+                    break;
                 case 4: // Wanted (affiche)
                     introPanels.SetActive(true);
                     introPanelsImg.sprite = allIntroPanel[0];

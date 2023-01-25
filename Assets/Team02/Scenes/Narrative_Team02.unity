@@ -953,6 +953,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   choiceManager: {fileID: 2042917330}
+  dialoguesSO: {fileID: 11400000, guid: f0751a6f7d73d624399da932db08336f, type: 2}
   TextBoxBackgroundIntro: {fileID: 1303935252}
   nameSpeaker: {fileID: 7112096347375874229}
   lineSpeaker: {fileID: 7112096347866059610}
