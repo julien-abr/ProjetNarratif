@@ -10,11 +10,15 @@ namespace Team02
         [SerializeField]
         private RapBattlesSO rapBattlesSO;
 
-        List<RapBattle> RapBattles;
+        private List<RapBattle> RapBattles;
 
         [SerializeField] private Text nameEnemy;
         [SerializeField] private GameObject TextBox_Player;
         [SerializeField] private GameObject TextBox_Enemy;
+
+        public Image enemyVisual;
+        [SerializeField] private List<Sprite> allEnemySprites = new List<Sprite>();
+        public List<Sprite> AllEnemySprites => allEnemySprites;
 
         [SerializeField] private List<Choices> choicesPlayer = new List<Choices>();
 
@@ -22,8 +26,6 @@ namespace Team02
 
         private int RAP_BATTLE_STAGE = 1; // Doesn't start From 0 to represente fight 1-2-3 so use RapBattleStage below
         private int RapBattleStage { get => RAP_BATTLE_STAGE - 1; set { RAP_BATTLE_STAGE = value; } } // -1 for list 
-
-        private bool END;
 
         private int FIGHT_DLG_STAGE = 1; // Is set to 1 in Start
         public int FightDlgStage
@@ -35,6 +37,11 @@ namespace Team02
                 UpdateFightDlg();
             }
         }
+
+        private FightDlg currentFightDlg;
+        public FightDlg CurrentFightDlg => currentFightDlg;
+
+        private bool END;
 
         public event Action onfightDlgStageChanged;
         public void UpdateFightDlg()
@@ -81,6 +88,10 @@ namespace Team02
 
             SetLinePlayer(fightDlg[FightDlgStage - 1]);
 
+            enemyVisual.sprite = allEnemySprites[0];
+
+            IntroEnemy();
+
             onfightDlgStageChanged += () =>
             {
                 //SwitchSpeaker();
@@ -93,7 +104,12 @@ namespace Team02
             //FightDlgStage = 1;
         }
 
-        public void GoNextFightStage()
+        private void IntroEnemy()
+        {
+
+        }
+
+        private void GoNextFightStage()
         {
             int nextfightDlgStage = FIGHT_DLG_STAGE + 1;
 
@@ -102,7 +118,9 @@ namespace Team02
             {
                 // Go next BATTLE Stage
                 RAP_BATTLE_STAGE++;
-                Debug.Log("Change Enemy");
+
+                enemyVisual.sprite = allEnemySprites[RapBattleStage];
+
                 FightDlgStage = 1;
             }
             else if (RAP_BATTLE_STAGE >= rapBattlesSO.GetRapBattles.Count && FightDlgStage >= 3)
@@ -118,7 +136,7 @@ namespace Team02
         }
 
 
-        void SetLinePlayer(FightDlg _fightDlg)
+        private void SetLinePlayer(FightDlg _fightDlg)
         {
             for (int i = 0; i < choicesPlayer.Count; i++)
             {
@@ -127,7 +145,7 @@ namespace Team02
                 choicesPlayer[i].UpdateTextFight(_fightDlg.GetPlayerLines[i].GetText);
             }
         }
-        void SetLineEnemy(FightDlg _fightDlg)
+        private void SetLineEnemy(FightDlg _fightDlg)
         {
             choiceEnemy.UpdateTextFight(_fightDlg.GetEnemyLine.GetText);
         }
@@ -140,15 +158,15 @@ namespace Team02
             }
                 
             var fightsDlg = RapBattles[RapBattleStage]?.GetFightDialogs;
-            var fightDlg = fightsDlg[FightDlgStage - 1];
+            currentFightDlg = fightsDlg[FightDlgStage - 1];
 
             TextBox_Player.SetActive(!TextBox_Player.activeSelf);
             TextBox_Enemy.SetActive(!TextBox_Enemy.activeSelf);
 
             if (TextBox_Enemy.activeSelf)
             {
-                choiceEnemy.UpdateTextFight(fightDlg.GetEnemyLine.GetText);
-                nameEnemy.text = fightDlg.GetEnemyLine.GetID;
+                choiceEnemy.UpdateTextFight(currentFightDlg.GetEnemyLine.GetText);
+                nameEnemy.text = currentFightDlg.GetEnemyLine.GetID;
             }
             else if (TextBox_Player.activeSelf)
             {
@@ -156,9 +174,9 @@ namespace Team02
 
                 for (int i = 0; i < choicesPlayer.Count; i++)
                 {
-                    choicesPlayer[i].effectiveness = fightDlg.GetPlayerLines[i].DamageType;
-                    choicesPlayer[i].idChoice = fightDlg.GetPlayerLines[i].GetID;
-                    choicesPlayer[i].UpdateTextFight(fightDlg.GetPlayerLines[i].GetText);
+                    choicesPlayer[i].effectiveness = currentFightDlg.GetPlayerLines[i].DamageType;
+                    choicesPlayer[i].idChoice = currentFightDlg.GetPlayerLines[i].GetID;
+                    choicesPlayer[i].UpdateTextFight(currentFightDlg.GetPlayerLines[i].GetText);
                 }
             }
         }
