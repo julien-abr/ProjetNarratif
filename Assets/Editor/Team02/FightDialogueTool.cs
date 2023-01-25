@@ -78,9 +78,12 @@ namespace Team02
                     GUILayout.Label("===== Tools");
                     GUILayout.Space(12);
 
-                    if (GUILayout.Button(new GUIContent("Soft Import CSV", "Update the texts to the one in the csv. The csv must be the same apart from the changes in text."), bigbuttonStyle))
+                    if(rapBattlesSO.GetRapBattles.Count > 0)
                     {
-                        rapBattlesSO.SoftImportCSV();
+                        if (GUILayout.Button(new GUIContent("Soft Import CSV", "Update the texts to the one in the csv. The csv must be the same apart from the changes in text."), bigbuttonStyle))
+                        {
+                            rapBattlesSO.SoftImportCSV();
+                        }
                     }
 
                     if (GUILayout.Button(new GUIContent("Hard Import CSV", "Resets everything and imports the csv."), bigbuttonStyle))
@@ -151,7 +154,10 @@ namespace Team02
                                 GUILayout.Label(line.GetID, EditorStyles.whiteLabel);
                                 GUILayout.Label(line.GetText, rapLineStyle);
 
+                                GUILayout.BeginHorizontal();
+                                line.Character = (CHARACTER)EditorGUILayout.EnumPopup("Character", line.Character);
                                 line.DamageType = (LINETYPE)EditorGUILayout.EnumPopup("Damage Type", line.DamageType);
+                                GUILayout.EndHorizontal();
 
                                 GUILayout.Space(15);
                             }
@@ -159,7 +165,10 @@ namespace Team02
                             GUILayout.Label(dlg.GetEnemyLine.GetID, EditorStyles.whiteLabel);
                             GUILayout.Label(dlg.GetEnemyLine.GetText, rapLineStyle);
 
+                            GUILayout.BeginHorizontal();
+                            dlg.GetEnemyLine.Character = (CHARACTER)EditorGUILayout.EnumPopup("Character", dlg.GetEnemyLine.Character);
                             dlg.GetEnemyLine.DamageType = (LINETYPE)EditorGUILayout.EnumPopup("Damage Type", dlg.GetEnemyLine.DamageType);
+                            GUILayout.EndHorizontal();
 
                             GUILayout.Space(15);
                             GUILayout.Label("====================================");

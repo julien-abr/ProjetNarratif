@@ -17,61 +17,169 @@ MonoBehaviour:
     _fightDialogs:
     - _id: Fight_01_01
       _playerLines:
-      - _id: Fight_01_01_PLAYER_01
-        _textLine: Le ciel est bleu aujourd'hui.
-        _damageType: -1
+      - _character: 0
+        _id: Fight_01_01_PLAYER_01
+        _textLine: "Je suis \xE0 peine arriv\xE9, je vois \xE0 ton look que tu es
+          toujours endett\xE9."
+        _damageType: 0
         _position: {x: 0, y: 1}
-      - _id: Fight_01_01_PLAYER_02
-        _textLine: "Les chiens aboient \xE0 la lune."
-        _damageType: 1
+      - _character: 0
+        _id: Fight_01_01_PLAYER_02
+        _textLine: "Est-ce que je suis devant un cowboy ou un \xE9pouvantail ? Dans
+          tous les cas ce combat ne va \xEAtre qu'un petit d\xE9tail. "
+        _damageType: 0
         _position: {x: 0, y: 2}
-      - _id: Fight_01_01_PLAYER_03
-        _textLine: "Les arcs-en-ciel apparaissent apr\xE8s la pluie."
-        _damageType: 2
+      - _character: 0
+        _id: Fight_01_01_PLAYER_03
+        _textLine: "Tiens comme on se retrouve, pas la peine de demander, ce n'est
+          pas ton ex-copine qui veut te voir assassin\xE9... Il parait qu'elle a
+          m\xEAme oubli\xE9e qui tu \xE9tais."
+        _damageType: 0
         _position: {x: 0, y: 3}
       _enemyLine:
+        _character: 0
         _id: Fight_01_01_OPPONENT
-        _textLine: Les lapins sautent dans les champs.
-        _damageType: 1
+        _textLine: "Oh tu es vivant ? Par ici on est content, \xE7a faisait longtemps
+          qu'on avait pas vu ta gueule de charlatan!"
+        _damageType: 0
         _position: {x: 0, y: 4}
     - _id: Fight_01_02
       _playerLines:
-      - _id: Fight_01_02_PLAYER_01
-        _textLine: "Les arbres sont verts en \xE9t\xE9."
+      - _character: 0
+        _id: Fight_01_02_PLAYER_01
+        _textLine: "A part mastiquer toute la journ\xE9e ton tabac \xE0 chiquer,
+          tes dents jaunes sont n\xE9glig\xE9es. "
         _damageType: 0
         _position: {x: 1, y: 1}
-      - _id: Fight_01_02_PLAYER_02
-        _textLine: Les feuilles tombent des arbres en automne.
+      - _character: 0
+        _id: Fight_01_02_PLAYER_02
+        _textLine: "L'autre jour \xE0 l'\xE9picerie, j'ai trouv\xE9 une bouteille
+          de ton whisky du Tennessee, Je m'en suis servi pour d\xE9sinfecter tous
+          mes outils."
         _damageType: 0
         _position: {x: 1, y: 2}
-      - _id: Fight_01_02_PLAYER_03
-        _textLine: Les marmottes hibernent pendant l'hiver.
+      - _character: 0
+        _id: Fight_01_02_PLAYER_03
+        _textLine: "Vu ton ventre, la bi\xE8re semble couler \xE0 flot, tu ne m'avais
+          pas dit que tu ne pouvais plus prendre le bateau."
         _damageType: 0
         _position: {x: 1, y: 3}
       _enemyLine:
+        _character: 0
         _id: Fight_01_02_OPPONENT
-        _textLine: "Les loups hurlent \xE0 la lune."
+        _textLine: "Tu as chang\xE9 depuis la derni\xE8re fois, je remarque que t'as
+          perdu ton \xE9loquence d'autrefois!  "
         _damageType: 0
         _position: {x: 1, y: 4}
     - _id: Fight_01_03
       _playerLines:
-      - _id: Fight_01_03_PLAYER_01
-        _textLine: La pluie tombe du ciel.
+      - _character: 0
+        _id: Fight_01_03_PLAYER_01
+        _textLine: "Tes v\xEAtements sont en mauvais \xE9tat, L'argent que je t'ai
+          pr\xE9t\xE9 que je n'attend pas, n'a m\xEAme pas pu sauver ton cas. "
         _damageType: 0
         _position: {x: 2, y: 1}
-      - _id: Fight_01_03_PLAYER_02
-        _textLine: "Les \xE9toiles brillent la nuit."
+      - _character: 0
+        _id: Fight_01_03_PLAYER_02
+        _textLine: "Hier je suis pass\xE9 devant la maison du fermier, il m'a avou\xE9
+          que m\xEAme ses oies ne mangerai pas une pourriture comme toi!"
         _damageType: 0
         _position: {x: 2, y: 2}
-      - _id: Fight_01_03_PLAYER_03
-        _textLine: Les grenouilles coassent dans les marais.
+      - _character: 0
+        _id: Fight_01_03_PLAYER_03
+        _textLine: "Toi et ton ventre \xE0 bi\xE8re vous m'\xE9nervez, regarde comment
+          chez toi tout est resserr\xE9."
         _damageType: 0
         _position: {x: 2, y: 3}
       _enemyLine:
+        _character: 0
         _id: Fight_01_03_OPPONENT
-        _textLine: "Les ours se r\xE9veillent apr\xE8s l'hibernation."
+        _textLine: "Vu comment t'es habill\xE9, tes affaires doivent pas bien marcher,
+          \xE7a fais quoi de m'avoir lach\xE9?"
         _damageType: 0
         _position: {x: 2, y: 4}
+    - _id: Fight_01_04
+      _playerLines:
+      - _character: 0
+        _id: Fight_01_04_PLAYER_01
+        _textLine: "Regarde ton pantalon, il y a des trous, il n'est pas \xE0 ta
+          taille tu ne connais m\xEAme pas tes dimensions."
+        _damageType: 0
+        _position: {x: 3, y: 1}
+      - _character: 0
+        _id: Fight_01_04_PLAYER_02
+        _textLine: "Ton tabac \xE0 chiquer est tellement d\xE9gueulasse, que m\xEAme
+          mon grand-p\xE8re fumeur et cracheur depuis l'antiquit\xE9, dirait que
+          \xE7a a le go\xFBt de godasses."
+        _damageType: 0
+        _position: {x: 3, y: 2}
+      - _character: 0
+        _id: Fight_01_04_PLAYER_03
+        _textLine: "Chez toi tout est un probl\xE8me. Je suis sur qu'aucune femme
+          ne t'aime."
+        _damageType: 0
+        _position: {x: 3, y: 3}
+      _enemyLine:
+        _character: 0
+        _id: Fight_01_04_OPPONENT
+        _textLine: "On te croyait mort, et v'l\xE0 que tu te ram\xE8nes avec ton
+          haleine de castor. On est toujours en d\xE9saccord, jte pr\xE9viens \xE7a
+          va \xEAtre hardcore!"
+        _damageType: 0
+        _position: {x: 3, y: 4}
+    - _id: Fight_01_05
+      _playerLines:
+      - _character: 0
+        _id: Fight_01_05_PLAYER_01
+        _textLine: "Laisse moi voir la marque de ton tabac \xE0 chiquer, ah oui en
+          effet m\xEAme mon canid\xE9 aurait peur d'y toucher."
+        _damageType: 0
+        _position: {x: 4, y: 1}
+      - _character: 0
+        _id: Fight_01_05_PLAYER_02
+        _textLine: "Ah oui j'avais oubli\xE9, l'argent que tu me dois ne remplacerai
+          m\xEAme pas ce que j'ai l'habitude de d\xE9penser au comptoir."
+        _damageType: 0
+        _position: {x: 4, y: 2}
+      - _character: 0
+        _id: Fight_01_05_PLAYER_03
+        _textLine: Tu parles de charlatan, mais on va voir qui s'en sortira d'ici
+          vivant. Allez, cours petit chenapan!
+        _damageType: 0
+        _position: {x: 4, y: 3}
+      _enemyLine:
+        _character: 0
+        _id: Fight_01_05_OPPONENT
+        _textLine: "Moi au moins, j'ai continu\xE9 \xE0 vivre bien p\xE9p\xE8re,
+          tandis que toi, tu gal\xE9rais comme un octog\xE9naire!"
+        _damageType: 0
+        _position: {x: 4, y: 4}
+    - _id: Fight_01_06
+      _playerLines:
+      - _character: 0
+        _id: Fight_01_06_PLAYER_01
+        _textLine: "Attend attend ne te d\xE9file pas, tu sembles \xEAtre dans l'embarras,
+          Tu as encore le temps de te racheter, \xE0 condition que tu disparaisse
+          et que tu te fasses oublier!"
+        _damageType: 0
+        _position: {x: 5, y: 1}
+      - _character: 0
+        _id: Fight_01_06_PLAYER_02
+        _textLine: "Ecoutes, je ne veux pas de ton argent, enfin de mon argent. On
+          peut tous faire des erreurs,  oublions \xE7a mais ne recommence pas."
+        _damageType: 0
+        _position: {x: 5, y: 2}
+      - _character: 0
+        _id: Fight_01_06_PLAYER_03
+        _textLine: PLACEHOLDER
+        _damageType: 0
+        _position: {x: 5, y: 3}
+      _enemyLine:
+        _character: 0
+        _id: Fight_01_06_OPPONENT
+        _textLine: PLACEHOLDER
+        _damageType: 0
+        _position: {x: 5, y: 4}
     _fighters:
     - {fileID: 0}
     - {fileID: 0}
@@ -79,61 +187,130 @@ MonoBehaviour:
     _fightDialogs:
     - _id: Fight_02_01
       _playerLines:
-      - _id: Fight_02_01_PLAYER_01
-        _textLine: Les oiseaux chantent le matin.
+      - _character: 0
+        _id: Fight_02_01_PLAYER_01
+        _textLine: Aller, vas t-en, j'ai pas ton temps.
         _damageType: 0
-        _position: {x: 3, y: 1}
-      - _id: Fight_02_01_PLAYER_02
-        _textLine: Les montagnes sont hautes et imposantes.
+        _position: {x: 6, y: 1}
+      - _character: 0
+        _id: Fight_02_01_PLAYER_02
+        _textLine: "Bouges tes pattes ou je t'\xE9clate."
         _damageType: 0
-        _position: {x: 3, y: 2}
-      - _id: Fight_02_01_PLAYER_03
-        _textLine: Les abeilles butinent les fleurs.
+        _position: {x: 6, y: 2}
+      - _character: 0
+        _id: Fight_02_01_PLAYER_03
+        _textLine: Ouste! Ou je te met une rouste.
         _damageType: 0
-        _position: {x: 3, y: 3}
+        _position: {x: 6, y: 3}
       _enemyLine:
+        _character: 0
         _id: Fight_02_01_OPPONENT
-        _textLine: Les castors construisent des barrages.
+        _textLine: Waf !
         _damageType: 0
-        _position: {x: 3, y: 4}
+        _position: {x: 6, y: 4}
     - _id: Fight_02_02
       _playerLines:
-      - _id: Fight_02_02_PLAYER_01
-        _textLine: Les fleurs poussent dans le jardin.
+      - _character: 0
+        _id: Fight_02_02_PLAYER_01
+        _textLine: "Bon okay je vais commencer \xE0 t'allumer, tu sembles vide et
+          sans int\xEAret, m\xEAme ma grand-m\xE8re ne voudrait pas te carresser."
         _damageType: 0
-        _position: {x: 4, y: 1}
-      - _id: Fight_02_02_PLAYER_02
-        _textLine: "Les oc\xE9ans sont vastes et profonds."
+        _position: {x: 7, y: 1}
+      - _character: 0
+        _id: Fight_02_02_PLAYER_02
+        _textLine: T'as vu la taille de tes canines? Tu serais incapable de mordre
+          dans une sardine.
         _damageType: 0
-        _position: {x: 4, y: 2}
-      - _id: Fight_02_02_PLAYER_03
-        _textLine: Les aigles tournoient dans le ciel.
+        _position: {x: 7, y: 2}
+      - _character: 0
+        _id: Fight_02_02_PLAYER_03
+        _textLine: "Tu me cherches? Fais gaffe \xE0 ce que je vais te mettre dans
+          le derch."
         _damageType: 0
-        _position: {x: 4, y: 3}
+        _position: {x: 7, y: 3}
       _enemyLine:
+        _character: 0
         _id: Fight_02_02_OPPONENT
-        _textLine: "Les \xE9cureuils stockent des noisettes."
+        _textLine: Woof waf! waf waf !
         _damageType: 0
-        _position: {x: 4, y: 4}
+        _position: {x: 7, y: 4}
     - _id: Fight_02_03
       _playerLines:
-      - _id: Fight_02_03_PLAYER_01
-        _textLine: Les enfants jouent dans le parc.
+      - _character: 0
+        _id: Fight_02_03_PLAYER_01
+        _textLine: "Toi et ta fourrure d\xE9sordonn\xE9e, faites gaffe \xE0 ne pas
+          vous faire boycotter."
         _damageType: 0
-        _position: {x: 5, y: 1}
-      - _id: Fight_02_03_PLAYER_02
-        _textLine: Les feux de camp illuminent la nuit.
+        _position: {x: 8, y: 1}
+      - _character: 0
+        _id: Fight_02_03_PLAYER_02
+        _textLine: "Ton cerveau semble si petit, qui oserait te caresser la t\xEAte
+          sans avoir peur de t'enterrer ici!"
         _damageType: 0
-        _position: {x: 5, y: 2}
-      - _id: Fight_02_03_PLAYER_03
-        _textLine: Les papillons de nuit brillent dans le noir.
+        _position: {x: 8, y: 2}
+      - _character: 0
+        _id: Fight_02_03_PLAYER_03
+        _textLine: "Ton unique raison d'\xEAtre ? Courir apr\xE8s la baballe ? Tu
+          n'as pas honte d'\xEAtre ici ? Tu ferais mieux de te trouver un vrai but
+          dans la vie!"
         _damageType: 0
-        _position: {x: 5, y: 3}
+        _position: {x: 8, y: 3}
       _enemyLine:
+        _character: 0
         _id: Fight_02_03_OPPONENT
-        _textLine: "Les cerfs paissent dans les for\xEAts."
+        _textLine: ... huh ?
         _damageType: 0
-        _position: {x: 5, y: 4}
+        _position: {x: 8, y: 4}
+    - _id: Fight_02_04
+      _playerLines:
+      - _character: 0
+        _id: Fight_02_04_PLAYER_01
+        _textLine: "D'une m\xE8re Boxer et d'un p\xE8re Berger Bulgare, j'ai bien
+          peur que je puisse te traiter de batard."
+        _damageType: 0
+        _position: {x: 9, y: 1}
+      - _character: 0
+        _id: Fight_02_04_PLAYER_02
+        _textLine: "Ton pellage est tellement sale, que m\xEAme un crachoir aurait
+          peur de te voir."
+        _damageType: 0
+        _position: {x: 9, y: 2}
+      - _character: 0
+        _id: Fight_02_04_PLAYER_03
+        _textLine: "Allez, rentre chez ton ma\xEEtre si tu veux pas faire plus de
+          kilom\xE8tres."
+        _damageType: 0
+        _position: {x: 9, y: 3}
+      _enemyLine:
+        _character: 0
+        _id: Fight_02_04_OPPONENT
+        _textLine: Woof !
+        _damageType: 0
+        _position: {x: 9, y: 4}
+    - _id: Fight_02_05
+      _playerLines:
+      - _character: 0
+        _id: Fight_02_05_PLAYER_01
+        _textLine: Waf Waf, Il ne te reste que quelques secondes avant de finir dans
+          ta tombe.
+        _damageType: 0
+        _position: {x: 10, y: 1}
+      - _character: 0
+        _id: Fight_02_05_PLAYER_02
+        _textLine: "*Caresser le chien et passer \xE0 cot\xE9*"
+        _damageType: 0
+        _position: {x: 10, y: 2}
+      - _character: 0
+        _id: Fight_02_05_PLAYER_03
+        _textLine: PLACEHOLDER
+        _damageType: 0
+        _position: {x: 10, y: 3}
+      _enemyLine:
+        _character: 0
+        _id: Fight_02_05_OPPONENT
+        _textLine: PLACEHOLDER
+        _damageType: 0
+        _position: {x: 10, y: 4}
     _fighters:
     - {fileID: 0}
     - {fileID: 0}
@@ -141,61 +318,249 @@ MonoBehaviour:
     _fightDialogs:
     - _id: Fight_03_01
       _playerLines:
-      - _id: Fight_03_01_PLAYER_01
-        _textLine: Les nuages flottent dans le ciel.
+      - _character: 0
+        _id: Fight_03_01_PLAYER_01
+        _textLine: "Pourquoi m'as tu demand\xE9, je parie que c'est l'histoire avec
+          ton nouveau gars qui s'est mal termin\xE9e."
         _damageType: 0
-        _position: {x: 6, y: 1}
-      - _id: Fight_03_01_PLAYER_02
-        _textLine: "Les rivi\xE8res coulent vers la mer."
+        _position: {x: 11, y: 1}
+      - _character: 0
+        _id: Fight_03_01_PLAYER_02
+        _textLine: "Que me veux tu ? A peine je suis arriv\xE9 tu sembles tendue,
+          serais-tu d\xE9motiv\xE9 \xE0 l'id\xE9e que ce duel soit d\xE9j\xE0 perdu
+          ?  "
         _damageType: 0
-        _position: {x: 6, y: 2}
-      - _id: Fight_03_01_PLAYER_03
-        _textLine: Les chats sauvages chassent les souris.
+        _position: {x: 11, y: 2}
+      - _character: 0
+        _id: Fight_03_01_PLAYER_03
+        _textLine: "Alors on se retrouve enfin.. Allez, abr\xE8ge, tout ceci est
+          enfantin."
         _damageType: 0
-        _position: {x: 6, y: 3}
+        _position: {x: 11, y: 3}
       _enemyLine:
+        _character: 0
         _id: Fight_03_01_OPPONENT
-        _textLine: Les tigres chassent dans la jungle.
+        _textLine: "Ah te voil\xE0, c'est \xE9tonnant que tu ne sois pas rest\xE9
+          dans ton trou \xE0 rat!"
         _damageType: 0
-        _position: {x: 6, y: 4}
+        _position: {x: 11, y: 4}
     - _id: Fight_03_02
       _playerLines:
-      - _id: Fight_03_02_PLAYER_01
-        _textLine: Les voitures roulent sur la route.
+      - _character: 0
+        _id: Fight_03_02_PLAYER_01
+        _textLine: "Rappelle moi, c'est pas tes parents qui ont un to\xEEt dans cette
+          m\xEAme ville justement ?"
         _damageType: 0
-        _position: {x: 7, y: 1}
-      - _id: Fight_03_02_PLAYER_02
-        _textLine: Les papillons volent autour des fleurs.
+        _position: {x: 12, y: 1}
+      - _character: 0
+        _id: Fight_03_02_PLAYER_02
+        _textLine: Ma ville est plus que ta ville!
         _damageType: 0
-        _position: {x: 7, y: 2}
-      - _id: Fight_03_02_PLAYER_03
-        _textLine: Les souris grignotent les grains.
+        _position: {x: 12, y: 2}
+      - _character: 0
+        _id: Fight_03_02_PLAYER_03
+        _textLine: "Je vais t'avouer, je me demande comment tu vas survivre \xE0
+          ce qui arrive, dans ce clash tu n'es que figurative."
         _damageType: 0
-        _position: {x: 7, y: 3}
+        _position: {x: 12, y: 3}
       _enemyLine:
+        _character: 0
         _id: Fight_03_02_OPPONENT
-        _textLine: "Les \xE9l\xE9phants se baignent dans les rivi\xE8res."
+        _textLine: "T'es aussi minable que ton vieux pote, tu n'es m\xEAme pas capable
+          de le mettre \xE0 ta botte."
         _damageType: 0
-        _position: {x: 7, y: 4}
+        _position: {x: 12, y: 4}
     - _id: Fight_03_03
       _playerLines:
-      - _id: Fight_03_03_PLAYER_01
-        _textLine: "Les chats dorment toute la journ\xE9e."
+      - _character: 0
+        _id: Fight_03_03_PLAYER_01
+        _textLine: "Qui voudrais d'un charlatan comme lui? J'ai fais un choix judicieux,
+          tu veux juste cr\xE9er du conflit."
         _damageType: 0
-        _position: {x: 8, y: 1}
-      - _id: Fight_03_03_PLAYER_02
-        _textLine: "Les \xE9clairs illuminent le ciel orageux."
+        _position: {x: 13, y: 1}
+      - _character: 0
+        _id: Fight_03_03_PLAYER_02
+        _textLine: "Tu t'attaques \xE0 quelqu'un d'autre? Qu'est ce qu'il y a, t'as
+          peur de m'affronter? Chez moi c'est la mar\xE9e-haute, et je ne vais pas
+          te m\xE9nager."
         _damageType: 0
-        _position: {x: 8, y: 2}
-      - _id: Fight_03_03_PLAYER_03
-        _textLine: Les renards chassent les lapins.
+        _position: {x: 13, y: 2}
+      - _character: 0
+        _id: Fight_03_03_PLAYER_03
+        _textLine: Tu veux qu'on parle d'amis? J'oubliais, t'as le seum, t'en as
+          meme pas un seul.
         _damageType: 0
-        _position: {x: 8, y: 3}
+        _position: {x: 13, y: 3}
       _enemyLine:
+        _character: 0
         _id: Fight_03_03_OPPONENT
-        _textLine: Les lions rugissent dans la savane.
+        _textLine: "Moi, j'ai tout le village \xE0 mes pieds, et toi? Personne n'est
+          venu avec toi, m\xEAme pas d'alli\xE9."
         _damageType: 0
-        _position: {x: 8, y: 4}
+        _position: {x: 13, y: 4}
+    - _id: Fight_03_04
+      _playerLines:
+      - _character: 0
+        _id: Fight_03_04_PLAYER_01
+        _textLine: "Aurais tu oubli\xE9 ce que disais ta lettre ? \"Viens seul\".
+          On dirait que tu as quelques probl\xE8mes de m\xE9moire, si je peux me
+          permettre."
+        _damageType: 0
+        _position: {x: 14, y: 1}
+      - _character: 0
+        _id: Fight_03_04_PLAYER_02
+        _textLine: "Mes alli\xE9s ? Ils sont rest\xE9s au bercail s'occuper de mes
+          affaires, l\xE0-bas, je commande. Et toi? A tes pieds, ils ne te font m\xEAme
+          pas d'offrande."
+        _damageType: 0
+        _position: {x: 14, y: 2}
+      - _character: 0
+        _id: Fight_03_04_PLAYER_03
+        _textLine: "Je pr\xE9f\xE8re n'avoir aucun alli\xE9 que des faux-amis, regarde
+          autour de toi, tu n'as pas peur de cette infamie? "
+        _damageType: 0
+        _position: {x: 14, y: 3}
+      _enemyLine:
+        _character: 0
+        _id: Fight_03_04_OPPONENT
+        _textLine: "La derni\xE8re fois qu'on a fait un bras de fer, j'ai failli
+          te le casser, t'as d\xE9j\xE0 oubli\xE9? Franchement, tu fais piti\xE9."
+        _damageType: 0
+        _position: {x: 14, y: 4}
+    - _id: Fight_03_05
+      _playerLines:
+      - _character: 0
+        _id: Fight_03_05_PLAYER_01
+        _textLine: "Ce jour l\xE0, je t'ai laiss\xE9 faire, et t'as eu la peur de
+          ta vie, t'as fr\xF4l\xE9 la mort. Dois-je te rappeler le score? 100-1."
+        _damageType: 0
+        _position: {x: 15, y: 1}
+      - _character: 0
+        _id: Fight_03_05_PLAYER_02
+        _textLine: "Venant de toi, \xE7a ne m'\xE9tonne pas. Tu n'as m\xEAme pas
+          pu voir que je te laissais gagner pour \xEAtre sympa."
+        _damageType: 0
+        _position: {x: 15, y: 2}
+      - _character: 0
+        _id: Fight_03_05_PLAYER_03
+        _textLine: "Tu mens comme tu respires, je n'ai m\xEAme pas de bras en fer!"
+        _damageType: 0
+        _position: {x: 15, y: 3}
+      _enemyLine:
+        _character: 0
+        _id: Fight_03_05_OPPONENT
+        _textLine: "Regarde moi, je suis plus belle qu'une d\xE9esse. Et toi? T'es
+          tellement moche qu'on te d\xE9laisse."
+        _damageType: 0
+        _position: {x: 15, y: 4}
+    - _id: Fight_03_06
+      _playerLines:
+      - _character: 0
+        _id: Fight_03_06_PLAYER_01
+        _textLine: "Je ne sais pas de quelle d\xE9esse tu te caricatures, mais ce
+          n'est pas Aphrodite. Tu es peut-\xEAtre g\xE2t\xE9e par dame Nature, mais
+          tes rimes sont parodiques. "
+        _damageType: 0
+        _position: {x: 16, y: 1}
+      - _character: 0
+        _id: Fight_03_06_PLAYER_02
+        _textLine: "Je te signale que la beaut\xE9 c'est subjectif. Comment oses
+          tu insulter celui que tu aimais d'un tel adjectif? "
+        _damageType: 0
+        _position: {x: 16, y: 2}
+      - _character: 0
+        _id: Fight_03_06_PLAYER_03
+        _textLine: "Une d\xE9esse? Toi? Retourne sur terre, t'es plus \xE9paisse
+          que ma grand-m\xE8re."
+        _damageType: 0
+        _position: {x: 16, y: 3}
+      _enemyLine:
+        _character: 0
+        _id: Fight_03_06_OPPONENT
+        _textLine: Tu parles mal de moi? Tu dois oublier que je connais tout le monde
+          ici. Le sheriff entendra parler de toi.
+        _damageType: 0
+        _position: {x: 16, y: 4}
+    - _id: Fight_03_07
+      _playerLines:
+      - _character: 0
+        _id: Fight_03_07_PLAYER_01
+        _textLine: "Bravo, tu connais Jacques, Michel et Barnab\xE9. Les trois seuls
+          habitants de ce trou paum\xE9!"
+        _damageType: 0
+        _position: {x: 17, y: 1}
+      - _character: 0
+        _id: Fight_03_07_PLAYER_02
+        _textLine: "Je sais que tout le monde te conna\xEEt figures toi. Et la raison
+          \xE0 cel\xE0 n'est pas tr\xE8s jolie, si tu veux mon avis."
+        _damageType: 0
+        _position: {x: 17, y: 2}
+      - _character: 0
+        _id: Fight_03_07_PLAYER_03
+        _textLine: "Le sheriff n'en a que faire de tes querelles, ici je suis r\xE9glo.
+          Tu crois que je me rebelle, \xE7a n'affecte que ton \xE9go. "
+        _damageType: 0
+        _position: {x: 17, y: 3}
+      _enemyLine:
+        _character: 0
+        _id: Fight_03_07_OPPONENT
+        _textLine: "O\xF9 sont tes connaissances? Je ne vois que toi et ta solitude,
+          toutes mes condol\xE9ances.  "
+        _damageType: 0
+        _position: {x: 17, y: 4}
+    - _id: Fight_03_08
+      _playerLines:
+      - _character: 0
+        _id: Fight_03_08_PLAYER_01
+        _textLine: "Ton fr\xE8re est l\xE0? Je dois lui dire que j'aurais du le choisir
+          \xE0 ta place, bien que \xE7a t'agace."
+        _damageType: 0
+        _position: {x: 18, y: 1}
+      - _character: 0
+        _id: Fight_03_08_PLAYER_02
+        _textLine: "En parlant de connaissances, on parle de ta famille? Je les connais
+          tr\xE8s bien, ils habitent dans ma ville et r\xE9p\xE8tent que t'es fragile. "
+        _damageType: 0
+        _position: {x: 18, y: 2}
+      - _character: 0
+        _id: Fight_03_08_PLAYER_03
+        _textLine: "Mes connaissances sont partout, contrairement \xE0 toi qui l'agite
+          comme un toutou, ils me suivent pour mon talent et pas mes formes.(le chien
+          se ramene) -Woof."
+        _damageType: 0
+        _position: {x: 18, y: 3}
+      _enemyLine:
+        _character: 0
+        _id: Fight_03_08_OPPONENT
+        _textLine: D'ailleurs, j'ai une surprise pour toi, bien que ce ne soit pas
+          pour le meilleur, il va falloir que tu le tutoies.
+        _damageType: 0
+        _position: {x: 18, y: 4}
+    - _id: Fight_03_09
+      _playerLines:
+      - _character: 0
+        _id: Fight_03_09_PLAYER_01
+        _textLine: "T'as l'air secou\xE9e, mes rimes t'ont ent\xE9rr\xE9e? La prochaine
+          n'oublie pas de renoncer avant de m'appeller."
+        _damageType: 0
+        _position: {x: 19, y: 1}
+      - _character: 0
+        _id: Fight_03_09_PLAYER_02
+        _textLine: "Arr\xEAtons de se pointer du doigt, faisons la paix et oublions
+          tout \xE7a."
+        _damageType: 0
+        _position: {x: 19, y: 2}
+      - _character: 0
+        _id: Fight_03_09_PLAYER_03
+        _textLine: PLACEHOLDER
+        _damageType: 0
+        _position: {x: 19, y: 3}
+      _enemyLine:
+        _character: 0
+        _id: Fight_03_09_OPPONENT
+        _textLine: PLACEHOLDER
+        _damageType: 0
+        _position: {x: 19, y: 4}
     _fighters:
     - {fileID: 0}
     - {fileID: 0}

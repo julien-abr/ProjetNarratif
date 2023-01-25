@@ -12,9 +12,19 @@ namespace Team02
         INEFFECTIVE = -1
     }
 
+    public enum CHARACTER
+    {
+        PLAYER = 0,
+        DRUNK = 1,
+        DOG = 2,
+        EX = 3
+    }
+
     [System.Serializable]
     public class FightLine
     {
+        [SerializeField, HideInInspector]
+        private CHARACTER _character;
         [SerializeField, HideInInspector]
         private string _id;
         [SerializeField, HideInInspector]
@@ -45,6 +55,7 @@ namespace Team02
         public string GetText => _textLine;
         public LINETYPE DamageType { get { return _damageType; } set { _damageType = value; } }
         public Vector2Int Position { get { return _position ; } set { _position = value; } }
+        public CHARACTER Character { get { return _character; } set { _character = value; } }
     }
 
     [System.Serializable]
@@ -149,7 +160,7 @@ namespace Team02
             for(int i = 2; i < _csvAsStrings.Length - 1; i++)
             {
                 string[] d = _csvAsStrings[i].Split(';');
-                for(int j = 1; j < d.Length; j++)
+                for (int j = 1; j < d.Length; j++)
                 {
                     a[i - 2, j - 1] = d[j];
                 }
@@ -170,7 +181,7 @@ namespace Team02
     [System.Serializable]
     public class CharacterData
     {
-        public string name;
+        public CHARACTER _character;
         [SerializeField]
         private SpriteData[] _sprites;
         [SerializeField, TextArea]
