@@ -1,86 +1,86 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine.SceneManagement;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.Audio;
 using TMPro;
-using Team02;
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
-public class MainMenuController : MonoBehaviour
+namespace Team02
 {
-    [SerializeField] private TMP_Dropdown languageDropdown;
-    [SerializeField] private Slider musicVolumeSlider;
-    [SerializeField] private Slider readSpeedSlider;
-    [SerializeField] private Toggle instantTextToggle;
-    [SerializeField] private Button backButton;
-
-    [Header("Menu Objects")]
-    [SerializeField] private GameObject mainMenu;
-    [SerializeField] private GameObject optionsMenu;
-    private AudioMixer audioMixer;
-    private RapBattlesSO rapBattlesSo;
-
-    private void Start()
+    public class MainMenuController : MonoBehaviour
     {
-        audioMixer = Resources.Load<AudioMixer>("Audio/AudioMixer");
-        rapBattlesSo = Resources.Load<RapBattlesSO>("Team02/RapBattles");
-        
-        GameOptions.InitilizeOptions();
+        [SerializeField] private TMP_Dropdown languageDropdown;
+        [SerializeField] private Slider musicVolumeSlider;
+        [SerializeField] private Slider readSpeedSlider;
+        [SerializeField] private Toggle instantTextToggle;
+        [SerializeField] private Button backButton;
 
-        if (languageDropdown != null)
+        [Header("Menu Objects")]
+        [SerializeField] private GameObject mainMenu;
+        [SerializeField] private GameObject optionsMenu;
+        private AudioMixer audioMixer;
+        private RapBattlesSO rapBattlesSo;
+
+        private void Start()
         {
-            languageDropdown.value = GameOptions.language;
-            rapBattlesSo.ChangeLanguage(GameOptions.language);
-            languageDropdown.onValueChanged.AddListener(GameOptions.SetLanguage);
+            audioMixer = Resources.Load<AudioMixer>("Team02/Audio/Team02_Mixer");
+            rapBattlesSo = Resources.Load<RapBattlesSO>("Team02/RapBattles");
+
+            GameOptions.InitilizeOptions();
+
+            if (languageDropdown != null)
+            {
+                languageDropdown.value = GameOptions.language;
+                rapBattlesSo.ChangeLanguage(GameOptions.language);
+                languageDropdown.onValueChanged.AddListener(GameOptions.SetLanguage);
+            }
+
+            if (musicVolumeSlider != null)
+            {
+                musicVolumeSlider.value = GameOptions.musicVolume;
+                //audioMixer.SetFloat("MusicVolume", GameOptions.musicVolume);
+                musicVolumeSlider.onValueChanged.AddListener(GameOptions.SetMusicVolume);
+            }
+
+            if (readSpeedSlider != null)
+            {
+                readSpeedSlider.value = GameOptions.readSpeed;
+                readSpeedSlider.onValueChanged.AddListener(GameOptions.SetReadingSpeed);
+            }
+
+            if (instantTextToggle != null)
+            {
+                instantTextToggle.isOn = GameOptions.isInstantText;
+                instantTextToggle.onValueChanged.AddListener(GameOptions.SetInstantText);
+            }
+
+            backButton.onClick.AddListener(BackToMenu);
         }
 
-        if (musicVolumeSlider != null)
+        #region mainMenu
+        public void StartGame()
         {
-            musicVolumeSlider.value = GameOptions.musicVolume;
-            audioMixer.SetFloat("MusicVolume", GameOptions.musicVolume);
-            musicVolumeSlider.onValueChanged.AddListener(GameOptions.SetMusicVolume);
+            SceneManager.LoadScene(1);
         }
 
-        if (readSpeedSlider != null)
+        public void Options()
         {
-            readSpeedSlider.value = GameOptions.readSpeed;
-            readSpeedSlider.onValueChanged.AddListener(GameOptions.SetReadingSpeed);
+            mainMenu.SetActive(false);
+            optionsMenu.SetActive(true);
         }
 
-        if (instantTextToggle != null)
+        public void Quit()
         {
-            instantTextToggle.isOn = GameOptions.isInstantText;
-            instantTextToggle.onValueChanged.AddListener(GameOptions.SetInstantText);
+            Application.Quit();
+        }
+        #endregion mainMenu
+
+        #region optionsMenu
+        private void BackToMenu()
+        {
+            optionsMenu.SetActive(false);
+            mainMenu.SetActive(true);
         }
 
-        backButton.onClick.AddListener(BackToMenu);
+        #endregion optionsMenu
     }
-
-    #region mainMenu
-    public void StartGame()
-    {
-        SceneManager.LoadScene(1);
-    }
-
-    public void Options()
-    {
-        mainMenu.SetActive(false);
-        optionsMenu.SetActive(true);
-    }
-
-    public void Quit()
-    {
-        Application.Quit();
-    }
-    #endregion mainMenu
-
-    #region optionsMenu
-    private void BackToMenu()
-    {
-        optionsMenu.SetActive(false);
-        mainMenu.SetActive(true);
-    }
-
-    #endregion optionsMenu
 }

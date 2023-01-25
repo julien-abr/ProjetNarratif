@@ -3,7 +3,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Team02
-{   
+{
     public class Choices : MonoBehaviour
     {
         [SerializeField]

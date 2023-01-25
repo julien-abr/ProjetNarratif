@@ -1,40 +1,41 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Custom Hierarchy Rules", menuName = "Hierarchy Rules", order = 0)]
-public class HierarchyRulesSO : ScriptableObject
+namespace Team02
 {
-    [SerializeField]
-    private List<CustomHierarchyLines> customHierarchyLines;
-
-    public List<CustomHierarchyLines> CustomHierarchyLines_ => customHierarchyLines;
-
-    [System.Serializable]
-    public class CustomHierarchyLines
+    [CreateAssetMenu(fileName = "Custom Hierarchy Rules", menuName = "Hierarchy Rules", order = 0)]
+    public class HierarchyRulesSO : ScriptableObject
     {
-        public string typo;
+        [SerializeField]
+        private List<CustomHierarchyLines> customHierarchyLines;
 
-        public HierarchyTypos hierarchyTypos;
+        public List<CustomHierarchyLines> CustomHierarchyLines_ => customHierarchyLines;
 
-        public Color fontColor;
+        [System.Serializable]
+        public class CustomHierarchyLines
+        {
+            public string typo;
 
-        public Color bgColor;
+            public HierarchyTypos hierarchyTypos;
 
-        public TextAnchor alignment;
-        public bool upperCase;
-        public FontStyle fontStyle;
+            public Color fontColor;
 
-        public Texture icon;
-    }
+            public Color bgColor;
 
-    public enum HierarchyTypos
-    {
-        StartWith,
-        Contains,
-        Tag,
-        Layer,
-        Component,
+            public TextAnchor alignment;
+            public bool upperCase;
+            public FontStyle fontStyle;
+
+            public Texture icon;
+        }
+
+        public enum HierarchyTypos
+        {
+            StartWith,
+            Contains,
+            Tag,
+            Layer,
+            Component,
+        }
     }
 }
-
