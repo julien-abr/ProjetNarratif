@@ -348,7 +348,7 @@ MonoBehaviour:
       _playerLines:
       - _character: 0
         _id: Fight_03_02_PLAYER_01
-        _textLine: "Rappelle moi, c'est pas tes parents qui ont un to\xEEt dans cette
+        _textLine: "Rappelle moi, c'est pas tes parents qui ont un toit dans cette
           m\xEAme ville justement ?"
         _damageType: 0
         _position: {x: 12, y: 1}
@@ -374,7 +374,7 @@ MonoBehaviour:
       _playerLines:
       - _character: 0
         _id: Fight_03_03_PLAYER_01
-        _textLine: "Qui voudrais d'un charlatan comme lui? J'ai fais un choix judicieux,
+        _textLine: "Qui voudrais d'un charlatan comme lui? J'ai fait un choix judicieux,
           tu veux juste cr\xE9er du conflit."
         _damageType: 0
         _position: {x: 13, y: 1}
@@ -525,8 +525,7 @@ MonoBehaviour:
       - _character: 0
         _id: Fight_03_08_PLAYER_03
         _textLine: "Mes connaissances sont partout, contrairement \xE0 toi qui l'agite
-          comme un toutou, ils me suivent pour mon talent et pas mes formes.(le chien
-          se ramene) -Woof."
+          comme un toutou, ils me suivent pour mon talent et pas mes formes."
         _damageType: 0
         _position: {x: 18, y: 3}
       _enemyLine:

@@ -60,6 +60,20 @@ namespace Team02
             }
         }
 
+        public void SoftImportCSV(string name)
+        {
+            DialogueCSV csv = new(name);
+            string[,] importedStrings = csv.ToStrings();
+
+            for (int i = 0; i < dialogues.Count; i++)
+            {
+                for(int j = 0; j < dialogues[i].lines.Count; j++)
+                {
+                    dialogues[i].lines[j].text = importedStrings[dialogues[i].lines[j].position.x, dialogues[i].lines[j].position.y];
+                }
+            }
+        }
+
         public void ChangeLanguage(int lang, string name)
         {
             DialogueCSV csv = new(name);

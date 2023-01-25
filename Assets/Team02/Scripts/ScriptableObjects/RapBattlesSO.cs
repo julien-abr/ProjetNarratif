@@ -78,6 +78,7 @@ namespace Team02
 
             return playerLines[lineIndex.Value];
         }
+
         public FightLine GetLine(string lineID)
         {
             int battleIndex = int.Parse(lineID.Substring(FIGHT_BATTLE_ID_INDEX, 2)) - 1;

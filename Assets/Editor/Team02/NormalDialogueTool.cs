@@ -115,13 +115,21 @@ namespace Team02
                     GUILayout.Label("===== Tools");
                     GUILayout.Space(12);
 
-                    //if(beginDialoguesSO.dialogues.Count > 0)
-                    //{
-                    //    if (GUILayout.Button(new GUIContent("Soft Import FightCSV", "Update the texts to the one in the csv. The csv must be the same apart from the changes in text."), bigbuttonStyle))
-                    //    {
-                    //        beginDialoguesSO.SoftImportCSV();
-                    //    }
-                    //}
+                    if(beginDialoguesSO.dialogues.Count > 0)
+                    {
+                        if (GUILayout.Button(new GUIContent("Soft Import BeginCSV", "Update the texts to the one in the csv. The csv must be the same apart from the changes in text."), bigbuttonStyle))
+                        {
+                            beginDialoguesSO.SoftImportCSV("Begin");
+                        }
+                    }
+
+                    if (endDialoguesSO.dialogues.Count > 0)
+                    {
+                        if (GUILayout.Button(new GUIContent("Soft Import EndCSV", "Update the texts to the one in the csv. The csv must be the same apart from the changes in text."), bigbuttonStyle))
+                        {
+                            endDialoguesSO.SoftImportCSV("End");
+                        }
+                    }
 
                     if (GUILayout.Button(new GUIContent("Hard Import BeginCSV", "Resets everything and imports the csv."), bigbuttonStyle))
                     {
