@@ -75,13 +75,13 @@ MonoBehaviour:
     m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 15
-    m_Alignment: 0
+    m_Alignment: 3
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "- Tu me plaisais pas en m\xEAme temps."
+  m_Text: "- T'as tu\xE9 ma grand m\xE8re putain"
 --- !u!114 &4776865795683042252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -94,6 +94,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c72d791ad69df0d4aa73890b17d17d00, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  choiceManager: {fileID: 0}
   choiceText: {fileID: 7112096346906685241}
   effectiveness: 0
 --- !u!114 &5725313423134733971

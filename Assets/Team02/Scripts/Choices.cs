@@ -10,24 +10,17 @@ namespace Team02
         private ChoiceManager choiceManager;
 
         public Text choiceText;
-        private int idChoice;
-        public int IDChoice => idChoice;
+        public string idChoice;
+        public string IDChoice => idChoice;
 
-        public DialogEffectiveness effectiveness;
-        private DialogEffectiveness Effectiveness => effectiveness;
+        public LINETYPE effectiveness;
+        public LINETYPE Effectiveness => effectiveness;
 
         public void Start()
         {
             choiceText ??= this.gameObject.GetComponent<Text>();
 
             choiceManager ??= FindObjectOfType<ChoiceManager>();
-        }
-
-        public enum DialogEffectiveness
-        {
-            Ineffective,
-            Normal,
-            Critical
         }
 
         public void UpdateTextFight(string textLine)
@@ -53,8 +46,7 @@ namespace Team02
 
         public void Selected()
         {
-            Debug.Log("Selected");
-            choiceManager.GoNextFightStage();
+            choiceManager.SwitchSpeaker();
         }
     }
 
