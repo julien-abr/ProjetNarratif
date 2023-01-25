@@ -14,6 +14,8 @@ namespace Team02
 
         [SerializeField] private Text nameEnemy;
         [SerializeField] private GameObject TextBox_Player;
+        public void TextBox_Player_Disabled() { TextBox_Player.SetActive(false); }
+
         [SerializeField] private GameObject TextBox_Enemy;
 
         public Image enemyVisual;
@@ -25,7 +27,14 @@ namespace Team02
         [SerializeField] private Choices choiceEnemy;
 
         private int RAP_BATTLE_STAGE = 1; // Doesn't start From 0 to represente fight 1-2-3 so use RapBattleStage below
-        private int RapBattleStage { get => RAP_BATTLE_STAGE - 1; set { RAP_BATTLE_STAGE = value; } } // -1 for list 
+        private int RapBattleStage 
+        { 
+            get => RAP_BATTLE_STAGE - 1; 
+            set 
+            {
+                RAP_BATTLE_STAGE = value; // -1 for list 
+            } 
+        } 
 
         private int FIGHT_DLG_STAGE = 1; // Is set to 1 in Start
         public int FightDlgStage
@@ -34,7 +43,7 @@ namespace Team02
             set
             {
                 FIGHT_DLG_STAGE = value;
-                UpdateFightDlg();
+                //UpdateFightDlg();
             }
         }
 
@@ -61,6 +70,14 @@ namespace Team02
                 TextBox_Enemy = this.gameObject.transform.GetChild(1).gameObject;
             }
 
+            RapBattles = rapBattlesSO?.GetRapBattles;
+
+            var fightsDlg = RapBattles[RapBattleStage]?.GetFightDialogs;
+
+            enemyVisual.sprite = allEnemySprites[0];
+
+            currentFightDlg = fightsDlg[FightDlgStage - 1];
+
             /*// Get the choice of the Player and the Enemy via their child 
             choicesPlayer.Clear();
 
@@ -79,21 +96,12 @@ namespace Team02
                 Debug.LogError("Need rapBattlesSO in the ChoiceManager !");
             }
 
-            TextBox_Player.SetActive(true);
+            TextBox_Player.SetActive(false);
             TextBox_Enemy.SetActive(false);
-
-            RapBattles = rapBattlesSO?.GetRapBattles;
-
-            var fightDlg = RapBattles[RapBattleStage]?.GetFightDialogs;
-
-            SetLinePlayer(fightDlg[FightDlgStage - 1]);
-
-            enemyVisual.sprite = allEnemySprites[0];
-
-            IntroEnemy();
 
             onfightDlgStageChanged += () =>
             {
+                TextBox_Player.SetActive(false);
                 //SwitchSpeaker();
                 //var fightDlg = RapBattles[RapBattleStage]?.GetFightDialogs;
 
@@ -104,9 +112,11 @@ namespace Team02
             //FightDlgStage = 1;
         }
 
-        private void IntroEnemy()
+        public void StartFight()
         {
+            TextBox_Player.SetActive(true);
 
+            SetLinePlayer(currentFightDlg);
         }
 
         private void GoNextFightStage()
@@ -122,6 +132,8 @@ namespace Team02
                 enemyVisual.sprite = allEnemySprites[RapBattleStage];
 
                 FightDlgStage = 1;
+
+                UpdateFightDlg();
             }
             else if (RAP_BATTLE_STAGE >= rapBattlesSO.GetRapBattles.Count && FightDlgStage >= 3)
             {
@@ -152,6 +164,7 @@ namespace Team02
 
         public void SwitchSpeaker()
         {
+
             if (END)
             {
                 return;
@@ -170,14 +183,14 @@ namespace Team02
             }
             else if (TextBox_Player.activeSelf)
             {
-                GoNextFightStage();
-
                 for (int i = 0; i < choicesPlayer.Count; i++)
                 {
                     choicesPlayer[i].effectiveness = currentFightDlg.GetPlayerLines[i].DamageType;
                     choicesPlayer[i].idChoice = currentFightDlg.GetPlayerLines[i].GetID;
                     choicesPlayer[i].UpdateTextFight(currentFightDlg.GetPlayerLines[i].GetText);
                 }
+
+                GoNextFightStage();
             }
         }
     }
