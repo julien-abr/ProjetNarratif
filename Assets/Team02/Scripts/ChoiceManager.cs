@@ -26,6 +26,10 @@ namespace Team02
 
         [SerializeField] private Choices choiceEnemy;
 
+        [SerializeField] private GameObject finalChoice;
+        [SerializeField] private Image finalChoiceEnemyImg;
+        [SerializeField] private GameObject endPanel;
+
         private float currentScore;
         public float CurrentScore => currentScore;
 
@@ -82,16 +86,19 @@ namespace Team02
 
             TextBox_Player.SetActive(false);
             TextBox_Enemy.SetActive(false);
+            finalChoice.SetActive(false);
 
             onfightDlgStageChanged += () =>
             {
                 TextBox_Player.SetActive(false);
+                finalChoice.SetActive(false);
             };
         }
 
         public void StartFight()
         {
             TextBox_Player.SetActive(true);
+            
             currentScore = 0;
 
             currentFightDlg = CurrentFightDialogs[FightDlgStage - 1];
@@ -129,20 +136,15 @@ namespace Team02
                 else
                 {
                     // WIN ! Go next BATTLE Stage
-                    RAP_BATTLE_STAGE++;
 
-                    enemyVisual.sprite = allEnemySprites[RapBattleStage];
-
-                    FightDlgStage = 1;
-
-                    // before end do the epargner here
-
-                    EndCurrentFightDlg();
+                    finalChoice.SetActive(true);
+                    finalChoiceEnemyImg.sprite = allEnemySprites[RapBattleStage];
                 }
             }
             else if (RAP_BATTLE_STAGE >= rapBattlesSO.GetRapBattles.Count && FightDlgStage >= (CurrentFightDialogs.Count - 1))
             {
                 END = true;
+                endPanel.SetActive(true);
                 Debug.Log("End");
                 TextBox_Enemy.SetActive(false);
                 TextBox_Player.SetActive(false);
@@ -154,6 +156,18 @@ namespace Team02
             }
         }
 
+        public void ChangeBattle()
+        {
+            RAP_BATTLE_STAGE++;
+
+            enemyVisual.sprite = allEnemySprites[RapBattleStage];
+
+            FightDlgStage = 1;
+
+            // before end do the epargner here
+
+            EndCurrentFightDlg();
+        }
 
         private void SetLinePlayer(FightDlg _fightDlg)
         {
@@ -175,8 +189,6 @@ namespace Team02
             {
                 return;
             }
-
-            Debug.Log($"currentScore : {currentScore} += score({score})");
 
             currentScore += score;
 
