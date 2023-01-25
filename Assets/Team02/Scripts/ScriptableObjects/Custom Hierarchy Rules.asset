@@ -85,3 +85,11 @@ MonoBehaviour:
     upperCase: 0
     fontStyle: 0
     icon: {fileID: 2800000, guid: 7f854f490da24e54f9e8383e446b5d81, type: 3}
+  - typo: BoxCollider2D
+    hierarchyTypos: 4
+    fontColor: {r: 0.2971698, g: 1, b: 0.3385128, a: 1}
+    bgColor: {r: 1, g: 1, b: 1, a: 0}
+    alignment: 3
+    upperCase: 0
+    fontStyle: 0
+    icon: {fileID: 2800000, guid: 7f854f490da24e54f9e8383e446b5d81, type: 3}
