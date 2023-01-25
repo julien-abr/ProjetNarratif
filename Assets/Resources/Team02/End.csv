@@ -1,0 +1,14 @@
+;;;Français;English
+Notes / Commentaires;ID;Character;;
+;DLG_00_00;PLAYER;C'est fini pour toi, je t'ai refroidis.;It's over for you, I've made you cold.
+;DLG_00_01;DRUNK;AAAAH! Je suis désolé promis je te rembourse tes 4.99$;AAAAH! I'm sorry, I promise I'll refund your $4.99
+;DLG_00_02;PLAYER;Laisse moi passer je suis venu pour autre chose.;Let me pass I came for something else.
+;DLG_00_03;DRUNK;Oui oui... pas de soucis.;Yes yes... no worries.
+;DLG_01_00;PLAYER;C'est bon, t'as compris?;So, you understand?
+;DLG_01_01;DOG;Waf;Bark
+;DLG_01_02;PLAYER;Allez déguerpis!;Go away!
+;DLG_01_03;DOG;Woof woof;Bark Bark
+;DLG_02_00;PLAYER;Pourquoi tu as attendus 3 ans pour m'envoyer cette lettre?;Why did you wait 3 years to send me this letter?
+;DLG_02_01;EX;Je voulais attendre le bon moment pour te le dire.; wanted to wait for the right moment to tell you.
+;DLG_02_02;PLAYER;Viens en aux faits! ;Get to the point! 
+;DLG_02_03;EX;Tu as... enfin on a... un enfant...;You have... well we have... a child...

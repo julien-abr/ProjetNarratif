@@ -1,0 +1,11 @@
+;;;Français;English
+Notes / Commentaires;ID;Character;;
+;DLG_00_00;DRUNK;T'es de retour?! Fallait prévenir, j'ai toujours pas de quoi te rembourser!;You're back?! You should have warned me, I still don't have enough money to pay you back!
+;DLG_00_01;PLAYER;J'étais pas venu pour ça de base mais je vais me faire un plaisir de te le faire payer aujourd'hui!;I didn't come for this in the first place, but I'll gladly make you pay for it today!
+;DLG_00_02;DRUNK;J'ai beau être éméché, je tiens encore assez debout pour te roaster. Que le duel commence !;I may be drunk, but I can still stand up enough to roast you. Let the duel begin!
+;DLG_01_00;DOG;Woof;Bark
+;DLG_01_01;PLAYER;T'es sur mon chemin, je vais m'énerver!;You're in my way, I'll get mad!
+;DLG_01_02;DOG;Woof woof, que le duel commence! Waf.;Bark bark, let's fight! Bark
+;DLG_02_00;EX;Enfin arrivé? Je t'attendais, j'ai quelques chose à t'annoncer.;Finally arrived? I was waiting for you, I have something to tell you.
+;DLG_02_01;PLAYER;Oui je sais, c'est pour ça que je suis venu, dis moi tout j'aimerai partir le plus rapidement possible.;Yes I know, that's why I came, tell me everything I would like to leave as soon as possible.
+;DLG_02_02;EX;Tu sais quoi, on va régler nos comptes avant! J'ai deux trois petites choses à te dire. Que le duel commence !;You know what, let's settle the score first! I have a couple of things to say to you. Let the duel begin!

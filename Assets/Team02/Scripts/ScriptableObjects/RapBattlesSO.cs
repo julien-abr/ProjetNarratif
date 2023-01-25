@@ -55,7 +55,7 @@ namespace Team02
             {
                 if(fightDialogs[dialogueIndex].GetEnemyLine == null)
                 {
-                    Debug.LogError($"{fightDialogs[dialogueIndex].GetID} has no enemy line.");
+                    Debug.LogError($"{fightDialogs[dialogueIndex].GetID} has no enemy text.");
                     return null;
                 }
 
@@ -98,14 +98,14 @@ namespace Team02
         /// </summary>
         public void HardImportCSV()
         {
-            CSV csv = new();
+            FightCSV csv = new();
             languages = csv.GetLanguages();
             string[,] importedStrings = csv.ToStrings();
             string rapBattlesNbSstring = importedStrings[importedStrings.GetLength(0) - 1, 0].Substring(FIGHT_BATTLE_ID_INDEX, 2);
             int rapBattlesNb = int.Parse(rapBattlesNbSstring);
 
-            Debug.Log("CSV : " + languages.Length + " languages found in the csv.");
-            Debug.Log("CSV : " + rapBattlesNb + " rap battles found in the csv.");
+            Debug.Log("FightCSV : " + languages.Length + " languages found in the csv.");
+            Debug.Log("FightCSV : " + rapBattlesNb + " rap battles found in the csv.");
 
             rapBattles = new();
             int currentBattle = 1;
@@ -139,7 +139,7 @@ namespace Team02
 
         public void SoftImportCSV()
         {
-            CSV csv = new();
+            FightCSV csv = new();
             string[,] importedStrings = csv.ToStrings();
 
             for (int i = 0; i < importedStrings.GetLength(0); i++)
@@ -174,7 +174,7 @@ namespace Team02
 
         public void ChangeLanguage(int lang)
         {
-            CSV csv = new();
+            FightCSV csv = new();
             string[,] importedStrings = csv.ToStrings();
 
             foreach (var battle in rapBattles)

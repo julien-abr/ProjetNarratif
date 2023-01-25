@@ -21,6 +21,33 @@ namespace Team02
     }
 
     [System.Serializable]
+    public class DialogueLine
+    {
+        public string id;
+        public CHARACTER character;
+        public SPRITE_POSE pose;
+        public string text;
+        public Vector2Int position;
+
+        public DialogueLine(string id)
+        {
+            this.id = id;
+        }
+    }
+
+    [System.Serializable]
+    public class Dialogue
+    {
+        public string id;
+        public List<DialogueLine> lines = new List<DialogueLine>();
+
+        public Dialogue(string id)
+        {
+            this.id = id;
+        }
+    }
+
+    [System.Serializable]
     public class FightLine
     {
         [SerializeField, HideInInspector]
@@ -116,11 +143,11 @@ namespace Team02
     }
 
     [System.Serializable]
-    class CSV
+    class FightCSV
     {
         private string[] _csvAsStrings;
 
-        public CSV()
+        public FightCSV()
         {
             TextAsset csv = Resources.Load<TextAsset>("Team02/Fights");
             if (!csv)
@@ -158,6 +185,59 @@ namespace Team02
             a = new string[_csvAsStrings.Length - 3, n];
 
             for(int i = 2; i < _csvAsStrings.Length - 1; i++)
+            {
+                string[] d = _csvAsStrings[i].Split(';');
+                for (int j = 1; j < d.Length; j++)
+                {
+                    a[i - 2, j - 1] = d[j];
+                }
+            }
+
+            return a;
+        }
+    }
+
+    [System.Serializable]
+    class DialogueCSV
+    {
+        private string[] _csvAsStrings;
+
+        /// <summary> name = the name of the file in the Resources folder. </summary>
+        public DialogueCSV(string name)
+        {
+            TextAsset csv = Resources.Load<TextAsset>("Team02/" + name);
+            if (!csv)
+            {
+                Debug.LogError($"There are no \"{name}.csv\" file in \"Resources/Team02\".");
+                return;
+            }
+            _csvAsStrings = csv.text.Split('\n');
+        }
+
+        /// <summary> Returns an array of languages found in the csv. </summary>
+        public string[] GetLanguages()
+        {
+            MatchCollection matches = Regex.Matches(_csvAsStrings[0], @"[^;\n\r]+");
+            string[] a = new string[matches.Count];
+
+            for (int i = 0; i < matches.Count; i++)
+            {
+                a[i] = matches[i].Value;
+            }
+
+            return a;
+        }
+
+        /// <summary>
+        /// Returns an array of arrays of strings. Each array is a line of the csv and each line is an array of the csv columns.
+        /// </summary>
+        public string[,] ToStrings()
+        {
+            string[,] a;
+            int n = (_csvAsStrings[2].Split(';')).Length - 1;
+            a = new string[_csvAsStrings.Length - 3, n];
+
+            for (int i = 2; i < _csvAsStrings.Length - 1; i++)
             {
                 string[] d = _csvAsStrings[i].Split(';');
                 for (int j = 1; j < d.Length; j++)

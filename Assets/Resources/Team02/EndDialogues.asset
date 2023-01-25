@@ -1,0 +1,84 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893287d59c3ae684e9f28e0705699144, type: 3}
+  m_Name: EndDialogues
+  m_EditorClassIdentifier: 
+  dialogues:
+  - id: DLG_00
+    lines:
+    - id: DLG_00_00
+      character: 0
+      pose: 0
+      text: C'est fini pour toi, je t'ai refroidis.
+      position: {x: 0, y: 2}
+    - id: DLG_00_01
+      character: 1
+      pose: 0
+      text: "AAAAH! Je suis d\xE9sol\xE9 promis je te rembourse tes 4.99$"
+      position: {x: 1, y: 2}
+    - id: DLG_00_02
+      character: 0
+      pose: 0
+      text: Laisse moi passer je suis venu pour autre chose.
+      position: {x: 2, y: 2}
+    - id: DLG_00_03
+      character: 1
+      pose: 0
+      text: Oui oui... pas de soucis.
+      position: {x: 3, y: 2}
+  - id: DLG_01
+    lines:
+    - id: DLG_01_00
+      character: 0
+      pose: 0
+      text: C'est bon, t'as compris?
+      position: {x: 4, y: 2}
+    - id: DLG_01_01
+      character: 2
+      pose: 0
+      text: Waf
+      position: {x: 5, y: 2}
+    - id: DLG_01_02
+      character: 0
+      pose: 0
+      text: "Allez d\xE9guerpis!"
+      position: {x: 6, y: 2}
+    - id: DLG_01_03
+      character: 2
+      pose: 0
+      text: Woof woof
+      position: {x: 7, y: 2}
+  - id: DLG_02
+    lines:
+    - id: DLG_02_00
+      character: 0
+      pose: 0
+      text: Pourquoi tu as attendus 3 ans pour m'envoyer cette lettre?
+      position: {x: 8, y: 2}
+    - id: DLG_02_01
+      character: 3
+      pose: 0
+      text: Je voulais attendre le bon moment pour te le dire.
+      position: {x: 9, y: 2}
+    - id: DLG_02_02
+      character: 0
+      pose: 0
+      text: 'Viens en aux faits! '
+      position: {x: 10, y: 2}
+    - id: DLG_02_03
+      character: 3
+      pose: 0
+      text: Tu as... enfin on a... un enfant...
+      position: {x: 11, y: 2}
+  languages:
+  - "Fran\xE7ais"
+  - English

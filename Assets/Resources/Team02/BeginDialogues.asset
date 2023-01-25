@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 893287d59c3ae684e9f28e0705699144, type: 3}
+  m_Name: BeginDialogues
+  m_EditorClassIdentifier: 
+  dialogues:
+  - id: DLG_00
+    lines:
+    - id: DLG_00_00
+      character: 1
+      pose: 0
+      text: "T'es de retour?! Fallait pr\xE9venir, j'ai toujours pas de quoi te rembourser!"
+      position: {x: 0, y: 2}
+    - id: DLG_00_01
+      character: 0
+      pose: 0
+      text: "J'\xE9tais pas venu pour \xE7a de base mais je vais me faire un plaisir
+        de te le faire payer aujourd'hui!"
+      position: {x: 1, y: 2}
+    - id: DLG_00_02
+      character: 1
+      pose: 0
+      text: "J'ai beau \xEAtre \xE9m\xE9ch\xE9, je tiens encore assez debout pour
+        te roaster. Que le duel commence !"
+      position: {x: 2, y: 2}
+  - id: DLG_01
+    lines:
+    - id: DLG_01_00
+      character: 2
+      pose: 0
+      text: Woof
+      position: {x: 3, y: 2}
+    - id: DLG_01_01
+      character: 0
+      pose: 0
+      text: "T'es sur mon chemin, je vais m'\xE9nerver!"
+      position: {x: 4, y: 2}
+    - id: DLG_01_02
+      character: 2
+      pose: 0
+      text: Woof woof, que le duel commence! Waf.
+      position: {x: 5, y: 2}
+  - id: DLG_02
+    lines:
+    - id: DLG_02_00
+      character: 3
+      pose: 0
+      text: "Enfin arriv\xE9? Je t'attendais, j'ai quelques chose \xE0 t'annoncer."
+      position: {x: 6, y: 2}
+    - id: DLG_02_01
+      character: 0
+      pose: 0
+      text: "Oui je sais, c'est pour \xE7a que je suis venu, dis moi tout j'aimerai
+        partir le plus rapidement possible."
+      position: {x: 7, y: 2}
+    - id: DLG_02_02
+      character: 3
+      pose: 0
+      text: "Tu sais quoi, on va r\xE9gler nos comptes avant! J'ai deux trois petites
+        choses \xE0 te dire. Que le duel commence !"
+      position: {x: 8, y: 2}
+  languages:
+  - "Fran\xE7ais"
+  - English
