@@ -21,23 +21,23 @@ MonoBehaviour:
         _id: Fight_01_01_PLAYER_01
         _textLine: "Je suis \xE0 peine arriv\xE9, je vois \xE0 ton look que tu es
           toujours endett\xE9."
-        _damageType: 2
+        _damageType: 1
         _position: {x: 0, y: 1}
       - _character: 0
         _id: Fight_01_01_PLAYER_02
         _textLine: "Est-ce que je suis devant un cowboy ou un \xE9pouvantail ? Dans
           tous les cas ce combat ne va \xEAtre qu'un petit d\xE9tail. "
-        _damageType: 1
+        _damageType: -1
         _position: {x: 0, y: 2}
       - _character: 0
         _id: Fight_01_01_PLAYER_03
         _textLine: "Tiens comme on se retrouve, pas la peine de demander, ce n'est
           pas ton ex-copine qui veut te voir assassin\xE9... Il parait qu'elle a
           m\xEAme oubli\xE9e qui tu \xE9tais."
-        _damageType: -1
+        _damageType: 2
         _position: {x: 0, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 1
         _id: Fight_01_01_OPPONENT
         _textLine: "Oh tu es vivant ? Par ici on est content, \xE7a faisait longtemps
           qu'on avait pas vu ta gueule de charlatan!"
@@ -56,16 +56,16 @@ MonoBehaviour:
         _textLine: "L'autre jour \xE0 l'\xE9picerie, j'ai trouv\xE9 une bouteille
           de ton whisky du Tennessee, Je m'en suis servi pour d\xE9sinfecter tous
           mes outils."
-        _damageType: 1
+        _damageType: -1
         _position: {x: 1, y: 2}
       - _character: 0
         _id: Fight_01_02_PLAYER_03
         _textLine: "Vu ton ventre, la bi\xE8re semble couler \xE0 flot, tu ne m'avais
           pas dit que tu ne pouvais plus prendre le bateau."
-        _damageType: -1
+        _damageType: 1
         _position: {x: 1, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 1
         _id: Fight_01_02_OPPONENT
         _textLine: "Tu as chang\xE9 depuis la derni\xE8re fois, je remarque que t'as
           perdu ton \xE9loquence d'autrefois!  "
@@ -92,7 +92,7 @@ MonoBehaviour:
         _damageType: -1
         _position: {x: 2, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 1
         _id: Fight_01_03_OPPONENT
         _textLine: "Vu comment t'es habill\xE9, tes affaires doivent pas bien marcher,
           \xE7a fais quoi de m'avoir lach\xE9?"
@@ -104,23 +104,23 @@ MonoBehaviour:
         _id: Fight_01_04_PLAYER_01
         _textLine: "Regarde ton pantalon, il y a des trous, il n'est pas \xE0 ta
           taille tu ne connais m\xEAme pas tes dimensions."
-        _damageType: 2
+        _damageType: -1
         _position: {x: 3, y: 1}
       - _character: 0
         _id: Fight_01_04_PLAYER_02
         _textLine: "Ton tabac \xE0 chiquer est tellement d\xE9gueulasse, que m\xEAme
           mon grand-p\xE8re fumeur et cracheur depuis l'antiquit\xE9, dirait que
           \xE7a a le go\xFBt de godasses."
-        _damageType: 1
+        _damageType: 2
         _position: {x: 3, y: 2}
       - _character: 0
         _id: Fight_01_04_PLAYER_03
         _textLine: "Chez toi tout est un probl\xE8me. Je suis sur qu'aucune femme
           ne t'aime."
-        _damageType: -1
+        _damageType: 1
         _position: {x: 3, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 1
         _id: Fight_01_04_OPPONENT
         _textLine: "On te croyait mort, et v'l\xE0 que tu te ram\xE8nes avec ton
           haleine de castor. On est toujours en d\xE9saccord, jte pr\xE9viens \xE7a
@@ -133,7 +133,7 @@ MonoBehaviour:
         _id: Fight_01_05_PLAYER_01
         _textLine: "Laisse moi voir la marque de ton tabac \xE0 chiquer, ah oui en
           effet m\xEAme mon canid\xE9 aurait peur d'y toucher."
-        _damageType: 2
+        _damageType: -1
         _position: {x: 4, y: 1}
       - _character: 0
         _id: Fight_01_05_PLAYER_02
@@ -145,10 +145,10 @@ MonoBehaviour:
         _id: Fight_01_05_PLAYER_03
         _textLine: Tu parles de charlatan, mais on va voir qui s'en sortira d'ici
           vivant. Allez, cours petit chenapan!
-        _damageType: -1
+        _damageType: 2
         _position: {x: 4, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 1
         _id: Fight_01_05_OPPONENT
         _textLine: "Moi au moins, j'ai continu\xE9 \xE0 vivre bien p\xE9p\xE8re,
           tandis que toi, tu gal\xE9rais comme un octog\xE9naire!"
@@ -167,15 +167,15 @@ MonoBehaviour:
         _id: Fight_01_06_PLAYER_02
         _textLine: "Ecoutes, je ne veux pas de ton argent, enfin de mon argent. On
           peut tous faire des erreurs,  oublions \xE7a mais ne recommence pas."
-        _damageType: 1
+        _damageType: 2
         _position: {x: 5, y: 2}
       - _character: 0
         _id: Fight_01_06_PLAYER_03
         _textLine: PLACEHOLDER
-        _damageType: -1
+        _damageType: 1
         _position: {x: 5, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 1
         _id: Fight_01_06_OPPONENT
         _textLine: PLACEHOLDER
         _damageType: 0
@@ -190,7 +190,7 @@ MonoBehaviour:
       - _character: 0
         _id: Fight_02_01_PLAYER_01
         _textLine: Aller, vas t-en, j'ai pas ton temps.
-        _damageType: 2
+        _damageType: 1
         _position: {x: 6, y: 1}
       - _character: 0
         _id: Fight_02_01_PLAYER_02
@@ -200,10 +200,10 @@ MonoBehaviour:
       - _character: 0
         _id: Fight_02_01_PLAYER_03
         _textLine: Ouste! Ou je te met une rouste.
-        _damageType: -1
+        _damageType: 1
         _position: {x: 6, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 2
         _id: Fight_02_01_OPPONENT
         _textLine: Waf !
         _damageType: 0
@@ -214,7 +214,7 @@ MonoBehaviour:
         _id: Fight_02_02_PLAYER_01
         _textLine: "Bon okay je vais commencer \xE0 t'allumer, tu sembles vide et
           sans int\xEAret, m\xEAme ma grand-m\xE8re ne voudrait pas te carresser."
-        _damageType: 2
+        _damageType: 1
         _position: {x: 7, y: 1}
       - _character: 0
         _id: Fight_02_02_PLAYER_02
@@ -226,10 +226,10 @@ MonoBehaviour:
         _id: Fight_02_02_PLAYER_03
         _textLine: "Tu me cherches? Fais gaffe \xE0 ce que je vais te mettre dans
           le derch."
-        _damageType: -1
+        _damageType: 1
         _position: {x: 7, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 2
         _id: Fight_02_02_OPPONENT
         _textLine: Woof waf! waf waf !
         _damageType: 0
@@ -240,7 +240,7 @@ MonoBehaviour:
         _id: Fight_02_03_PLAYER_01
         _textLine: "Toi et ta fourrure d\xE9sordonn\xE9e, faites gaffe \xE0 ne pas
           vous faire boycotter."
-        _damageType: 2
+        _damageType: 1
         _position: {x: 8, y: 1}
       - _character: 0
         _id: Fight_02_03_PLAYER_02
@@ -253,10 +253,10 @@ MonoBehaviour:
         _textLine: "Ton unique raison d'\xEAtre ? Courir apr\xE8s la baballe ? Tu
           n'as pas honte d'\xEAtre ici ? Tu ferais mieux de te trouver un vrai but
           dans la vie!"
-        _damageType: -1
+        _damageType: 1
         _position: {x: 8, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 2
         _id: Fight_02_03_OPPONENT
         _textLine: ... huh ?
         _damageType: 0
@@ -267,7 +267,7 @@ MonoBehaviour:
         _id: Fight_02_04_PLAYER_01
         _textLine: "D'une m\xE8re Boxer et d'un p\xE8re Berger Bulgare, j'ai bien
           peur que je puisse te traiter de batard."
-        _damageType: 2
+        _damageType: 1
         _position: {x: 9, y: 1}
       - _character: 0
         _id: Fight_02_04_PLAYER_02
@@ -279,10 +279,10 @@ MonoBehaviour:
         _id: Fight_02_04_PLAYER_03
         _textLine: "Allez, rentre chez ton ma\xEEtre si tu veux pas faire plus de
           kilom\xE8tres."
-        _damageType: -1
+        _damageType: 1
         _position: {x: 9, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 2
         _id: Fight_02_04_OPPONENT
         _textLine: Woof !
         _damageType: 0
@@ -303,10 +303,10 @@ MonoBehaviour:
       - _character: 0
         _id: Fight_02_05_PLAYER_03
         _textLine: PLACEHOLDER
-        _damageType: -1
+        _damageType: 1
         _position: {x: 10, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 2
         _id: Fight_02_05_OPPONENT
         _textLine: PLACEHOLDER
         _damageType: 0
@@ -322,7 +322,7 @@ MonoBehaviour:
         _id: Fight_03_01_PLAYER_01
         _textLine: "Pourquoi m'as tu demand\xE9, je parie que c'est l'histoire avec
           ton nouveau gars qui s'est mal termin\xE9e."
-        _damageType: 2
+        _damageType: 1
         _position: {x: 11, y: 1}
       - _character: 0
         _id: Fight_03_01_PLAYER_02
@@ -338,7 +338,7 @@ MonoBehaviour:
         _damageType: -1
         _position: {x: 11, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 3
         _id: Fight_03_01_OPPONENT
         _textLine: "Ah te voil\xE0, c'est \xE9tonnant que tu ne sois pas rest\xE9
           dans ton trou \xE0 rat!"
@@ -350,21 +350,21 @@ MonoBehaviour:
         _id: Fight_03_02_PLAYER_01
         _textLine: "Rappelle moi, c'est pas tes parents qui ont un toit dans cette
           m\xEAme ville justement ?"
-        _damageType: 2
+        _damageType: 1
         _position: {x: 12, y: 1}
       - _character: 0
         _id: Fight_03_02_PLAYER_02
         _textLine: Ma ville est plus que ta ville!
-        _damageType: 1
+        _damageType: -1
         _position: {x: 12, y: 2}
       - _character: 0
         _id: Fight_03_02_PLAYER_03
         _textLine: "Je vais t'avouer, je me demande comment tu vas survivre \xE0
           ce qui arrive, dans ce clash tu n'es que figurative."
-        _damageType: -1
+        _damageType: 2
         _position: {x: 12, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 3
         _id: Fight_03_02_OPPONENT
         _textLine: "T'es aussi minable que ton vieux pote, tu n'es m\xEAme pas capable
           de le mettre \xE0 ta botte."
@@ -376,14 +376,14 @@ MonoBehaviour:
         _id: Fight_03_03_PLAYER_01
         _textLine: "Qui voudrais d'un charlatan comme lui? J'ai fait un choix judicieux,
           tu veux juste cr\xE9er du conflit."
-        _damageType: 2
+        _damageType: 1
         _position: {x: 13, y: 1}
       - _character: 0
         _id: Fight_03_03_PLAYER_02
         _textLine: "Tu t'attaques \xE0 quelqu'un d'autre? Qu'est ce qu'il y a, t'as
           peur de m'affronter? Chez moi c'est la mar\xE9e-haute, et je ne vais pas
           te m\xE9nager."
-        _damageType: 1
+        _damageType: 2
         _position: {x: 13, y: 2}
       - _character: 0
         _id: Fight_03_03_PLAYER_03
@@ -392,7 +392,7 @@ MonoBehaviour:
         _damageType: -1
         _position: {x: 13, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 3
         _id: Fight_03_03_OPPONENT
         _textLine: "Moi, j'ai tout le village \xE0 mes pieds, et toi? Personne n'est
           venu avec toi, m\xEAme pas d'alli\xE9."
@@ -405,14 +405,14 @@ MonoBehaviour:
         _textLine: "Aurais tu oubli\xE9 ce que disais ta lettre ? \"Viens seul\".
           On dirait que tu as quelques probl\xE8mes de m\xE9moire, si je peux me
           permettre."
-        _damageType: 2
+        _damageType: 1
         _position: {x: 14, y: 1}
       - _character: 0
         _id: Fight_03_04_PLAYER_02
         _textLine: "Mes alli\xE9s ? Ils sont rest\xE9s au bercail s'occuper de mes
           affaires, l\xE0-bas, je commande. Et toi? A tes pieds, ils ne te font m\xEAme
           pas d'offrande."
-        _damageType: 1
+        _damageType: 2
         _position: {x: 14, y: 2}
       - _character: 0
         _id: Fight_03_04_PLAYER_03
@@ -421,7 +421,7 @@ MonoBehaviour:
         _damageType: -1
         _position: {x: 14, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 3
         _id: Fight_03_04_OPPONENT
         _textLine: "La derni\xE8re fois qu'on a fait un bras de fer, j'ai failli
           te le casser, t'as d\xE9j\xE0 oubli\xE9? Franchement, tu fais piti\xE9."
@@ -447,7 +447,7 @@ MonoBehaviour:
         _damageType: -1
         _position: {x: 15, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 3
         _id: Fight_03_05_OPPONENT
         _textLine: "Regarde moi, je suis plus belle qu'une d\xE9esse. Et toi? T'es
           tellement moche qu'on te d\xE9laisse."
@@ -475,7 +475,7 @@ MonoBehaviour:
         _damageType: -1
         _position: {x: 16, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 3
         _id: Fight_03_06_OPPONENT
         _textLine: Tu parles mal de moi? Tu dois oublier que je connais tout le monde
           ici. Le sheriff entendra parler de toi.
@@ -487,22 +487,22 @@ MonoBehaviour:
         _id: Fight_03_07_PLAYER_01
         _textLine: "Bravo, tu connais Jacques, Michel et Barnab\xE9. Les trois seuls
           habitants de ce trou paum\xE9!"
-        _damageType: 2
+        _damageType: 1
         _position: {x: 17, y: 1}
       - _character: 0
         _id: Fight_03_07_PLAYER_02
         _textLine: "Je sais que tout le monde te conna\xEEt figures toi. Et la raison
           \xE0 cel\xE0 n'est pas tr\xE8s jolie, si tu veux mon avis."
-        _damageType: 1
+        _damageType: -1
         _position: {x: 17, y: 2}
       - _character: 0
         _id: Fight_03_07_PLAYER_03
         _textLine: "Le sheriff n'en a que faire de tes querelles, ici je suis r\xE9glo.
           Tu crois que je me rebelle, \xE7a n'affecte que ton \xE9go. "
-        _damageType: -1
+        _damageType: 2
         _position: {x: 17, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 3
         _id: Fight_03_07_OPPONENT
         _textLine: "O\xF9 sont tes connaissances? Je ne vois que toi et ta solitude,
           toutes mes condol\xE9ances.  "
@@ -529,7 +529,7 @@ MonoBehaviour:
         _damageType: -1
         _position: {x: 18, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 3
         _id: Fight_03_08_OPPONENT
         _textLine: D'ailleurs, j'ai une surprise pour toi, bien que ce ne soit pas
           pour le meilleur, il va falloir que tu le tutoies.
@@ -555,7 +555,7 @@ MonoBehaviour:
         _damageType: -1
         _position: {x: 19, y: 3}
       _enemyLine:
-        _character: 0
+        _character: 3
         _id: Fight_03_09_OPPONENT
         _textLine: PLACEHOLDER
         _damageType: 0
