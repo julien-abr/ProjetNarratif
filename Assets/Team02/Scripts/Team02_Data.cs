@@ -9,6 +9,7 @@ namespace Team02
     {
         EFFECTIVE = 2,
         NORMAL = 1,
+        ENEMY = 0,
         INEFFECTIVE = -1
     }
 
@@ -255,7 +256,10 @@ namespace Team02
         IDLE = 0,
         WEAK = 1,
         ATTACK = 2,
-        HURT = 3
+        HURT = 3,
+        WANTED_FRONT = 4,
+        WANTED_BACK = 5,
+        VS = 6
     }
 
     [System.Serializable]

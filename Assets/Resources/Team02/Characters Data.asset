@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Characters Data
   m_EditorClassIdentifier: 
   _characters:
-  - name: Player
+  - _character: 0
     _sprites:
     - _pose: 0
       _sprite: {fileID: 0}
@@ -23,3 +23,12 @@ MonoBehaviour:
       _sprite: {fileID: 0}
     - _pose: 3
       _sprite: {fileID: 0}
+    - _pose: 4
+      _sprite: {fileID: 0}
+    - _pose: 5
+      _sprite: {fileID: 0}
+    - _pose: 6
+      _sprite: {fileID: 0}
+    _description: 
+    _strongTraits: []
+    _weakTraits: []
