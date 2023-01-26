@@ -25,21 +25,29 @@ namespace Team02
             canvasScaler = canvas.GetComponent<CanvasScaler>();
         }
 
-        public void LeftFighterWon() //Call when player won
+        //public void LeftFighterWon() //Call when player won
+        //{
+        //    Vector2 newPos = new Vector2(currentX - amountToMove, rectTransform.anchoredPosition.y);
+        //    rectTransform.DOAnchorPos(newPos, moveDuration).SetEase(easeMode);
+        //    currentX -= amountToMove;
+        //}
+        //
+        //public void RightFighterWon()
+        //{
+        //    Vector2 newPos = new Vector2(currentX + amountToMove, rectTransform.anchoredPosition.y);
+        //    rectTransform.DOAnchorPos(newPos, moveDuration).SetEase(easeMode);
+        //    currentX += amountToMove;
+        //}
+
+        public void MoveCrowd(float amountToMove)
         {
-            Vector2 newPos = new Vector2(currentX - amountToMove, rectTransform.anchoredPosition.y);
+            Vector2 newPos = new Vector2(currentX - (this.amountToMove * amountToMove), rectTransform.anchoredPosition.y);
+            Debug.Log(newPos);
             rectTransform.DOAnchorPos(newPos, moveDuration).SetEase(easeMode);
-            currentX -= amountToMove;
+            currentX -= this.amountToMove * amountToMove;
         }
 
-        public void RightFighterWon()
-        {
-            Vector2 newPos = new Vector2(currentX + amountToMove, rectTransform.anchoredPosition.y);
-            rectTransform.DOAnchorPos(newPos, moveDuration).SetEase(easeMode);
-            currentX += amountToMove;
-        }
-
-        private void ResetData(int amountOfDialogs) //Call between each battlephase
+        public void ResetData(int amountOfDialogs) //Call between each battlephase
         {
             rectTransform.anchoredPosition = new Vector2(0, rectTransform.anchoredPosition.y);
             numberOfDialogs = amountOfDialogs;
