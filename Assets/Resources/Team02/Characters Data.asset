@@ -35,13 +35,13 @@ MonoBehaviour:
   - _character: 1
     _sprites:
     - _pose: 0
-      _sprite: {fileID: 21300000, guid: ee8144070092c2f4f9abbf080c4a5287, type: 3}
+      _sprite: {fileID: 21300000, guid: 3abbb2d477fb07249abddc9e23ad4216, type: 3}
     - _pose: 1
-      _sprite: {fileID: 21300000, guid: c5f44f8cd0249184481ad67eda11ca38, type: 3}
+      _sprite: {fileID: 21300000, guid: 663a6887d3a347540ba1fc85c97604ae, type: 3}
     - _pose: 2
-      _sprite: {fileID: 0}
+      _sprite: {fileID: 21300000, guid: 56720c2d829901146983fba4a1a2c356, type: 3}
     - _pose: 3
-      _sprite: {fileID: 0}
+      _sprite: {fileID: 21300000, guid: 076a2e5c664fca94a9bc5cb3d5f0adc6, type: 3}
     - _pose: 4
       _sprite: {fileID: 21300000, guid: 62c472449f8c979498c8f27d0bf741fc, type: 3}
     - _pose: 5
