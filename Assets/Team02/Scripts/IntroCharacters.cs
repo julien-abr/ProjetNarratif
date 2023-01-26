@@ -32,6 +32,9 @@ namespace Team02
         [SerializeField]
         private List<Sprite> allIntroPanel = new List<Sprite>();
 
+        private CHARACTER currentCharacter;
+        private CharacterData currentCharacterData;
+
         /*Enemy -> Player -> Enemy
             -> Wanted (affiche) -> Wanted (descriptif)
             > Ecran de VS*/
@@ -43,7 +46,7 @@ namespace Team02
                 choiceManager = FindObjectOfType<ChoiceManager>();
             }
 
-            choiceManager.enemyVisual.sprite = choiceManager.AllEnemySprites[0];
+            choiceManager.enemyVisual.sprite = choiceManager.GetAllEnemySprites[0];
 
             introPanels.SetActive(false);
             TextBoxBackgroundIntro.SetActive(false); // need to be true
@@ -61,11 +64,15 @@ namespace Team02
             TextBoxBackgroundIntro.SetActive(true);
             currentStageIntro = 0;
             choiceManager.TextBox_Player_Disabled();
-            if (choiceManager.CurrentScore > 0 || currentFight <= 0)
+
+            currentCharacter = dialoguesSO.dialogues[currentFight].lines[currentStageIntro].character;
+
+            currentCharacterData = choiceManager.GetCharacterData.GetCharacterData((int)currentCharacter);
+
+            if (choiceManager.GetCurrentScore > 0 || currentFight <= 0)
             {
                 currentFight++; 
             }
-
             AdvancedIntro();
         }
 
@@ -75,25 +82,51 @@ namespace Team02
 
             currentStageIntro++;
 
-            FightLine firstSpeaker = choiceManager.CurrentFightDlg.GetEnemyLine;
+            FightLine firstSpeaker = choiceManager.GetCurrentFightDlg.GetEnemyLine;
+
+            DialogueLine dialogIntro;
 
             switch (currentStageIntro)
             {
                 case 1: // Enemy intro line 1
                 case 2: // Player intro line 1
                 case 3: // Enemy intro line 2
-                    nameSpeaker.text = dialoguesSO.dialogues[currentFight - 1].lines[currentStageIntro - 1].character.ToString();
-                    lineSpeaker.text = dialoguesSO.dialogues[currentFight - 1].lines[currentStageIntro - 1].text;
+                    dialogIntro = dialoguesSO.dialogues[currentFight - 1].lines[currentStageIntro - 1];
+
+                    nameSpeaker.text = dialogIntro.character.ToString();
+                    lineSpeaker.text = dialogIntro.text;
                     break;
-                case 4: // Wanted (affiche)
+                case 4: // WANTED_FRONT
                     introPanels.SetActive(true);
-                    introPanelsImg.sprite = allIntroPanel[0];
+
+                    if (currentCharacterData.GetSprite(SPRITE_POSE.WANTED_FRONT) != null)
+                    {
+                        introPanelsImg.sprite = currentCharacterData.GetSprite(SPRITE_POSE.WANTED_FRONT);
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"{currentCharacter} doesn't have a SPRITE_POSE.WANTED_FRONT");
+                    }
                     break;
-                case 5: // Wanted (descriptif)
-                    introPanelsImg.sprite = allIntroPanel[1];
+                case 5: // WANTED_BACK
+                    if (currentCharacterData.GetSprite(SPRITE_POSE.WANTED_BACK) != null)
+                    {
+                        introPanelsImg.sprite = currentCharacterData.GetSprite(SPRITE_POSE.WANTED_BACK);
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"{currentCharacter} doesn't have a SPRITE_POSE.WANTED_BACK");
+                    }
                     break;
                 case 6: // Ecran de VS
-                    introPanelsImg.sprite = allIntroPanel[2];
+                    if (currentCharacterData.GetSprite(SPRITE_POSE.VS) != null)
+                    {
+                        introPanelsImg.sprite = currentCharacterData.GetSprite(SPRITE_POSE.VS);
+                    }
+                    else
+                    {
+                        Debug.LogWarning($"{currentCharacter} doesn't have a SPRITE_POSE.VS");
+                    }
                     break;
                 case 7:
                     introPanels.SetActive(false);

@@ -1,6 +1,7 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEditor;
 
 namespace Team02
 {
@@ -32,6 +33,17 @@ namespace Team02
                 choiceText.text = ($"- {textLine}");
             else
                 StartCoroutine(WriteText(textLine));
+
+            #if UNITY_EDITOR
+            if (effectiveness == LINETYPE.EFFECTIVE)
+            {
+                choiceText.color = Color.green;
+            }
+            else
+            {
+                choiceText.color = Color.white;
+            }
+            #endif
         }
 
         private IEnumerator WriteText(string textLine)

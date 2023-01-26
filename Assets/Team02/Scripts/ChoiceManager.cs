@@ -7,31 +7,37 @@ namespace Team02
 {
     public class ChoiceManager : MonoBehaviour
     {
+        [Header("Scripts & Data References")]
         [SerializeField]
         private RapBattlesSO rapBattlesSO;
 
         private List<RapBattle> RapBattles;
 
-        [SerializeField] private Text nameEnemy;
+        [SerializeField]
+        private CharacterDataSO characterDataSO;
+        public CharacterDataSO GetCharacterData => characterDataSO;
+
+        [SerializeField]
+        private CrowdController crowdController;
+
+        [Header("Player References")]
         [SerializeField] private GameObject TextBox_Player;
         public void TextBox_Player_Disabled() { TextBox_Player.SetActive(false); }
-
-        [SerializeField] private GameObject TextBox_Enemy;
-
-        public Image enemyVisual;
-        [SerializeField] private List<Sprite> allEnemySprites = new List<Sprite>();
-        public List<Sprite> AllEnemySprites => allEnemySprites;
-
+        [SerializeField] private GameObject finalChoice;
+        [SerializeField] private GameObject endPanel;
         [SerializeField] private List<Choices> choicesPlayer = new List<Choices>();
 
+        [Header("Enemy References")]
+        [SerializeField] private Text nameEnemy;
+        [SerializeField] private GameObject TextBox_Enemy;
         [SerializeField] private Choices choiceEnemy;
-
-        [SerializeField] private GameObject finalChoice;
+        public Image enemyVisual;
         [SerializeField] private Image finalChoiceEnemyImg;
-        [SerializeField] private GameObject endPanel;
+        [SerializeField] private List<Sprite> allEnemySprites = new List<Sprite>();
+        public List<Sprite> GetAllEnemySprites => allEnemySprites;
 
         private float currentScore;
-        public float CurrentScore => currentScore;
+        public float GetCurrentScore => currentScore;
 
         private int RAP_BATTLE_STAGE = 1; // Doesn't start From 0 to represente fight 1-2-3 so use RapBattleStage below
         private int RapBattleStage 
@@ -54,7 +60,7 @@ namespace Team02
         }   
 
         private FightDlg currentFightDlg;
-        public FightDlg CurrentFightDlg => currentFightDlg;
+        public FightDlg GetCurrentFightDlg => currentFightDlg;
 
         private bool END;
 
@@ -164,8 +170,6 @@ namespace Team02
 
             FightDlgStage = 1;
 
-            // before end do the epargner here
-
             EndCurrentFightDlg();
         }
 
@@ -198,7 +202,8 @@ namespace Team02
                 // Switch to enemy line (doesn't change fight)
                 TextBox_Player.SetActive(false);
                 TextBox_Enemy.SetActive(true);
-                choiceEnemy.UpdateTextFight(currentFightDlg.GetEnemyLine.GetText);
+
+                SetLineEnemy(currentFightDlg);
                 nameEnemy.text = currentFightDlg.GetEnemyLine.GetID;
             }
             else if(TextBox_Enemy.activeSelf) // When clicked on Enemy line
