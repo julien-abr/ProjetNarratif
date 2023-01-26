@@ -100,34 +100,22 @@ namespace Team02
                 case 4: // WANTED_FRONT
                     introPanels.SetActive(true);
 
-                    if (currentCharacterData.GetSprite(SPRITE_POSE.WANTED_FRONT) != null)
+                    choiceManager.SetCharacterSprite(currentCharacter, SPRITE_POSE.WANTED_FRONT, introPanelsImg);
+
+                    /*if (currentCharacterData.GetSprite(SPRITE_POSE.WANTED_FRONT) != null)
                     {
                         introPanelsImg.sprite = currentCharacterData.GetSprite(SPRITE_POSE.WANTED_FRONT);
                     }
                     else
                     {
                         Debug.LogWarning($"{currentCharacter} doesn't have a SPRITE_POSE.WANTED_FRONT");
-                    }
+                    }*/
                     break;
                 case 5: // WANTED_BACK
-                    if (currentCharacterData.GetSprite(SPRITE_POSE.WANTED_BACK) != null)
-                    {
-                        introPanelsImg.sprite = currentCharacterData.GetSprite(SPRITE_POSE.WANTED_BACK);
-                    }
-                    else
-                    {
-                        Debug.LogWarning($"{currentCharacter} doesn't have a SPRITE_POSE.WANTED_BACK");
-                    }
+                    choiceManager.SetCharacterSprite(currentCharacter, SPRITE_POSE.WANTED_BACK, introPanelsImg);
                     break;
                 case 6: // Ecran de VS
-                    if (currentCharacterData.GetSprite(SPRITE_POSE.VS) != null)
-                    {
-                        introPanelsImg.sprite = currentCharacterData.GetSprite(SPRITE_POSE.VS);
-                    }
-                    else
-                    {
-                        Debug.LogWarning($"{currentCharacter} doesn't have a SPRITE_POSE.VS");
-                    }
+                    choiceManager.SetCharacterSprite(currentCharacter, SPRITE_POSE.VS, introPanelsImg);
                     break;
                 case 7:
                     introPanels.SetActive(false);
