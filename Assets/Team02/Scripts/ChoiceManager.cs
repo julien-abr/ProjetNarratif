@@ -7,20 +7,16 @@ namespace Team02
 {
     public class ChoiceManager : MonoBehaviour
     {
+        #region References
         [Header("Scripts & Data References")]
-        [SerializeField]
-        private RapBattlesSO rapBattlesSO;
-
+        [SerializeField] private RapBattlesSO rapBattlesSO;
         private List<RapBattle> RapBattles;
-
-        [SerializeField]
-        private CharacterDataSO characterDataSO;
+        [SerializeField] private CharacterDataSO characterDataSO;
         public CharacterDataSO GetCharacterData => characterDataSO;
-
-        [SerializeField]
-        private CrowdController crowdController;
+        [SerializeField] private CrowdController crowdController;
 
         [Header("Player References")]
+        public Image playerVisual;
         [SerializeField] private GameObject TextBox_Player;
         public void TextBox_Player_Disabled() { TextBox_Player.SetActive(false); }
         [SerializeField] private GameObject finalChoice;
@@ -36,8 +32,29 @@ namespace Team02
         [SerializeField] private List<Sprite> allEnemySprites = new List<Sprite>();
         public List<Sprite> GetAllEnemySprites => allEnemySprites;
 
+        #endregion
+
+        #region Variables 
+
+        private CHARACTER currentCharacter;
+        private CharacterData currentCharacterData;
+
         private float currentScore;
         public float GetCurrentScore => currentScore;
+        private void SetCurrentScore(float score)
+        {
+            if (score == 0)
+            {
+                // reset 
+                currentScore = 0;
+                crowdController.ResetData(numberOfFightsInBattle);
+            }
+            else
+            {
+                currentScore += score;
+                crowdController.MoveCrowd(score);
+            }
+        }
 
         private int RAP_BATTLE_STAGE = 1; // Doesn't start From 0 to represente fight 1-2-3 so use RapBattleStage below
         private int RapBattleStage 
@@ -57,7 +74,9 @@ namespace Team02
         {
             get => RapBattles[RapBattleStage]?.GetFightDialogs;
             set { CurrentFightDialogs = value; }
-        }   
+        }
+
+        private int numberOfFightsInBattle;
 
         private FightDlg currentFightDlg;
         public FightDlg GetCurrentFightDlg => currentFightDlg;
@@ -70,6 +89,7 @@ namespace Team02
             if (onfightDlgStageChanged != null)
                 onfightDlgStageChanged();
         }
+        #endregion
 
         private void Awake()
         {
@@ -77,8 +97,6 @@ namespace Team02
             if (TextBox_Enemy == null) TextBox_Enemy = this.gameObject.transform.GetChild(1).gameObject;
 
             RapBattles = rapBattlesSO?.GetRapBattles;
-
-            enemyVisual.sprite = allEnemySprites[0];
 
             currentFightDlg = CurrentFightDialogs[FightDlgStage - 1];
         }
@@ -98,57 +116,74 @@ namespace Team02
             {
                 TextBox_Player.SetActive(false);
                 finalChoice.SetActive(false);
+                SetPlayerSprite(SPRITE_POSE.IDLE);
             };
+
+            SetPlayerSprite(SPRITE_POSE.IDLE);
         }
 
         public void StartFight()
         {
             TextBox_Player.SetActive(true);
-            
-            currentScore = 0;
+
+            SetCurrentScore(0);
 
             currentFightDlg = CurrentFightDialogs[FightDlgStage - 1];
 
             SetLinePlayer(currentFightDlg);
+
+            SetEnemySprite(SPRITE_POSE.IDLE);
+
+            numberOfFightsInBattle = CurrentFightDialogs.Count - 1;
+
+            crowdController.ResetData(numberOfFightsInBattle);
         }
 
         private void RestartCurrentFight()
         {
-            //TextBox_Player.SetActive(true);
-
             FightDlgStage = 1;
 
             currentFightDlg = CurrentFightDialogs[FightDlgStage - 1];
-
             SetLinePlayer(currentFightDlg);
-
             EndCurrentFightDlg();
-            currentScore = 0;
+            SetCurrentScore(0);
+
+            crowdController.ResetData(numberOfFightsInBattle);
         }
 
         private void GoNextFightStage()
         {
             int nextfightDlgStage = FIGHT_DLG_STAGE + 1;
+            bool fightLeft = nextfightDlgStage <= numberOfFightsInBattle;
 
-            if (nextfightDlgStage > CurrentFightDialogs.Count - 1 // - 1 because the last in the list are kill dialog
-                && RAP_BATTLE_STAGE < rapBattlesSO.GetRapBattles.Count)
+            if (fightLeft)
             {
-                if (currentScore <= 0)
-                {
-                    // Lose, Restart fight
-
-                    RestartCurrentFight();
-                }
-                else
-                {
-                    // WIN ! Go next BATTLE Stage
-
-                    finalChoice.SetActive(true);
-                    finalChoiceEnemyImg.sprite = allEnemySprites[RapBattleStage];
-                }
+                FightDlgStage++;
+                return;
             }
-            else if (RAP_BATTLE_STAGE >= rapBattlesSO.GetRapBattles.Count && FightDlgStage >= (CurrentFightDialogs.Count - 1))
+            else if (currentScore < 0)
             {
+                // Lose, Restart fight
+
+                RestartCurrentFight();
+                return;
+            }
+
+            bool rapBattleLeft = RAP_BATTLE_STAGE < rapBattlesSO.GetRapBattles.Count;
+
+            if (fightLeft == false && rapBattleLeft)
+            {
+                // WIN ! Go next BATTLE Stage
+
+                finalChoice.SetActive(true);
+                finalChoiceEnemyImg.sprite = allEnemySprites[RapBattleStage];
+
+                SetEnemySprite(SPRITE_POSE.HURT);
+            }
+            else if (RAP_BATTLE_STAGE >= rapBattlesSO.GetRapBattles.Count && FightDlgStage >= numberOfFightsInBattle)
+            {
+                // WIN !! End of the narrative game
+
                 END = true;
                 endPanel.SetActive(true);
                 Debug.Log("End");
@@ -156,17 +191,15 @@ namespace Team02
                 TextBox_Player.SetActive(false);
                 return;
             }
-            else
-            {
-                FightDlgStage++;
-            }
         }
 
-        public void ChangeBattle()
+        public void ChangeBattle() // For finish button 
         {
             RAP_BATTLE_STAGE++;
 
             enemyVisual.sprite = allEnemySprites[RapBattleStage];
+
+            SetEnemySprite(SPRITE_POSE.IDLE);
 
             FightDlgStage = 1;
 
@@ -181,10 +214,61 @@ namespace Team02
                 choicesPlayer[i].idChoice = _fightDlg.GetPlayerLines[i].GetID;
                 choicesPlayer[i].UpdateTextFight(_fightDlg.GetPlayerLines[i].GetText);
             }
+
+            SetPlayerSprite(SPRITE_POSE.ATTACK);
+            SetEnemySprite(SPRITE_POSE.HURT);
         }
+
         private void SetLineEnemy(FightDlg _fightDlg)
         {
             choiceEnemy.UpdateTextFight(_fightDlg.GetEnemyLine.GetText);
+            SetEnemySprite(SPRITE_POSE.ATTACK);
+            SetPlayerSprite(SPRITE_POSE.HURT);
+        }
+        private void SetPlayerSprite(SPRITE_POSE spritePose)
+        {
+            var player = currentFightDlg.GetPlayerLines[0].Character;
+            var playerData = GetCharacterData.GetCharacterData((int)player);
+            var spriteToChange = playerVisual;
+
+            if (playerData.GetSprite(spritePose) != null)
+            {
+                spriteToChange.sprite = playerData.GetSprite(spritePose);
+            }
+            else
+            {
+                Debug.LogWarning($"{playerData} doesn't have a SPRITE_POSE.{spritePose}");
+            }
+        }
+        public void SetEnemySprite(SPRITE_POSE spritePose)
+        {
+            var enemy = currentFightDlg.GetEnemyLine.Character;
+            var enemyData = GetCharacterData.GetCharacterData((int)enemy);
+            var spriteToChange = enemyVisual;
+
+            if (enemyData.GetSprite(spritePose) != null)
+            {
+                spriteToChange.sprite = enemyData.GetSprite(spritePose);
+            }
+            else
+            {
+                Debug.LogWarning($"{enemy} doesn't have a SPRITE_POSE.{spritePose}");
+            }
+        }
+
+        public void SetCharacterSprite(CHARACTER character, SPRITE_POSE spritePose, Image spriteToChange )
+        {
+            // Simpler with SetEnemySprite and SetPlayerSprite
+            var characterData = GetCharacterData.GetCharacterData((int)character);
+
+            if (characterData.GetSprite(spritePose) != null)
+            {
+                spriteToChange.sprite = characterData.GetSprite(spritePose);
+            }
+            else
+            {
+                Debug.LogWarning($"{character} doesn't have a SPRITE_POSE.{spritePose}");
+            }
         }
 
         public void SwitchSpeaker(float score)
@@ -194,19 +278,21 @@ namespace Team02
                 return;
             }
 
-            currentScore += score;
+            SetCurrentScore(score);
 
-            if (TextBox_Player.activeSelf) // When clicked on Player line
+            if (TextBox_Player.activeSelf) // When clicked on Player line (Enemy is clashing)
             {
-                
                 // Switch to enemy line (doesn't change fight)
                 TextBox_Player.SetActive(false);
                 TextBox_Enemy.SetActive(true);
 
+                currentCharacter = currentFightDlg.GetEnemyLine.Character;
+                currentCharacterData = GetCharacterData.GetCharacterData((int)currentCharacter);
+
                 SetLineEnemy(currentFightDlg);
                 nameEnemy.text = currentFightDlg.GetEnemyLine.GetID;
             }
-            else if(TextBox_Enemy.activeSelf) // When clicked on Enemy line
+            else if(TextBox_Enemy.activeSelf) // When clicked on Enemy line (Player is clashing)
             {
                 currentFightDlg = CurrentFightDialogs[FightDlgStage];
 
@@ -214,7 +300,10 @@ namespace Team02
                 TextBox_Enemy.SetActive(false);
                 TextBox_Player.SetActive(true);
 
-                if (FightDlgStage >= CurrentFightDialogs.Count - 1)
+                currentCharacter = currentFightDlg.GetPlayerLines[0].Character;
+                currentCharacterData = GetCharacterData.GetCharacterData((int)currentCharacter);
+
+                if (FightDlgStage >= numberOfFightsInBattle)
                 {
                     GoNextFightStage();
                     return;

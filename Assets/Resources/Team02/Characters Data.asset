@@ -16,13 +16,70 @@ MonoBehaviour:
   - _character: 0
     _sprites:
     - _pose: 0
+      _sprite: {fileID: 21300000, guid: 25236cf09324daa44830948280314174, type: 3}
+    - _pose: 1
+      _sprite: {fileID: 21300000, guid: b02186627352db54f8937a85cdf97a3e, type: 3}
+    - _pose: 2
+      _sprite: {fileID: 21300000, guid: a028fec14b013a64b8ed32935fd27b42, type: 3}
+    - _pose: 3
+      _sprite: {fileID: 21300000, guid: 0748b7d80bc379846bf58779c293d2c6, type: 3}
+    - _pose: 4
       _sprite: {fileID: 0}
+    - _pose: 5
+      _sprite: {fileID: 0}
+    - _pose: 6
+      _sprite: {fileID: 0}
+    _description: 
+    _strongTraits: []
+    _weakTraits: []
+  - _character: 1
+    _sprites:
+    - _pose: 0
+      _sprite: {fileID: 21300000, guid: ee8144070092c2f4f9abbf080c4a5287, type: 3}
+    - _pose: 1
+      _sprite: {fileID: 21300000, guid: c5f44f8cd0249184481ad67eda11ca38, type: 3}
+    - _pose: 2
+      _sprite: {fileID: 0}
+    - _pose: 3
+      _sprite: {fileID: 0}
+    - _pose: 4
+      _sprite: {fileID: 21300000, guid: 62c472449f8c979498c8f27d0bf741fc, type: 3}
+    - _pose: 5
+      _sprite: {fileID: 21300000, guid: 881221e6649c9c647a4576d4c1c3a7c0, type: 3}
+    - _pose: 6
+      _sprite: {fileID: 21300000, guid: 3c5be23d9b7e0fe4abc6b8cce11abccb, type: 3}
+    _description: 
+    _strongTraits: []
+    _weakTraits: []
+  - _character: 2
+    _sprites:
+    - _pose: 0
+      _sprite: {fileID: 21300000, guid: d5debe45f958d8440972081706f187c6, type: 3}
     - _pose: 1
       _sprite: {fileID: 0}
     - _pose: 2
       _sprite: {fileID: 0}
     - _pose: 3
       _sprite: {fileID: 0}
+    - _pose: 4
+      _sprite: {fileID: 21300000, guid: 349371d6406403f4cac0cc61b399f098, type: 3}
+    - _pose: 5
+      _sprite: {fileID: 21300000, guid: 165c4238ecf737c40b2d39ae41587c63, type: 3}
+    - _pose: 6
+      _sprite: {fileID: 0}
+    _description: 
+    _strongTraits: []
+    _weakTraits: []
+  - _character: 3
+    _sprites:
+    - _pose: 0
+      _sprite: {fileID: 21300000, guid: a851ee62a627c20418823da30f68ad5e, type: 3}
+    - _pose: 1
+      _sprite: {fileID: 21300000, guid: f5df407e929618b449fbe17192bca4bd, type: 3}
+    - _pose: 2
+      _sprite: {fileID: 21300000, guid: a9b296f254afde94e9cf8796f0dadd3c, type: 3}
+    - _pose: 3
+      _sprite: {fileID: 21300000, guid: 07c7e266d6fd38b4cb086f7992818cef, type: 3}
     - _pose: 4
       _sprite: {fileID: 0}
     - _pose: 5

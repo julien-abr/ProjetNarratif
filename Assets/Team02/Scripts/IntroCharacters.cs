@@ -46,8 +46,6 @@ namespace Team02
                 choiceManager = FindObjectOfType<ChoiceManager>();
             }
 
-            choiceManager.enemyVisual.sprite = choiceManager.GetAllEnemySprites[0];
-
             introPanels.SetActive(false);
             TextBoxBackgroundIntro.SetActive(false); // need to be true
 
@@ -65,14 +63,17 @@ namespace Team02
             currentStageIntro = 0;
             choiceManager.TextBox_Player_Disabled();
 
-            currentCharacter = dialoguesSO.dialogues[currentFight].lines[currentStageIntro].character;
-
-            currentCharacterData = choiceManager.GetCharacterData.GetCharacterData((int)currentCharacter);
-
             if (choiceManager.GetCurrentScore > 0 || currentFight <= 0)
             {
                 currentFight++; 
             }
+
+            currentCharacter = dialoguesSO.dialogues[currentFight - 1].lines[currentStageIntro].character;
+
+            currentCharacterData = choiceManager.GetCharacterData.GetCharacterData((int)currentCharacter);
+
+            choiceManager.SetCharacterSprite(currentCharacter, SPRITE_POSE.IDLE, choiceManager.enemyVisual);
+
             AdvancedIntro();
         }
 

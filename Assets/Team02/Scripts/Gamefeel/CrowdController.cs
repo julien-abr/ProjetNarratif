@@ -42,7 +42,6 @@ namespace Team02
         public void MoveCrowd(float amountToMove)
         {
             Vector2 newPos = new Vector2(currentX - (this.amountToMove * amountToMove), rectTransform.anchoredPosition.y);
-            Debug.Log(newPos);
             rectTransform.DOAnchorPos(newPos, moveDuration).SetEase(easeMode);
             currentX -= this.amountToMove * amountToMove;
         }

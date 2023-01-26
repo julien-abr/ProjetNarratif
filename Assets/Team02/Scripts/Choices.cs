@@ -39,6 +39,10 @@ namespace Team02
             {
                 choiceText.color = Color.green;
             }
+            else if (effectiveness == LINETYPE.INEFFECTIVE)
+            {
+                choiceText.color = Color.red;
+            }
             else
             {
                 choiceText.color = Color.white;
