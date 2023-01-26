@@ -726,7 +726,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.4056604, g: 0.4056604, b: 0.4056604, a: 1}
+  m_Color: {r: 1, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -765,8 +765,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   canvas: {fileID: 2102633418}
   offset: 100
-  moveDuration: 1.7
-  easeMode: 21
+  moveDuration: 0.5
+  easeMode: 24
 --- !u!1 &608023782
 GameObject:
   m_ObjectHideFlags: 0
