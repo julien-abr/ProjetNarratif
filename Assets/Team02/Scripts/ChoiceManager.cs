@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 namespace Team02
 {
@@ -14,6 +15,7 @@ namespace Team02
         [SerializeField] private CharacterDataSO characterDataSO;
         public CharacterDataSO GetCharacterData => characterDataSO;
         [SerializeField] private CrowdController crowdController;
+        [SerializeField] private DialoguesSO dialoguesSO;
 
         [Header("Player References")]
         public Image playerVisual;
@@ -31,6 +33,12 @@ namespace Team02
         [SerializeField] private Image finalChoiceEnemyImg;
         [SerializeField] private List<Sprite> allEnemySprites = new List<Sprite>();
         public List<Sprite> GetAllEnemySprites => allEnemySprites;
+
+
+        [SerializeField] private GameObject finishDialog;
+        [SerializeField] private Image imgFinish;
+        [SerializeField] private Text speakerNameFinish;
+        [SerializeField] private Text speakerTextFinish;
 
         #endregion
 
@@ -116,6 +124,7 @@ namespace Team02
             {
                 TextBox_Player.SetActive(false);
                 finalChoice.SetActive(false);
+                finishDialog.SetActive(false);
                 SetPlayerSprite(SPRITE_POSE.IDLE);
             };
 
@@ -191,6 +200,79 @@ namespace Team02
                 TextBox_Player.SetActive(false);
                 return;
             }
+        }
+
+        bool wasFinish;
+
+        // No difference between finish or not
+
+        public void DisplayFinishDialog(bool isFinish)
+        {
+            wasFinish = isFinish;
+            finishDialog.SetActive(true);
+
+            speakerNameFinish.text = CurrentFightDialogs[numberOfFightsInBattle].GetPlayerLines[0].Character.ToString();
+            imgFinish.sprite = playerVisual.sprite;
+
+            if (isFinish)
+            {
+                speakerTextFinish.text = CurrentFightDialogs[numberOfFightsInBattle].GetPlayerLines[0].GetText;
+            }
+            else
+            {
+                speakerTextFinish.text = CurrentFightDialogs[numberOfFightsInBattle].GetPlayerLines[1].GetText;
+            }
+        }
+
+        public void RestartGame()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
+        int stageFinish = 0;
+        int offset;
+
+        public void AdvanceFinish()
+        {
+            if (wasFinish)
+            {
+                offset = 0;
+                //imgFinish.sprite = characterDataSO.GetCharacterData(RAP_BATTLE_STAGE).GetSprite(SPRITE_POSE.IDLE);
+                speakerNameFinish.text = dialoguesSO.dialogues[RAP_BATTLE_STAGE - 1].lines[stageFinish + offset].character.ToString();
+                speakerTextFinish.text = dialoguesSO.dialogues[RAP_BATTLE_STAGE - 1].lines[stageFinish + offset].text;
+
+                if (stageFinish >= 1)
+                {
+                    imgFinish.sprite = enemyVisual.sprite;
+                    Debug.Log("dzqd");
+                }
+
+                if (stageFinish > 1)
+                {
+                    stageFinish = 0;
+                    ChangeBattle();
+                }
+            }
+            else
+            {
+                offset = 2;
+                speakerNameFinish.text = dialoguesSO.dialogues[RAP_BATTLE_STAGE - 1].lines[stageFinish + offset].character.ToString();
+                speakerTextFinish.text = dialoguesSO.dialogues[RAP_BATTLE_STAGE - 1].lines[stageFinish + offset].text;
+
+                if (stageFinish + offset >= (stageFinish + offset + 1))
+                {
+                    imgFinish.sprite = enemyVisual.sprite;
+                    Debug.Log("dzqd");
+                }
+
+                if (stageFinish > 3 )
+                {
+                    stageFinish = 0;
+                    ChangeBattle();
+                }
+            }
+
+            stageFinish++;
         }
 
         public void ChangeBattle() // For finish button 
@@ -290,7 +372,7 @@ namespace Team02
                 currentCharacterData = GetCharacterData.GetCharacterData((int)currentCharacter);
 
                 SetLineEnemy(currentFightDlg);
-                nameEnemy.text = currentFightDlg.GetEnemyLine.GetID;
+                nameEnemy.text = currentFightDlg.GetEnemyLine.Character.ToString();
             }
             else if(TextBox_Enemy.activeSelf) // When clicked on Enemy line (Player is clashing)
             {
