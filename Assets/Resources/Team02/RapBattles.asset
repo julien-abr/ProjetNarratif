@@ -189,7 +189,7 @@ MonoBehaviour:
       _playerLines:
       - _character: 0
         _id: Fight_02_01_PLAYER_01
-        _textLine: Aller, vas t-en, j'ai pas ton temps.
+        _textLine: Allez, vas t-en, j'ai pas ton temps.
         _damageType: 1
         _position: {x: 6, y: 1}
       - _character: 0
@@ -402,9 +402,9 @@ MonoBehaviour:
       _playerLines:
       - _character: 0
         _id: Fight_03_04_PLAYER_01
-        _textLine: "Aurais tu oubli\xE9 ce que disais ta lettre ? \"Viens seul\".
+        _textLine: "\"Aurais tu oubli\xE9 ce que disais ta lettre ? \"\"Viens seul\"\".
           On dirait que tu as quelques probl\xE8mes de m\xE9moire, si je peux me
-          permettre."
+          permettre.\""
         _damageType: 1
         _position: {x: 14, y: 1}
       - _character: 0
