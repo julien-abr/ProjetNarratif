@@ -51,6 +51,7 @@ namespace Team02
             rectTransform.anchoredPosition = new Vector2(0, rectTransform.anchoredPosition.y);
             numberOfDialogs = amountOfDialogs;
             amountToMove = ((canvasScaler.referenceResolution.x / 2) - offset) / numberOfDialogs;
+            currentX = rectTransform.anchoredPosition.x;
         }
     }
 }

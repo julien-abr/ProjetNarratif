@@ -268,17 +268,8 @@ namespace Team02
         public CHARACTER _character;
         [SerializeField]
         private SpriteData[] _sprites;
-        [SerializeField, TextArea]
-        private string _description;
-        [SerializeField]
-        private string[] _strongTraits;
-        [SerializeField]
-        private string[] _weakTraits;
-        //[SerializeField]
-        //private AudioClip[] _audioClips;
 
         public Sprite GetSprite(SPRITE_POSE pose) => _sprites[(int)pose].GetSprite;
-        //public AudioClip GetAudioClip(int index) => _audioClips[index];
     }
 
     [System.Serializable]
@@ -287,6 +278,8 @@ namespace Team02
         public SPRITE_POSE _pose;
         [SerializeField]
         private Sprite _sprite;
+        [SerializeField]
+        private Sprite _sprite_english;
 
         public Sprite GetSprite => _sprite;
     }

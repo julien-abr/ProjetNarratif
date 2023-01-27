@@ -81,7 +81,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "- T'as tu\xE9 ma grand m\xE8re putain"
+  m_Text: "- T'as tu\xE9 ma grand m\xE8re putain."
 --- !u!114 &4776865795683042252
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -96,6 +96,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   choiceManager: {fileID: 0}
   choiceText: {fileID: 7112096346906685241}
+  idChoice: 
+  enemy: 0
   effectiveness: 0
 --- !u!114 &5725313423134733971
 MonoBehaviour:

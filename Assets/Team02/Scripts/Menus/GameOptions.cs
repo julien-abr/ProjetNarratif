@@ -11,6 +11,8 @@ namespace Team02
         public static bool isInstantText = false;
         private static AudioMixer audioMixer;
         private static RapBattlesSO rapBattlesSo;
+        private static DialoguesSO beginSo;
+        private static DialoguesSO endSo;
 
         public static void InitilizeOptions()
         {
@@ -25,12 +27,17 @@ namespace Team02
 
             audioMixer = Resources.Load<AudioMixer>("Audio/AudioMixer");
             rapBattlesSo = Resources.Load<RapBattlesSO>("Team02/RapBattles");
+            beginSo = Resources.Load<DialoguesSO>("Team02/BeginDialogues");
+            endSo = Resources.Load<DialoguesSO>("Team02/EndDialogues");
         }
 
         public static void SetLanguage(int index)
         {
+            Debug.Log("Language changed to " + index);
             language = index;
             rapBattlesSo.ChangeLanguage(index);
+            beginSo.ChangeLanguage(index, "Begin");
+            endSo.ChangeLanguage(index, "End");
             PlayerPrefs.SetInt("Language", index);
         }
 

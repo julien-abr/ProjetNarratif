@@ -136,7 +136,7 @@ namespace Team02
 
             numberOfFightsInBattle = CurrentFightDialogs.Count - 1;
 
-            crowdController.ResetData(numberOfFightsInBattle);
+            crowdController.ResetData(numberOfFightsInBattle + 1);
         }
 
         private void RestartCurrentFight()
