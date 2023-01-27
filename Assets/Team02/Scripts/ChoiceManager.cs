@@ -189,16 +189,10 @@ namespace Team02
 
                 SetEnemySprite(SPRITE_POSE.HURT);
             }
-            else if (RAP_BATTLE_STAGE >= rapBattlesSO.GetRapBattles.Count && FightDlgStage >= numberOfFightsInBattle)
+            if (RAP_BATTLE_STAGE >= rapBattlesSO.GetRapBattles.Count && FightDlgStage >= numberOfFightsInBattle)
             {
-                // WIN !! End of the narrative game
-
-                END = true;
-                endPanel.SetActive(true);
-                Debug.Log("End");
-                TextBox_Enemy.SetActive(false);
-                TextBox_Player.SetActive(false);
-                return;
+                finalChoice.SetActive(true);
+                finalChoiceEnemyImg.sprite = allEnemySprites[RapBattleStage];
             }
         }
 
@@ -277,6 +271,18 @@ namespace Team02
 
         public void ChangeBattle() // For finish button 
         {
+            if (RAP_BATTLE_STAGE >= rapBattlesSO.GetRapBattles.Count && FightDlgStage >= numberOfFightsInBattle)
+            {
+                // WIN !! End of the narrative game
+
+                END = true;
+                endPanel.SetActive(true);
+                Debug.Log("End");
+                TextBox_Enemy.SetActive(false);
+                TextBox_Player.SetActive(false);
+                return;
+            }
+
             RAP_BATTLE_STAGE++;
 
             enemyVisual.sprite = allEnemySprites[RapBattleStage];
