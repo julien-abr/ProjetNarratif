@@ -66,11 +66,8 @@ namespace Team02
         public void Selected()
         {
             float score = 0;
-            if (enemy)
-            {
-                score = -0.75f;
-            }
-            else
+
+            if (!enemy)
             {
                 switch (effectiveness)
                 {
@@ -87,8 +84,8 @@ namespace Team02
                         break;
                 }
             }
-            
-            choiceManager.SwitchSpeaker(score);
+
+            choiceManager.StartCoroutine(choiceManager.SwitchSpeaker(score, effectiveness));
         }
     }
 
