@@ -287,14 +287,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34901962, g: 0.34901962, b: 0.34901962, a: 0.89411765}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.87058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6a8e0664a36398046b90deb784442cd6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -437,14 +437,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 0.89411765}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.87058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6a8e0664a36398046b90deb784442cd6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -561,6 +561,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: '- PlaceHolder Enemy Line : This should not be displayed.'
       objectReference: {fileID: 0}
+    - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2e6c071d2ff8aee41b1b4b876ecd9eb4, type: 3}
     - target: {fileID: 7112096346906685246, guid: 3c68648978e52624188946f54dcda334, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -676,6 +680,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: '- PlaceHolder Player Text 3 : This should not be displayed.'
       objectReference: {fileID: 0}
+    - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2e6c071d2ff8aee41b1b4b876ecd9eb4, type: 3}
     - target: {fileID: 7112096346906685246, guid: 3c68648978e52624188946f54dcda334, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -781,6 +789,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: '- PlaceHolder Player Text 2 : This should not be displayed.'
       objectReference: {fileID: 0}
+    - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2e6c071d2ff8aee41b1b4b876ecd9eb4, type: 3}
     - target: {fileID: 7112096346906685246, guid: 3c68648978e52624188946f54dcda334, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -1304,14 +1316,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 0.89411765}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.87058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6a8e0664a36398046b90deb784442cd6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1906,14 +1918,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.3490566, g: 0.3490566, b: 0.3490566, a: 0.89411765}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.87058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6a8e0664a36398046b90deb784442cd6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1950,6 +1962,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: '- PlaceHolder Enemy Name : This should not be displayed.'
       objectReference: {fileID: 0}
+    - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2e6c071d2ff8aee41b1b4b876ecd9eb4, type: 3}
     - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 20
@@ -2414,14 +2430,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34901962, g: 0.34901962, b: 0.34901962, a: 0.89411765}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.87058824}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6a8e0664a36398046b90deb784442cd6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2709,14 +2725,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.34901962, g: 0.34901962, b: 0.34901962, a: 0.89411765}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 6a8e0664a36398046b90deb784442cd6, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3395,6 +3411,10 @@ PrefabInstance:
       value: '- PlaceHolder Enemy Name : This should not be displayed.'
       objectReference: {fileID: 0}
     - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2e6c071d2ff8aee41b1b4b876ecd9eb4, type: 3}
+    - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
       propertyPath: m_FontData.m_MaxSize
       value: 20
       objectReference: {fileID: 0}
@@ -3589,6 +3609,7 @@ MonoBehaviour:
   imgFinish: {fileID: 828978512}
   speakerNameFinish: {fileID: 1159234097}
   speakerTextFinish: {fileID: 1733757434}
+  waitAttackEnd: 0
 --- !u!1001 &2065664808
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3604,6 +3625,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: '- PlaceHolder Enemy Line : This should not be displayed.'
       objectReference: {fileID: 0}
+    - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2e6c071d2ff8aee41b1b4b876ecd9eb4, type: 3}
     - target: {fileID: 7112096346906685246, guid: 3c68648978e52624188946f54dcda334, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -3883,7 +3908,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e6c071d2ff8aee41b1b4b876ecd9eb4, type: 3}
     m_FontSize: 20
     m_FontStyle: 0
     m_BestFit: 1
@@ -3917,7 +3942,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 2e6c071d2ff8aee41b1b4b876ecd9eb4, type: 3}
     m_FontSize: 15
     m_FontStyle: 0
     m_BestFit: 1
@@ -3995,6 +4020,10 @@ PrefabInstance:
       propertyPath: m_Text
       value: '- PlaceHolder Player Text 3 : This should not be displayed.'
       objectReference: {fileID: 0}
+    - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
+      propertyPath: m_FontData.m_Font
+      value: 
+      objectReference: {fileID: 12800000, guid: 2e6c071d2ff8aee41b1b4b876ecd9eb4, type: 3}
     - target: {fileID: 7112096346906685241, guid: 3c68648978e52624188946f54dcda334, type: 3}
       propertyPath: m_FontData.m_Alignment
       value: 3

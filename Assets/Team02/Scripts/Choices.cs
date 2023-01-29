@@ -68,6 +68,9 @@ namespace Team02
 
         public void Selected()
         {
+            if (choiceManager.waitAttackEnd)
+                return; 
+
             float score = 0;
 
             if (!enemy)
@@ -91,7 +94,14 @@ namespace Team02
                 }
             }
 
+            choiceManager.waitAttackEnd = true;
+
             choiceManager.StartCoroutine(choiceManager.SwitchSpeaker(score, effectiveness));
+        }
+
+        private void OnEnable()
+        {
+            choiceManager.waitAttackEnd = false;
         }
     }
 

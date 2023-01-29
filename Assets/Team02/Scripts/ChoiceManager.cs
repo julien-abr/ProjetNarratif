@@ -91,6 +91,7 @@ namespace Team02
         private FightDlg currentFightDlg;
         public FightDlg GetCurrentFightDlg => currentFightDlg;
 
+        public bool waitAttackEnd;
         private bool END;
 
         public event Action onfightDlgStageChanged;
@@ -198,9 +199,15 @@ namespace Team02
             }
         }
 
-        bool wasFinish;
 
         // No difference between finish or not
+
+        public void RestartGame()
+        {
+            SceneManager.LoadScene("MainMenu");
+        }
+
+        bool wasFinish;
 
         public void DisplayFinishDialog(bool isFinish)
         {
@@ -218,11 +225,6 @@ namespace Team02
             {
                 speakerTextFinish.text = CurrentFightDialogs[numberOfFightsInBattle].GetPlayerLines[1].GetText;
             }
-        }
-
-        public void RestartGame()
-        {
-            SceneManager.LoadScene("MainMenu");
         }
 
         int stageFinish = 0;
@@ -373,7 +375,6 @@ namespace Team02
                 Debug.LogWarning($"{character} doesn't have a SPRITE_POSE.{spritePose}");
             }
         }
-
         public IEnumerator SwitchSpeaker(float score, LINETYPE effectiveness)
         {
             if (END)
