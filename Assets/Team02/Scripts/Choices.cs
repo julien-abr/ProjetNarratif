@@ -33,6 +33,7 @@ namespace Team02
                 choiceText.text = ($"- {textLine}");
             else
                 StartCoroutine(WriteText(textLine));
+            return;
 
             #if UNITY_EDITOR
             if (effectiveness == LINETYPE.EFFECTIVE)
@@ -52,6 +53,8 @@ namespace Team02
 
         private IEnumerator WriteText(string textLine)
         {
+            choiceText.color = Color.white;
+
             var localizedText = ($"- {textLine}");
             var chars = localizedText.ToCharArray();
             var fullString = string.Empty;
@@ -73,12 +76,15 @@ namespace Team02
                 {
                     case LINETYPE.EFFECTIVE:
                         score = 2;
+                        choiceText.color = Color.green;
                         break;
                     case LINETYPE.NORMAL:
                         score = 1;
+                        choiceText.color = Color.white;
                         break;
                     case LINETYPE.INEFFECTIVE:
                         score = -1;
+                        choiceText.color = Color.red;
                         break;
                     default:
                         break;

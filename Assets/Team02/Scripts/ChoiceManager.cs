@@ -454,7 +454,7 @@ namespace Team02
 
             if (character == CHARACTER.PLAYER)
             {
-                TextBox_Player.SetActive(false);
+                //TextBox_Player.SetActive(false);
 
                 switch (effectiveness)
                 {
@@ -475,7 +475,7 @@ namespace Team02
                 SetPlayerSprite(SPRITE_POSE.HURT);
             }
 
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(1.2f);
 
             if (character == CHARACTER.PLAYER)
             {
