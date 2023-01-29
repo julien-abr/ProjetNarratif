@@ -38,6 +38,7 @@ namespace Team02
                 choiceText.text = ($"- {textLine}");
             else
                 StartCoroutine(WriteText(textLine));
+            return;
 
             #if UNITY_EDITOR
             if (effectiveness == LINETYPE.EFFECTIVE)
@@ -57,6 +58,8 @@ namespace Team02
 
         private IEnumerator WriteText(string textLine)
         {
+            choiceText.color = Color.white;
+
             var localizedText = ($"- {textLine}");
             var chars = localizedText.ToCharArray();
             var fullString = string.Empty;
@@ -71,32 +74,32 @@ namespace Team02
         public void Selected()
         {
             float score = 0;
-            if (enemy)
-            {
-                score = -0.75f;
-            }
-            else
+
+            if (!enemy)
             {
                 switch (effectiveness)
                 {
                     case LINETYPE.EFFECTIVE:
                         HOOO.Play();
                         score = 2;
+                        choiceText.color = Color.green;
                         break;
                     case LINETYPE.NORMAL:
                         yay.Play();
                         score = 1;
+                        choiceText.color = Color.white;
                         break;
                     case LINETYPE.INEFFECTIVE:
                         boo.Play();
                         score = -1;
+                        choiceText.color = Color.red;
                         break;
                     default:
                         break;
                 }
             }
-            
-            choiceManager.SwitchSpeaker(score);
+
+            choiceManager.StartCoroutine(choiceManager.SwitchSpeaker(score, effectiveness));
         }
     }
 

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using DG.Tweening;
 
 namespace Team02
 {
@@ -317,14 +319,27 @@ namespace Team02
                 choicesPlayer[i].UpdateTextFight(_fightDlg.GetPlayerLines[i].GetText);
             }
 
-            SetPlayerSprite(SPRITE_POSE.ATTACK);
-            SetEnemySprite(SPRITE_POSE.HURT);
+            if (currentScore >= 2)
+            {
+                SetPlayerSprite(SPRITE_POSE.IDLE);
+                SetEnemySprite(SPRITE_POSE.WEAK);
+            }
+            else if (currentScore <= 2)
+            {
+                SetPlayerSprite(SPRITE_POSE.WEAK);
+                SetEnemySprite(SPRITE_POSE.IDLE);
+            }
+            else
+            {
+                SetPlayerSprite(SPRITE_POSE.IDLE);
+                SetEnemySprite(SPRITE_POSE.IDLE);
+            }
         }
 
         private void SetLineEnemy(FightDlg _fightDlg)
         {
             choiceEnemy.UpdateTextFight(_fightDlg.GetEnemyLine.GetText);
-            SetEnemySprite(SPRITE_POSE.ATTACK);
+            //SetEnemySprite(SPRITE_POSE.ATTACK);
             SetPlayerSprite(SPRITE_POSE.HURT);
         }
         private void SetPlayerSprite(SPRITE_POSE spritePose)
@@ -373,17 +388,46 @@ namespace Team02
             }
         }
 
-        public void SwitchSpeaker(float score)
+        public IEnumerator SwitchSpeaker(float score, LINETYPE effectiveness)
         {
             if (END)
             {
-                return;
+                yield return null;
             }
-
-            SetCurrentScore(score);
 
             if (TextBox_Player.activeSelf) // When clicked on Player line (Enemy is clashing)
             {
+                int howMuchEnemyShake = 0;
+                switch (score)
+                {
+                    case 2: //Effective
+                        howMuchEnemyShake = 20;
+                        break;
+                    case 1: //Normal
+                        howMuchEnemyShake = 5;
+                        break;
+                    case -1: //Ineffective
+                        howMuchEnemyShake = 0;
+                        break;
+                    default:
+                        break;
+                }
+                playerVisual.gameObject.transform.DOShakePosition(0.5f, new Vector3(howMuchEnemyShake, 0, 0));
+
+                enemyVisual.gameObject.transform.DOShakePosition(0.5f, howMuchEnemyShake);
+                SetCurrentScore(score);
+
+                yield return StartCoroutine(Attack(CHARACTER.PLAYER, playerVisual, SPRITE_POSE.ATTACK, effectiveness));
+
+                // Attack Enemy after ours
+
+                enemyVisual.gameObject.transform.DOShakeRotation(0.7f, new Vector3(0, 0, 5));
+
+                playerVisual.gameObject.transform.DOShakePosition(0.5f, 10);
+                SetCurrentScore(-0.75f);
+
+                //SetCurrentScore(-75f);
+
                 // Switch to enemy line (doesn't change fight)
                 TextBox_Player.SetActive(false);
                 TextBox_Enemy.SetActive(true);
@@ -408,11 +452,54 @@ namespace Team02
                 if (FightDlgStage >= numberOfFightsInBattle)
                 {
                     GoNextFightStage();
-                    return;
+                    yield return null;
                 }
 
                 SetLinePlayer(currentFightDlg);
                 GoNextFightStage();
+            }
+        }
+
+        IEnumerator Attack(CHARACTER character, Image spriteToChange, SPRITE_POSE spritePose, LINETYPE effectiveness)
+        {
+            var characterData = GetCharacterData.GetCharacterData((int)character);
+
+            spriteToChange.sprite = characterData.GetSprite(spritePose);
+
+            if (character == CHARACTER.PLAYER)
+            {
+                //TextBox_Player.SetActive(false);
+
+                switch (effectiveness)
+                {
+                    case LINETYPE.EFFECTIVE:
+                        SetEnemySprite(SPRITE_POSE.HURT);
+                        break;
+                    case LINETYPE.NORMAL:
+                    case LINETYPE.INEFFECTIVE:
+                        SetEnemySprite(SPRITE_POSE.IDLE);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            else
+            {
+                TextBox_Enemy.SetActive(false);
+                SetPlayerSprite(SPRITE_POSE.HURT);
+            }
+
+            yield return new WaitForSeconds(1.2f);
+
+            if (character == CHARACTER.PLAYER)
+            {
+                TextBox_Player.SetActive(true);
+                SetEnemySprite(SPRITE_POSE.ATTACK);
+            }
+            else
+            {
+                TextBox_Enemy.SetActive(true);
+                SetPlayerSprite(SPRITE_POSE.IDLE);
             }
         }
     }
