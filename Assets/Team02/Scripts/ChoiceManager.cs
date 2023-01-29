@@ -40,6 +40,10 @@ namespace Team02
         [SerializeField] private Text speakerNameFinish;
         [SerializeField] private Text speakerTextFinish;
 
+        [Header("Musics")]
+        public AudioSource ambient;
+        public AudioSource fight;
+
         #endregion
 
         #region Variables 
@@ -129,6 +133,7 @@ namespace Team02
             };
 
             SetPlayerSprite(SPRITE_POSE.IDLE);
+            ambient.Play();
         }
 
         public void StartFight()
@@ -146,6 +151,9 @@ namespace Team02
             numberOfFightsInBattle = CurrentFightDialogs.Count - 1;
 
             crowdController.ResetData(numberOfFightsInBattle + 1);
+
+            ambient.Stop();
+            fight.Play();
         }
 
         private void RestartCurrentFight()
@@ -158,6 +166,9 @@ namespace Team02
             SetCurrentScore(0);
 
             crowdController.ResetData(numberOfFightsInBattle);
+
+            fight.Stop();
+            ambient.Play();
         }
 
         private void GoNextFightStage()
@@ -292,6 +303,9 @@ namespace Team02
             FightDlgStage = 1;
 
             EndCurrentFightDlg();
+
+            fight.Stop();
+            ambient.Play();
         }
 
         private void SetLinePlayer(FightDlg _fightDlg)

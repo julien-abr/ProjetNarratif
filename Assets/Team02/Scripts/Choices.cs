@@ -20,6 +20,11 @@ namespace Team02
         public LINETYPE effectiveness;
         public LINETYPE Effectiveness => effectiveness;
 
+        [Header("Sons")]
+        public AudioSource boo;
+        public AudioSource yay;
+        public AudioSource HOOO;
+
         public void Start()
         {
             choiceText ??= this.gameObject.GetComponent<Text>();
@@ -75,12 +80,15 @@ namespace Team02
                 switch (effectiveness)
                 {
                     case LINETYPE.EFFECTIVE:
+                        HOOO.Play();
                         score = 2;
                         break;
                     case LINETYPE.NORMAL:
+                        yay.Play();
                         score = 1;
                         break;
                     case LINETYPE.INEFFECTIVE:
+                        boo.Play();
                         score = -1;
                         break;
                     default:
